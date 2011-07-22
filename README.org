@@ -1,0 +1,29 @@
+
+* LaTeX-KOMA-template
+
+** Purpose of this project
+
+This is a generic template for LaTeX documents using KOMA Script classes
+which are pretty common in at least German spoken countries.
+
+The template does *not* want to contain each and every trick but should
+provide a clean, consistent and well documented starting point for any
+document exceeding a few pages. So if you plan to write a longer report,
+a diploma thesis, a PhD thesis, or similar, this template should give you
+a good basis.
+
+The focus is that you - the author - is able to concentrate on the *content*
+of your work rather than start fiddling around with the look of the document.
+Several typographic optimizations are included in order to get a final document
+that is optimized to deliver your content.
+
+The speciality of this template is, that every setting in the preamble is
+well documented with LaTeX. You can generate this documentation by your own
+by not removing the template documentation include command in the main LaTeX
+file and using GNU make with the rule "templatedocu" followed by the rule "pdf":
+
+        make templatedocu pdf
+
+This command should result in a pdf file containing the documentation of this
+template.
+
