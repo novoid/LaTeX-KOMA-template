@@ -1,0 +1,191 @@
+%% Time-stamp: <2011-07-22 15:44:58 vk>
+%%%% === Disclaimer: =======================================================
+%% created by
+%%
+%%      Karl Voit
+%%
+%% using grml GNU/Linux, vim & LaTeX 2e
+%%
+%doc% 
+%doc% \section{How to use this \LaTeX{} document template}
+%doc% 
+%doc% This \LaTeX{} document template from
+%doc% \myLaT\footnote{\url{http://LaTeX.TUGraz.at}} is based on \myabk{KOMA}
+%doc% script\footnote{\url{http://komascript.de/}}. It provides an easy to use and
+%doc% easy to modify template. All settings are documented and many references to
+%doc% additional information sources are given.
+%doc% 
+%doc% \subsection{How to compile this document}
+%doc% 
+%doc% \subsubsection{\textsc{GNU}/Linux, \textsc{OS~X}, \textsc{UNIX}, Cygwin}
+%doc% 
+%doc% If your system provides \myabk{GNU}
+%doc% make\footnote{\url{https://secure.wikimedia.org/wikipedia/en/wiki/Make\_\%28software\%29}},
+%doc% it is very easy to compile this document:
+%doc% 
+%doc% \begin{verbatim}
+%doc% make pdf
+%doc% \end{verbatim}
+%doc% 
+%doc% You can get a list of all other commands provided by the Makefile by invoking
+%doc% \texttt{make help}.
+%doc% 
+%doc% \subsubsection{All other systems including Microsoft Windows}
+%doc% 
+%doc% If your system does not provide \myabk{GNU} make or you do not want to use \myabk{GNU} make,
+%doc% you can compile this document using the usual method with pdf\LaTeX{}:
+%doc% 
+%doc% \begin{verbatim}
+%doc% pdflatex main.tex
+%doc% pdflatex main.tex
+%doc% \end{verbatim}
+%doc% 
+%doc% If you are using \textsc{Bib}\TeX{} you have to add its commands such as:
+%doc% 
+%doc% \begin{verbatim}
+%doc% pdflatex main.tex
+%doc% bibtex main
+%doc% pdflatex main.tex
+%doc% pdflatex main.tex
+%doc% \end{verbatim}
+%doc% 
+%doc% Addidional commands are required for packages like \texttt{makeindex} and so
+%doc% forth.
+%doc% 
+%doc% \subsection{How to get rid of the template documentation}
+%doc% 
+%doc% The lines you are currently reading are being generated directly from the
+%doc% included \TeX{} files of the preamble. You can remove them by simply removing
+%doc% the line (or putting the comment character \texttt{\%} infront of it) 
+%doc% \verb#\input{template_documentation}# in \texttt{main.tex}.
+%doc% 
+%doc% \subsection{What about modifying the template?}
+%doc% 
+%doc% This template provides an easy to start \LaTeX{} document template with sound
+%doc% default settings. You can modify each setting any time. It is recommended that
+%doc% you are familiar with the documentation of the command whose settings you want
+%doc% to modify.
+%doc% 
+%doc% The following sections describe the settings and commands of this template and
+%doc% gives a short overview of its features.
+
+%doc%
+%doc% \section{\texttt{preamble.tex} --- Main preamble file}
+%doc%
+%doc% In file \verb#preamble/preamble.tex# you will find the basic
+%doc% definitions related to your document. This template uses the \myabk{KOMA} script
+%doc% extension package of \LaTeX{}.
+%doc% 
+%doc% There are comments added to the \verb#\documentclass{}# definitions. Please
+%doc% refer to the great documentation of \myabk{KOMA}\footnote{\texttt{scrguide.pdf} for
+%doc% German users} for further details.
+%doc% 
+%doc% \paragraph{What should I do with this file?} For standard purposes you might
+%doc% use the default values it provides. You must not remove its \texttt{include} command
+%doc% in \texttt{main.tex} since it contains important definitions. This file contains
+%doc% settings which are documented well an can be modified according to your needs.
+%doc% It is recommended that you fully understand each setting you modify in order to
+%doc% get a good document result.
+%doc% 
+
+\documentclass[%
+12pt,%
+a4paper,%
+parskip=half,%  vertical space between paragraphs (instead of indenting first par-line)
+oneside,%
+headinclude,%
+footinclude=false,%
+openright%
+]{scrartcl}
+
+
+%doc% 
+%doc% \subsection{UTF8 as input charset}
+%doc% 
+%doc% You are able and should use \myabk{UTF8} character settings for writing these \TeX{}-files.
+%doc% 
+\usepackage{ucs}             %% UTF8 as input characters
+\usepackage[utf8x]{inputenc} %% UTF8 as input characters
+%% Source: http://latex.tugraz.at/latex/tutorial#laden_von_paketen
+
+
+%doc% 
+%doc% \subsection{Language settings}
+%doc% 
+%doc% The default setting of the language is English. Please change settings for
+%doc% additional or alternative languages used.
+%doc% 
+%\usepackage{ngerman}    %% german language
+\usepackage[american]{babel}  %% american english
+
+
+%doc% 
+%doc% \subsection{Headers and footers}
+%doc% 
+%doc% Since this template is based on \myabk{KOMA} script it uses its great \texttt{scrpage2}
+%doc% package for defining header and footer information. Please refer to the \myabk{KOMA}
+%doc% script documentation how to use this package.
+%doc% 
+\usepackage{scrpage2} %% erweiterte Seitenstile
+
+
+%doc% 
+%doc% \subsection{Miscellaneous packages} \label{subsec:miscpackages}
+%doc% 
+%doc% There are several packages included by default. You might want to activate or
+%doc% deactivate them according to your requirements:
+%doc% 
+%doc% \begin{enumerate}
+
+
+%doc% \item[\texttt{\href{https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Formatting\#Other\_symbols}{%%
+%doc% pifont%%
+%doc% }}] 
+%doc% For additional special characters available by \verb#\ding{}#
+%\usepackage{pifont}  %% Sonderzeichen fuer Titelseite \ding{}
+
+%doc% \item[\texttt{\href{http://ctan.org/pkg/ifthen}{%%
+%doc% ifthen%%
+%doc% }}] 
+%doc% For using if/then/else statements for example in macros
+\usepackage{ifthen}  %% fuer Wiederholungen usw.
+
+%doc% \item[\texttt{\href{http://www.ctan.org/tex-archive/fonts/eurosym}{%%
+%doc% eurosym%%
+%doc% }}] 
+%doc% Using the character for Euro with \verb#\officialeuro{}#
+%\usepackage{eurosym}
+
+%doc% \item[\texttt{\href{http://www.ctan.org/tex-archive/help/Catalogue/entries/xspace.html}{%%
+%doc% xspace%%
+%doc% }}] 
+%doc% This package is required for intelligent spacing after commands
+\usepackage{xspace}
+
+%doc% \item[\texttt{\href{https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Colors}{%%
+%doc% color%%
+%doc% }}] 
+%doc% This package defines basic colors
+\usepackage[usenames,dvipsnames]{color}
+\definecolor{DispositionColor}{RGB}{30,103,182} %% used for links and so forth in screen-version
+
+
+%% This is undocumented due to problems using american english:
+%\usepackage{blindtext}  %% provides commands for blind text:
+%% \blindtext creates some text,
+%% \Blindtext creates more text.
+%% \blinddocument creates a small document with sections, lists...
+%% \Blinddocument creates a large document with sections, lists...
+%% Source:
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/blindtext/
+
+
+%doc% \end{enumerate}
+
+
+%%%% End 
+%%% Local Variables:
+%%% TeX-master: "../main"
+%%% End:
+%% vim:foldmethod=expr
+%% vim:fde=getline(v\:lnum)=~'^%%%%'?0\:getline(v\:lnum)=~'^%doc.*\ .\\%(sub\\)\\?section{.\\+'?'>1'\:'1':

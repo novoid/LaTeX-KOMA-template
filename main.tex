@@ -1,0 +1,84 @@
+%%%% Time-stamp: <2011-07-22 15:42:02 vk>
+%% ========================================================================
+%%%% Disclaimer
+%% ========================================================================
+%%
+%% created by
+%%
+%%      Karl Voit
+%%
+%% using grml GNU/Linux, vim & LaTeX 2e
+
+%% ========================================================================
+%%%% Basic settings
+%% ========================================================================
+\input{preamble/preamble}
+
+%% ========================================================================
+%%%% My own commands
+%% ========================================================================
+\input{preamble/mycommands}
+
+%% ========================================================================
+%%%% Typographic settings
+%% ========================================================================
+\input{preamble/typographic_settings}
+
+%% ========================================================================
+%%%% Document metadata
+%% ========================================================================
+%% Following commands are defined here and can be re-used anywhere.
+\newcommand{\myauthor}{Karl Voit}  %% also used for PDF metadata (hyperref)
+\newcommand{\mysubject}{}  %% also used for PDF metadata (hyperref)
+\newcommand{\mytitle}{}  %% also used for PDF metadata (hyperref)
+\newcommand{\mykeywords}{}  %% also used for PDF metadata (hyperref)
+
+%% ========================================================================
+%%%% MISC usepackages
+%% ========================================================================
+
+
+
+%% ========================================================================
+%%%% MISC self-defined commands
+%% ========================================================================
+
+\newcommand{\myLaT}{\LaTeX{}@TUG\xspace} %% LaTeX@TUG text "logo"
+
+
+%% ========================================================================
+%%%% Templates
+%% ========================================================================
+
+%% template for inserting figures:
+% \myfig{}%% filename
+%       {}%% width/height
+%       {}%% label
+%       {}%% caption
+
+%% acronyms in small caps: \myabk{UNESCO}
+
+\input{preamble/pdf_settings}  %% should be *last* definitions in preamble!
+%% ========================================================================
+%%%% begin{document}
+%% ========================================================================
+\begin{document}
+
+
+
+\tableofcontents  %% this produces the table of contents - you might have guessed :-)
+
+\input{template_documentation} %% delete this line if you want to disable sample text and template documentation
+
+
+\section{MYSECTION}
+
+MYTEXT
+
+
+
+
+%%%% end{document}
+\end{document}
+%% vim:foldmethod=expr
+%% vim:fde=getline(v\:lnum)=~'^%%%%\ .\\+'?'>1'\:'='

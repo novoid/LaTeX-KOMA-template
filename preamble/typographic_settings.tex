@@ -1,0 +1,120 @@
+%%%% Time-stamp: <2011-07-22 15:45:04 vk>
+%%%% === Disclaimer: =======================================================
+%% created by
+%%
+%%      Karl Voit
+%%
+%% using grml GNU/Linux, vim & LaTeX 2e
+%%
+%doc%
+%doc% \section{\texttt{typographic\_settings.tex} --- Typographic finetuning}
+%doc%
+%doc% The settings of file \verb#preamble/typographic_settings.tex# contain
+%doc% typographic finetuning related to things mentioned in literature.  The
+%doc% settings in this file relates to personal taste and most of all typographic
+%doc% experience. 
+%doc% 
+%doc% \paragraph{What should I do with this file?} You might as well skip the whole
+%doc% file by excluding the \verb#\input{preamble/typographic_settings.tex}# command
+%doc% in \texttt{main.tex}.  For standard usage it is recommended to stay with the
+%doc% default settings.
+%doc% 
+%doc% 
+%doc% \subsection{References related to typographic settings}
+%doc% 
+%doc% \begin{thebibliography}{9}
+%doc% \bibitem[Bringhurst1993]{Bringhurst1993}
+%doc%     \textbf{Robert Bringhurst}\\
+%doc%     \textit{The Elements of Typographic Style}\\
+%doc%     paperback, first edition, 1993
+%doc% \bibitem[Eijkhout2008]{Eijkhout2008}
+%doc%     \textbf{Victor Eijkhout}\\
+%doc%     \textit{\TeX{} by Topic, a \TeX{}nician's Reference}\\
+%doc%     document revision 1.2, may 2008\\
+%doc%     \url{http://www.eijkhout.net/texbytopic/texbytopic.html}
+%doc% \end{thebibliography}
+%% ========================================================================
+
+
+%doc%
+%doc% \subsection{French spacing}
+%doc%
+%doc% \paragraph{Why?} \cite[p 28, p 30]{Bringhurst1993}: `2.1.4 Use a single word space between sentences.'
+%doc%
+%doc% \paragraph{How?} \cite[p 185]{Eijkhout2008}:\\
+%doc% \verb#\frenchspacing  %% Macro to switch off extra space after punctuation.# \\
+\frenchspacing  %% Macro to switch off extra space after punctuation.
+%doc%
+%doc% Note: This setting might be default for \myabk{KOMA} script.
+%doc%
+
+
+%doc%
+%doc% \subsection{Text figures}
+%doc% 
+%doc% \ldots also called old style numbers. 
+%doc% (German: Mediävalziffern\footnote{\url{https://secure.wikimedia.org/wikibooks/de/wiki/LaTeX-W\%C3\%B6rterbuch:\_Medi\%C3\%A4valziffern}})
+%doc% \paragraph{Why?} \cite[p 44f]{Bringhurst1993}: 
+%doc% \begin{quote}
+%doc% `3.2.1 If the font includes both text figures and titling figures, use
+%doc%  titling figures only with full caps, and text figures in all other
+%doc%  circumstances.'
+%doc% \end{quote}
+%doc% 
+%doc% \paragraph{How?} 
+%doc% Quoted from Wikibooks\footnote{\url{https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Formatting\#Text\_figures\_.28.22old\_style.22\_numerals.29}}:
+%doc% \begin{quote}
+%doc% Some fonts do not have text figures built in; the textcomp package attempts to
+%doc% remedy this by effectively generating text figures from the currently-selected
+%doc% font. Put \verb#\usepackage{textcomp}# in your preamble. textcomp also allows you to
+%doc% use decimal points, properly formatted dollar signs, etc. within
+%doc% \verb#\oldstylenums{}#.
+%doc% \end{quote}
+%doc% \ldots but proposed \LaTeX{} method does not work out well. Instead use:\\
+%doc% \verb#\usepackage{hfoldsty}#  (enables text figures using additional font) or \\
+%doc% \verb#\usepackage[sc,osf]{mathpazo}# (switches to Palatino font with small caps and old style figures enabled).
+%doc%
+%\usepackage{hfoldsty}  %% enables text figures using additional font
+%% ... OR use ...
+\usepackage[sc,osf]{mathpazo} %% switches to Palatino with small caps and old style figures
+
+
+%doc% 
+%doc% \subsection{Abbrevations using \textsc{small caps}}
+%doc% 
+%doc% \paragraph{Why?} \cite[p 45f]{Bringhurst1993}: `3.2.2 For abbrevations and
+%doc% acronyms in the midst of normal text, use spaced small caps.'
+%doc% 
+%doc% \paragraph{How?} Using the predefined macro \verb#\myabk{}# for things like
+%doc% \myabk{UNO} or \myabk{UNESCO} using \verb#\myabk{UNO}# or \verb#\myabk{UNESCO}#.
+%doc% 
+\newcommand{\myabk}[1]{%%  abbrevations using small caps
+\textsc{\lowercase{#1}}%%
+}
+
+
+%doc% 
+%doc% \subsection{Colorized headings and links}
+%doc% 
+%doc% This document template is able to generate an output that uses colorized
+%doc% headings, captions, page numbers, and links. The color named `DispositionColor'
+%doc% used in this document is defined near the definition of package \texttt{color}
+%doc% in the preamble (see section~\ref{subsec:miscpackages}). The changes required
+%doc% for headings, page numbers, and captions are defined here.
+%doc% 
+%doc% Settings for colored links are handled by the definitions of the
+%doc% \texttt{hyperref} package (see section~\ref{sec:pdf}).
+%doc% 
+\setheadsepline{.4pt}[\color{DispositionColor}]
+\renewcommand{\headfont}{\normalfont\sffamily\color{DispositionColor}}
+\renewcommand{\pnumfont}{\normalfont\sffamily\color{DispositionColor}}
+\addtokomafont{disposition}{\color{DispositionColor}}
+\addtokomafont{caption}{\color{DispositionColor}\footnotesize}
+\addtokomafont{captionlabel}{\color{DispositionColor}}
+
+%%%% END
+%%% Local Variables:
+%%% TeX-master: "../main"
+%%% End:
+%% vim:foldmethod=expr
+%% vim:fde=getline(v\:lnum)=~'^%%%%'?0\:getline(v\:lnum)=~'^%doc.*\ .\\%(sub\\)\\?section{.\\+'?'>1'\:'1':

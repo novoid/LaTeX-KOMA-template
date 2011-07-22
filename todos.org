@@ -1,0 +1,39 @@
+## Time-stamp: <2011-07-22 15:53:52 vk>
+## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
+
+* TODO title page(s)
+:PROPERTIES:
+:CREATED: <2010-12-22 Wed 15:48>
+:END:
+
+- probably own folder called "titlepages" where all possible
+  titlepages are located:
+  - TU Graz
+  - KF
+
+* TODO acronyms
+:PROPERTIES:
+:CREATED: <2010-12-22 Fri 15:49>
+:END:
+
+* TODO add BibTeX to the template
+:PROPERTIES:
+:CREATED: <2011-07-22 Fri 15:53>
+:END:
+* TODO translate German comments
+:PROPERTIES:
+:CREATED: <2010-12-22 Fri 15:50>
+:END:
+
+* TODO look at creation of own sty-file
+:PROPERTIES:
+:CREATED: <2010-12-22 Fri 15:50>
+:END:
+
+* TODO Look at template of matthiaspospiech and adopt things
+:PROPERTIES:
+:CREATED: <2010-12-26 Fri 15:51>
+:END:
+
+/home/vk/src/diss_da_template/matthiaspospiech.de/LaTeX-Vorlage3/preambel
+

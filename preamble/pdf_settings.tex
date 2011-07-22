@@ -1,0 +1,83 @@
+%%%% Time-stamp: <2011-07-22 15:44:54 vk>
+%%%% === Disclaimer: =======================================================
+%% created by
+%%
+%%      Karl Voit
+%%
+%% using grml GNU/Linux, vim & LaTeX 2e
+%%
+
+%doc%
+%doc% \section{\texttt{pdf\_settings.tex} --- Settings related to PDF output}
+%doc% \label{sec:pdf}
+%doc% 
+%doc% The file \verb#preamble/pdf_settings.tex# basically contains the definitions for
+%doc% the \href{http://tug.org/applications/hyperref/}{\texttt{hyperref} package}
+%doc% including the
+%doc% \href{http://www.ctan.org/tex-archive/macros/latex/required/graphics/}{\texttt{graphicx}
+%doc% package}. Since these settings should be the last things of any \LaTeX{}
+%doc% preamble, they got their own \TeX{} file which is included in \texttt{main.tex}.
+%doc% 
+%doc% \paragraph{What should I do with this file?} The settings in this file are
+%doc% important for \myabk{PDF} output and including graphics. Do not exclude the
+%doc% related \texttt{input} command in \texttt{main.tex}. But you might want to
+%doc% modify some settings after you read the
+%doc% \href{http://tug.org/applications/hyperref/}{documentation of the \texttt{hyperref} package}.
+%doc% 
+
+%% Declarations of hyperref should be the last definitions of the preamble:
+%% FIXXME: black-and-white-version for printing!
+\ifpdfoutput{
+
+  \usepackage[pdftex]{graphicx}
+
+  \pdfcompresslevel=9
+
+  \usepackage[%
+  pdftitle={\mytitle}, %
+  pdfauthor={\myauthor}, %
+  pdfsubject={\mysubject}, %
+  pdfcreator={Accomplished with LaTeX2e and pdfLaTeX with hyperref-package under Debian GNU/Linux. No anmimals, MS-EULA or BSA-rules were harmed.},
+  pdfproducer={\myauthor},
+  pdfkeywords={\mykeywords},
+  a4paper=true, %
+  pdftex=true, %
+  backref, %
+  pagebackref=false, % creates backward references too
+  bookmarks=false, %
+  bookmarksopen=false, % when starting with AcrobatReader, the Bookmarkcolumn is opened
+  pdfpagemode=None,% None, UseOutlines, UseThumbs, FullScreen
+  plainpages=false, % correct, if pdflatex complains: ``destination with same identifier already exists''
+  %% colors: https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Colors
+  urlcolor=DispositionColor, %%
+  linkcolor=DispositionColor, %%
+  pagecolor=DispositionColor, %%
+  citecolor=DispositionColor, %%
+  anchorcolor=DispositionColor, %%
+%  colorlinks % turn on colored links (better for on-screen reading)
+  colorlinks=true % turn off colored links (better for printout versions)
+  ]{hyperref}
+
+  \DeclareGraphicsExtensions{.pdf}
+
+}{%else
+  % no PDF output; old-style latex producing dvi
+  \usepackage[dvips]{graphicx}
+  \DeclareGraphicsExtensions{.eps}
+  %% should be LAST definition!!!
+  %% for docu on that, see reference on package ``hyperref''!
+  \usepackage[%
+  a4paper=true, %
+  dvips, %
+  %plainpages=false, % correct, if pdflatex complains: ``destination with same identifier already exists''
+  colorlinks=false % ... as himself ;)
+  ]{hyperref}
+
+}
+
+%%%% END
+%%% Local Variables:
+%%% TeX-master: "../main"
+%%% End:
+%% vim:foldmethod=expr
+%% vim:fde=getline(v\:lnum)=~'^%%%%'?0\:getline(v\:lnum)=~'^%doc.*\ .\\%(sub\\)\\?section{.\\+'?'>1'\:'1':

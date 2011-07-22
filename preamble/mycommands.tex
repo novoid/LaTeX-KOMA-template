@@ -1,0 +1,110 @@
+%% Time-stamp: <2011-07-22 15:44:48 vk>
+%%%% === Disclaimer: =======================================================
+%% created by
+%%
+%%      Karl Voit
+%%
+%% using grml GNU/Linux, vim & LaTeX 2e
+%%
+
+%doc%
+%doc% \section{\texttt{mycommands.tex} --- various definitions}
+%doc%
+%doc% In file \verb#preamble/mycommands.tex# many useful commands are being
+%doc% defined. 
+%doc% 
+%doc% \paragraph{What should I do with this file?} Please take a look at its 
+%doc% content to get the most out of your document.
+%doc% 
+
+%doc% 
+%doc% One of the best advantages of \LaTeX{} compared to \myabk{WYSIWYG} software products is
+%doc% the possibility to define and use macros within text. This empowers the user to
+%doc% a great extend.  Many things can be defined using \verb#\newcommand{}# and
+%doc% automates repeating tasks. It its recommended to use macros not only for
+%doc% repetitive tasks but also for separating form from content such as \myabk{CSS}
+%doc% does for \myabk{XHTML}. Think of including graphics in your document: after
+%doc% writing your book, you might want to change all captions to the upper side of
+%doc% each figure. In this case you either have to modify all
+%doc% \texttt{includegraphics} commands or you were clever enough to define something
+%doc% like \verb#\myfig#\footnote{See below for a detailed description}. Using a
+%doc% macro for including graphics enables you to modify the position caption on only
+%doc% \emph{one} place: at the definition of the macro.
+%doc% 
+%doc% Following section describes some macros that came with this document template
+%doc% from \myLaT and you are welcome to modify or extend them or to create
+%doc% your own macros!
+%doc% 
+
+%doc% 
+%doc% \subsection{\texttt{myfig} --- including graphics made easy}
+%doc% 
+%doc% The classic: you can easily add graphics to you document with \verb#\myfig#:
+%doc% \begin{verbatim}
+%doc%  \myfig{flower}%% filename w/o extension in directory "figures"
+%doc%        {0.7\textwidth}%% maximum width/height, aspect ratio will be kept
+%doc%        {This flower was photographed at my home town in 2010}%% caption
+%doc%        {fig:flower}%% label
+%doc% \end{verbatim}
+%doc% 
+\newcommand{\myfig}[4]{
+%% example:
+% \myfig{}%% filename
+%       {width=0.5\textwidth,height=0.5\textheight}%% maximum width/height, aspect ratio will be kept
+%       {}%% caption
+%       {}%% label
+\begin{figure}%[htp]
+  \includegraphics[keepaspectratio,#2]{figures/#1}
+  \caption{#3}
+  \label{#4} %% NOTE: always label *after* caption!
+\end{figure}
+}
+
+
+%doc% 
+%doc% \subsection{\texttt{myclone} --- repeat things!}
+%doc% 
+%doc% Using \verb#\myclone[42]{foobar}# results the text `foobar' printed 42 times.
+%doc% But you can not only repeat text output with \texttt{myclone}. 
+%doc%
+%doc% Default argument
+%doc% for the optional parameter `number of times' (like `42' in the example above) 
+%doc% is set to two.
+%doc% 
+%% \myclone[x]{text}
+\newcounter{testcnt}
+\newcommand{\myclone}[2][2]{%
+  \setcounter{myclonecnt}{#1}%
+  \whiledo{\value{myclonecnt}>0}{#2\addtocounter{myclonecnt}{-1}}%
+}
+
+%% Info: http://en.wikibooks.org/wiki/LaTeX/Internationalization#German
+%doc% 
+%doc% \subsection{\texttt{myquote} --- correct quotation marks}
+%doc% 
+%doc% You should \emph{never} use quotation marks found on your keyboard
+%doc% since they end up in strange characters or false quotation marks.
+%doc% 
+%doc% In \LaTeX{} you have to use different quotation marks. With 
+%doc% \verb#\myquote{foobar}# you can get correct quotation marks around `foobar'.
+%doc% Please do check the definition of this function in order to modify
+%doc% its settings according to your language and quotation marks.
+%doc%
+%% \myquote{text}
+\newcommand{\myquote}[1]{%
+  %% please do remove the first comment character which
+  %% are in front of the command you want to use:
+  % \glqq{}#1\grqq{} %% results in something like ,,#1''
+  % \glq{}#1\grq{}   %% results in something like ,#1'
+   \frqq{}#1\flqq{} %% results in something like >>#1<< (for *german* texts)
+  % \frq{}#1\flq{}   %% results in something like >#1< (for *german* texts)
+  % \flqq{}#1\frqq{} %% results in something like <<#1>> (for *non* german texts)
+  % \flq{}#1\frq{}   %% results in something like <#1> (for *non* german texts)
+}
+
+%%%% End 
+%%% Local Variables:
+%%% TeX-master: "../main"
+%%% End:
+%% vim:foldmethod=expr
+%% vim:fde=getline(v\:lnum)=~'^%%%%'?0\:getline(v\:lnum)=~'^%doc.*\ .\\%(sub\\)\\?section{.\\+'?'>1'\:'1':
