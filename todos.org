@@ -1,4 +1,4 @@
-## Time-stamp: <2011-07-22 15:53:52 vk>
+## Time-stamp: <2011-07-22 17:08:35 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 
 * TODO title page(s)
@@ -11,6 +11,10 @@
   - TU Graz
   - KF
 
+* TODO maketitle example
+:PROPERTIES:
+:CREATED: <2011-07-22 Fri 17:08>
+:END:
 * TODO acronyms
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:49>

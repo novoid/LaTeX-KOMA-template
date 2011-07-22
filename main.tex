@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-07-22 15:42:02 vk>
+%%%% Time-stamp: <2011-07-22 17:48:02 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -29,8 +29,8 @@
 %% ========================================================================
 %% Following commands are defined here and can be re-used anywhere.
 \newcommand{\myauthor}{Karl Voit}  %% also used for PDF metadata (hyperref)
-\newcommand{\mysubject}{}  %% also used for PDF metadata (hyperref)
 \newcommand{\mytitle}{}  %% also used for PDF metadata (hyperref)
+\newcommand{\mysubject}{}  %% also used for PDF metadata (hyperref)
 \newcommand{\mykeywords}{}  %% also used for PDF metadata (hyperref)
 
 %% ========================================================================
@@ -65,15 +65,30 @@
 \begin{document}
 
 
+\pagenumbering{roman} %% use roman numbers for page numbers (or: arabic, Roman, alph, Alph)
+
+%% include title page:
+\input{titlepages/Deutsche_Diplomarbeit_-_Karl-Franzens_Uni_Graz}
 
 \tableofcontents  %% this produces the table of contents - you might have guessed :-)
+%\clearpage %% start a new page after table of contents
+\pagenumbering{arabic} %% use arabic numbers for page numbers (or: roman, Roman, alph, Alph)
+
 
 \input{template_documentation} %% delete this line if you want to disable sample text and template documentation
 
 
-\section{MYSECTION}
+%% include other tex files:
+\include{introduction}
+% \include{problem}
+% \include{solution}
+% \include{evaluation}
+% \include{outlook}
 
-MYTEXT
+% \appendix  %% close the main document, appendix follows now until end
+
+% \include{further_ressources}
+
 
 
 
