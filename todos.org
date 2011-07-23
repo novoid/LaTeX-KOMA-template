@@ -1,6 +1,19 @@
-## Time-stamp: <2011-07-22 17:08:35 vk>
+## Time-stamp: <2011-07-23 12:48:14 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
+#+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
+#+TAGS: KarlVoit(k) 
 
+* TODO Template documentation should be static [0/2]
+DEADLINE: <2011-07-23 Sat>
+:PROPERTIES:
+:CREATED: <2011-07-23 Sat 12:44>
+:END:
+** NEXT Makefile: documentation should end up in same PDF filename
+
+** NEXT adopt comments/documentation to this change
+:PROPERTIES:
+:CREATED: <2011-07-23 Sat 12:45>
+:END:
 * TODO title page(s)
 :PROPERTIES:
 :CREATED: <2010-12-22 Wed 15:48>
@@ -11,30 +24,45 @@
   - TU Graz
   - KF
 
-* TODO maketitle example
+* DONE Title page KF Uni Graz
+CLOSED: [2011-07-22 Fri 12:46]
+:PROPERTIES:
+:CREATED: <2011-07-22 Fri 12:46>
+:END:
+
+for Petra
+
+* NEXT move almost *all* user-specific data into separate file
+:PROPERTIES:
+:CREATED: <2011-07-23 Sat 12:46>
+:END:
+
+- in order to differ between template and content
+
+* NEXT maketitle example
 :PROPERTIES:
 :CREATED: <2011-07-22 Fri 17:08>
 :END:
-* TODO acronyms
+* NEXT acronyms
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:49>
 :END:
 
-* TODO add BibTeX to the template
+* NEXT add BibTeX to the template
 :PROPERTIES:
 :CREATED: <2011-07-22 Fri 15:53>
 :END:
-* TODO translate German comments
+* NEXT translate German comments
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:50>
 :END:
 
-* TODO look at creation of own sty-file
+* WISH look at creation of own sty-file
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:50>
 :END:
 
-* TODO Look at template of matthiaspospiech and adopt things
+* NEXT Look at template of matthiaspospiech and adopt things
 :PROPERTIES:
 :CREATED: <2010-12-26 Fri 15:51>
 :END:
