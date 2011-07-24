@@ -23,7 +23,7 @@ DATESTAMP_AND_PROJECT = ${DATESTAMP}_${PROJECTNAME}
 #PDFVIEWER = xpdf
 PDFVIEWER = acroread
 DVIVIEWER = xdvi
-TEMPLATEDOCUFILE = Template_Documentation.tex
+TEMPLATEDOCUFILE = Template-Documentation.tex
 
 #help
 #helpThe main targets of this Makefile are:
@@ -73,7 +73,7 @@ view: pdf
 
 #help	clean	clean up temporary files
 .PHONY: clean
-clean: templatedocu
+clean: 
 	-rm -r _*_.* *~ *.aux *.bbl ${MAINDOCUMENT}.dvi *.ps *.blg *.idx *.ilg *.ind *.toc *.log *.log *.brf *.out *.lof *.lot *.gxg *.glx *.gxs *.glo *.gls -f
 
 #help	purge	cleaner than clean ;-)
@@ -99,17 +99,33 @@ zip: purge pdf clean
 	zip -r ../${PROJECTNAME}_${TIMESTAMP}.zip *
 
 #help	templatedocu	updates tex-files for the documentation of this template
+#help			needs: echo, sed, grep
 .PHONY: templatedocu
 templatedocu:
-	grep "%doc%" preamble/preamble.tex | sed 's/^.*%doc% //' > ${TEMPLATEDOCUFILE}
+	echo "%% overriding preamble/preamble.tex %%" >${TEMPLATEDOCUFILE}
+	echo "\documentclass[12pt,a4paper,parskip=half,oneside,headinclude,footinclude=false,openright]{scrartcl}" >>${TEMPLATEDOCUFILE}
+	echo "\usepackage{ucs}\usepackage[utf8x]{inputenc}\usepackage[american]{babel}\usepackage{scrpage2}" >>${TEMPLATEDOCUFILE}
+	echo "\usepackage{ifthen}\usepackage{eurosym}\usepackage{xspace}\usepackage[usenames,dvipsnames]{color}" >>${TEMPLATEDOCUFILE}
+	echo "\definecolor{DispositionColor}{RGB}{30,103,182}" >>${TEMPLATEDOCUFILE}
+	echo "%% overriding userdata.tex %%" >>${TEMPLATEDOCUFILE}
+	echo "\\\newcommand{\myauthor}{Karl Voit}\\\newcommand{\mytitle}{LaTeX Template Documentation}" >>${TEMPLATEDOCUFILE}
+	echo "\\\newcommand{\mysubject}{LaTeX}\\\newcommand{\mykeywords}{LaTeX, pdflatex, template, documentation}" >>${TEMPLATEDOCUFILE}
+	echo "%% using existing TeX files %%" >>${TEMPLATEDOCUFILE}
+	echo "\input{preamble/mycommands}" >>${TEMPLATEDOCUFILE}
+	echo "\input{preamble/typographic_settings}" >>${TEMPLATEDOCUFILE}
+	echo "\\\newcommand{\myLaT}{\LaTeX{}@TUG\xspace}" >>${TEMPLATEDOCUFILE}
+	echo "\input{preamble/pdf_settings}" >>${TEMPLATEDOCUFILE}
+	echo "\\\begin{document}" >>${TEMPLATEDOCUFILE}
+	echo "\\\tableofcontents" >>${TEMPLATEDOCUFILE}
+	echo "%%---------------------------------------%%" >>${TEMPLATEDOCUFILE}
+	grep "%doc%" preamble/preamble.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	grep "%doc%" preamble/typographic_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	grep "%doc%" preamble/pdf_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
-	${PDFLATEX_CMD} ${MAINDOCUMENT}.tex
-	${PDFLATEX_CMD} ${MAINDOCUMENT}.tex
-	-${BIBTEX_CMD} ${MAINDOCUMENT}
-	${PDFLATEX_CMD} ${MAINDOCUMENT}.tex
-	-mv ${MAINDOCUMENT}.pdf Template-Documentation.pdf
-
+	echo "%%---------------------------------------%%" >>${TEMPLATEDOCUFILE}
+	echo "\end{document}" >>${TEMPLATEDOCUFILE}
+	${PDFLATEX_CMD} ${TEMPLATEDOCUFILE}
+	${PDFLATEX_CMD} ${TEMPLATEDOCUFILE}
 
 
 #end
+

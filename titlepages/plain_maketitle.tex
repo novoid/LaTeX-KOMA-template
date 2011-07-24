@@ -1,0 +1,29 @@
+%%%% Time-stamp: <2011-07-24 16:44:08 vk>
+%% ========================================================================
+%%%% Disclaimer
+%% ========================================================================
+%%
+%% created by
+%%
+%%      Karl Voit
+%%
+%% using grml GNU/Linux, vim & LaTeX 2e
+
+%% this is a very simple title page using LaTeX maketitle
+
+\title{%%
+\mytitle\\%%
+\mysubject}
+
+\author{\myauthor
+  \thanks{\href{http://LaTeX.TUGraz.at}{http://LaTeX.TUGraz.at}}\\
+    \date{\today}
+}
+
+\maketitle
+
+%% \clearpage %% (optional) new page after title page
+
+
+%% vim:foldmethod=expr
+%% vim:fde=getline(v\:lnum)=~'^%%%%\ .\\+'?'>1'\:'='

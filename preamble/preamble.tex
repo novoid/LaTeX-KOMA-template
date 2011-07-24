@@ -1,4 +1,4 @@
-%% Time-stamp: <2011-07-24 13:11:11 vk>
+%% Time-stamp: <2011-07-24 15:43:02 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -89,14 +89,17 @@
 %doc% 
 
 \documentclass[%
-12pt,%
-a4paper,%
-parskip=half,%  vertical space between paragraphs (instead of indenting first par-line)
-oneside,%
-headinclude,%
-footinclude=false,%
-openright%
-]{scrartcl}
+12pt,%%  size of the main text
+a4paper,%%  paper format
+parskip=half,%%  vertical space between paragraphs (instead of indenting first par-line)
+oneside,%%  document is not printed on left and right sides, only right side
+%twoside,%%  document is printed on left and right sides
+headinclude,%%  FIXXME
+footinclude=false,%%  FIXXME
+openright%%  FIXXME
+]{scrartcl}%% article class of KOMA: FIXXME
+%]{scrreprt}%% article class of KOMA: FIXXME
+%]{scrbook}%% article class of KOMA: FIXXME
 
 
 %doc% 
@@ -112,11 +115,11 @@ openright%
 %doc% 
 %doc% \subsection{Language settings}
 %doc% 
-%doc% The default setting of the language is English. Please change settings for
+%doc% The default setting of the language is American. Please change settings for
 %doc% additional or alternative languages used.
 %doc% 
-%\usepackage{ngerman}    %% german language
-\usepackage[american]{babel}  %% american english
+\usepackage[american]{babel}  %% American English
+%\usepackage[ngerman]{babel}  %% German
 
 
 %doc% 
@@ -126,7 +129,7 @@ openright%
 %doc% package for defining header and footer information. Please refer to the \myabk{KOMA}
 %doc% script documentation how to use this package.
 %doc% 
-\usepackage{scrpage2} %% erweiterte Seitenstile
+\usepackage{scrpage2} %%  advanced page style using KOMA
 
 
 %doc% 

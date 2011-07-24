@@ -6,3 +6,5 @@ preamble/auto/*
 *.log
 *.toc
 titlepages/Petra-data.tex
+Template-Documentation.tex
+userdata-Petra.tex

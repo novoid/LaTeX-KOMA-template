@@ -1,9 +1,9 @@
-## Time-stamp: <2011-07-24 14:05:13 vk>
+## Time-stamp: <2011-07-24 16:45:18 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
 
-* DONE Template documentation should be static [2/2]
+* DONE Template documentation should be static [3/3]
 DEADLINE: <2011-07-23 Sat>
 :PROPERTIES:
 :CREATED: <2011-07-23 Sat 12:44>
@@ -19,6 +19,19 @@ CLOSED: [2011-07-24 Sun 14:04]
 :PROPERTIES:
 :CREATED: <2011-07-23 Sat 12:45>
 :END:
+
+** DONE separate main.tex from Template-Documentation.tex
+CLOSED: [2011-07-24 Sun 16:27]
+:PROPERTIES:
+:CREATED: <2011-07-24 Sun 16:26>
+:END:
+
+- no need to comment out/in include command of template definition
+- duplicate most important things from:
+  - preamble.tex
+  - userdata.tex
+- include rest of the tex-files and misc things from main.tex
+
 * DONE Title page KF Uni Graz
 CLOSED: [2011-07-22 Fri 12:46]
 :PROPERTIES:
@@ -26,7 +39,18 @@ CLOSED: [2011-07-22 Fri 12:46]
 :END:
 
 for Petra
-* TODO title page(s)
+
+* DONE move almost *all* user-specific data into separate file
+CLOSED: [2011-07-24 Sun 16:26]
+:PROPERTIES:
+:CREATED: <2011-07-23 Sat 12:46>
+:END:
+
+- in order to differ between template and content
+
+userdata.tex
+* DONE title page(s)
+CLOSED: [2011-07-24 Sun 16:45]
 :PROPERTIES:
 :CREATED: <2010-12-22 Wed 15:48>
 :END:
@@ -35,15 +59,10 @@ for Petra
   titlepages are located:
   - TU Graz
   - KF
+- simple title page using maketitle
 
-* NEXT move almost *all* user-specific data into separate file
-:PROPERTIES:
-:CREATED: <2011-07-23 Sat 12:46>
-:END:
-
-- in order to differ between template and content
-
-* NEXT maketitle example
+* DONE maketitle example
+CLOSED: [2011-07-24 Sun 16:45]
 :PROPERTIES:
 :CREATED: <2011-07-22 Fri 17:08>
 :END:
