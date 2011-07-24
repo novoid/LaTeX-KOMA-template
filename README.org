@@ -34,30 +34,30 @@ the template.
 
 ** How to start?
 
-1. Put your desired PDF file name in the second line of file
+- Put your desired PDF file name in the second line of file
    "Makefile"
    - replace "Projectname" with your filename
    - do not use any file extension like ".tex" or ".pdf"
-2. generate the template documentation using [[http://www.gnu.org/software/make/][GNU make]]:
+- generate the template documentation using [[http://www.gnu.org/software/make/][GNU make]]:
    - "make templatedocu pdf"
-3. Read the generated PDF documentation of the template
-4. Get rid of the template documentation
+- Read the generated PDF documentation of the template
+- Get rid of the template documentation
    - place a LaTeX comment character "%" in front of "\input{template_documentation}"
-5. Modify files in the folder "preamble" if necessary
+- Modify files in the folder "preamble" if necessary
    - the PDF document documentation should give you an idea what to do
-6. Modify "main.tex":
+- Modify "main.tex":
    - \myauthor
    - \mytitle
    - \mysubject
    - \mykeywords
    - your desired general document structure
-7. replace or fill your content in "introduction.tex"
+- replace or fill your content in "introduction.tex"
    - you can rename "introduction.tex" but then you have to modify
      its include command in "main.tex" too
-8. create further tex-files (similar to "introduction.tex")for each
+- create further tex-files (similar to "introduction.tex")for each
    chapter of your document
    - include them according to the example of "introduction" in "main.tex"
-9. generate your document
+- generate your document
    - with GNU make: "make pdf"
    - with plain command line: "pdflatex main.tex"
    - with a LaTeX editor:
