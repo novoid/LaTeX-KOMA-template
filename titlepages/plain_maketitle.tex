@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-07-24 16:44:08 vk>
+%%%% Time-stamp: <2011-07-24 17:16:51 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -11,9 +11,12 @@
 
 %% this is a very simple title page using LaTeX maketitle
 
+
 \title{%%
-\mytitle\\%%
-\mysubject}
+~\hfill\includegraphics[width=3cm]{figures/TU_Graz_Logo}\\[5mm] %% a logo at the upper right corner
+\mytitle}
+
+\subtitle{\mysubject}
 
 \author{\myauthor
   \thanks{\href{http://LaTeX.TUGraz.at}{http://LaTeX.TUGraz.at}}\\
@@ -22,7 +25,8 @@
 
 \maketitle
 
-%% \clearpage %% (optional) new page after title page
+%\thispagestyle{empty}  %% no page number, header or footer
+%\clearpage %% (optional) new page after title page
 
 
 %% vim:foldmethod=expr

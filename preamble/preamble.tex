@@ -1,4 +1,4 @@
-%% Time-stamp: <2011-07-24 15:43:02 vk>
+%% Time-stamp: <2011-07-24 18:02:12 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -15,6 +15,61 @@
 %doc% easy to modify template. All settings are documented and many references to
 %doc% additional information sources are given.
 %doc% 
+%doc% \subsection{Modify this template for your requirements}
+%doc%
+%doc% \newcommand{\myfile}[1]{\texttt{\href{file:#1}{#1}}}
+%doc%
+%doc% \begin{enumerate}
+%doc% \item Put your desired \myabk{PDF} file name in the second line of file
+%doc%    \myfile{Makefile}
+%doc%    \begin{itemize}
+%doc%    \item replace \myquote{Projectname} with your filename
+%doc%    \item do not use any file extension like \texttt{.tex} or \texttt{.pdf}
+%doc%    \end{itemize}
+%doc% \item OPTIONAL: Modify files in the folder \texttt{preamble} if necessary
+%doc%   \begin{itemize}
+%doc%   \item following sections should give you an idea
+%doc%     what to do and why
+%doc%   \end{itemize}
+%doc% \item Modify \myfile{userdata.tex}:
+%doc%   \begin{itemize}
+%doc%   \item \verb+\myauthor+, \verb+\mytitle+, and so forth
+%doc%   \end{itemize}
+%doc% \item Modify \myfile{main.tex}:
+%doc%   \begin{itemize}
+%doc%   \item your desired general document structure
+%doc%   \end{itemize}
+%doc% \item replace file or fill your content in \myfile{introduction.tex}
+%doc%   \begin{itemize}
+%doc%   \item you can rename \myfile{introduction.tex} but then you have to
+%doc%     modify its include command in \myfile{main.tex} too
+%doc%   \end{itemize}
+%doc% \item OPTIONAL: create further tex-files (similar to \myfile{introduction.tex}) for each
+%doc%    chapter of your document
+%doc%    \begin{itemize}
+%doc%    \item include them according to the example of \texttt{introduction}
+%doc%      in \myfile{main.tex}
+%doc%    \end{itemize}
+%doc% \item generate your document
+%doc%   \begin{itemize}
+%doc%   \item with a \LaTeX{} editor:
+%doc%     \begin{itemize}
+%doc%     \item select \myfile{main.tex} as the \myquote{main project file} or make
+%doc%       sure to compile/run only \myfile{main.tex} (and not \myfile{introduction.tex}
+%doc%       or similar)
+%doc%     \end{itemize}
+%doc%   \item OR with \myabk{GNU} make: run \texttt{make pdf}
+%doc%   \item OR with plain command line:
+%doc%     \begin{itemize}
+%doc%     \item run \texttt{pdflatex main.tex} (invoke twice!)
+%doc%     \item if you are using
+%doc%       \href{http://en.wikipedia.org/wiki/BibTeX}{BibTeX}, start \texttt{bibtex
+%doc%       main} followed by \texttt{pdflatex main.tex}
+%doc%     \end{itemize}
+%doc%   \end{itemize}
+%doc% \end{enumerate}
+%doc% 
+%doc% 
 %doc% \subsection{How to compile this document}
 %doc% 
 %doc% \subsubsection{\textsc{GNU}/Linux, \textsc{OS~X}, \textsc{UNIX}, Cygwin}
@@ -29,6 +84,9 @@
 %doc% 
 %doc% You can get a list of all other commands provided by the Makefile by invoking
 %doc% \texttt{make help}.
+%doc% 
+%doc% If you do not have GNU make, you can compile main.tex within your \LaTeX{} editor.
+%doc% 
 %doc% 
 %doc% \subsubsection{All other systems including Microsoft Windows}
 %doc% 
@@ -54,10 +112,9 @@
 %doc% 
 %doc% \subsection{How to get rid of the template documentation}
 %doc% 
-%doc% The lines you are currently reading are being generated directly from the
-%doc% included \TeX{} files of the preamble. You can remove them by simply removing
-%doc% the line (or putting the comment character \texttt{\%} infront of it) 
-%doc% \verb#\input{Template_Documentation}# in \texttt{main.tex}.
+%doc% Simply remove the files \verb#Template_Documentation.pdf# and 
+%doc% \verb#Template_Documentation.tex# (if it exists) in the main folder 
+%doc% of this template.
 %doc% 
 %doc% \subsection{What about modifying the template?}
 %doc% 

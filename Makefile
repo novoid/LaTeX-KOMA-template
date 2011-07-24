@@ -98,6 +98,11 @@ tar: clean
 zip: purge pdf clean
 	zip -r ../${PROJECTNAME}_${TIMESTAMP}.zip *
 
+.PHONY: publish
+publish: templatedocu pdf clean
+	-rm 20*.pdf ${TEMPLATEDOCUFILE} -f
+	git status
+
 #help	templatedocu	updates tex-files for the documentation of this template
 #help			needs: echo, sed, grep
 .PHONY: templatedocu
@@ -109,13 +114,22 @@ templatedocu:
 	echo "\definecolor{DispositionColor}{RGB}{30,103,182}" >>${TEMPLATEDOCUFILE}
 	echo "%% overriding userdata.tex %%" >>${TEMPLATEDOCUFILE}
 	echo "\\\newcommand{\myauthor}{Karl Voit}\\\newcommand{\mytitle}{LaTeX Template Documentation}" >>${TEMPLATEDOCUFILE}
-	echo "\\\newcommand{\mysubject}{LaTeX}\\\newcommand{\mykeywords}{LaTeX, pdflatex, template, documentation}" >>${TEMPLATEDOCUFILE}
+	echo "\\\newcommand{\mysubject}{A comprehensive guide to use this template}" >>${TEMPLATEDOCUFILE}
+	echo "\\\newcommand{\mykeywords}{LaTeX, pdflatex, template, documentation}" >>${TEMPLATEDOCUFILE}
 	echo "%% using existing TeX files %%" >>${TEMPLATEDOCUFILE}
 	echo "\input{preamble/mycommands}" >>${TEMPLATEDOCUFILE}
 	echo "\input{preamble/typographic_settings}" >>${TEMPLATEDOCUFILE}
 	echo "\\\newcommand{\myLaT}{\LaTeX{}@TUG\xspace}" >>${TEMPLATEDOCUFILE}
 	echo "\input{preamble/pdf_settings}" >>${TEMPLATEDOCUFILE}
 	echo "\\\begin{document}" >>${TEMPLATEDOCUFILE}
+	echo "%% title page %%" >>${TEMPLATEDOCUFILE}
+	echo "\\\title{~\hfill\includegraphics[width=3cm]{figures/TU_Graz_Logo}\\\\\\[5mm]\mytitle}\subtitle{\mysubject}" >>${TEMPLATEDOCUFILE}
+	echo "\\\author{\myauthor\\\thanks{\href{http://LaTeX.TUGraz.at}{http://LaTeX.TUGraz.at}}\\\date{\\\today}}" >>${TEMPLATEDOCUFILE}
+	echo "\maketitle" >>${TEMPLATEDOCUFILE}
+	echo "" >>${TEMPLATEDOCUFILE}
+	echo "" >>${TEMPLATEDOCUFILE}
+	echo "" >>${TEMPLATEDOCUFILE}
+	echo "" >>${TEMPLATEDOCUFILE}
 	echo "\\\tableofcontents" >>${TEMPLATEDOCUFILE}
 	echo "%%---------------------------------------%%" >>${TEMPLATEDOCUFILE}
 	grep "%doc%" preamble/preamble.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
