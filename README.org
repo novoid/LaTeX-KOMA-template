@@ -19,47 +19,49 @@ that is optimized to deliver your content.
 
 ** What makes this template special?
 
-The speciality of this template is, that every setting in the preamble is
-*well documented* (in LaTeX). You can generate this documentation by your own
-by not removing the template documentation include command in the main LaTeX
-file and using [[http://www.gnu.org/software/make/][GNU make]] with the rule "templatedocu" followed by the rule "pdf":
+The speciality of this template is, that every setting in the preamble
+is *well documented* (in LaTeX). You can generate the documentation
+file "Template-Documentation.pdf" by your own by not removing the
+template documentation include command in the main LaTeX file and
+using [[http://www.gnu.org/software/make/][GNU make]] with the rule "templatedocu":
 
 #+begin_src sh
-make templatedocu pdf
+make templatedocu
 #+end_src
 
-This command should result in a pdf file containing the documentation of this
-template. Please refer to this PDF file for further information about
-the template.
+This command should result in the "Template-Documentation.pdf" file
+containing the most current documentation of this template. Please
+refer to this PDF file for further information about the template.
 
 ** How to start?
 
 - Put your desired PDF file name in the second line of file
    "Makefile"
-   - replace "Projectname" with your filename
-   - do not use any file extension like ".tex" or ".pdf"
+  - replace "Projectname" with your filename
+  - do not use any file extension like ".tex" or ".pdf"
 - generate the template documentation using [[http://www.gnu.org/software/make/][GNU make]]:
-   - "make templatedocu pdf"
-- Read the generated PDF documentation of the template
+  - "make templatedocu pdf"
+- Read the generated PDF documentation "Template-Documentation.pdf" of the template
 - Get rid of the template documentation
-   - place a LaTeX comment character "%" in front of "\input{template_documentation}"
+  - place a LaTeX comment character "%" in front of "\input{Template_Documentation}"
 - Modify files in the folder "preamble" if necessary
-   - the PDF document documentation should give you an idea what to do
+  - the PDF document documentation should give you an idea what to do
 - Modify "main.tex":
-   - \myauthor
-   - \mytitle
-   - \mysubject
-   - \mykeywords
-   - your desired general document structure
+  - \myauthor
+  - \mytitle
+  - \mysubject
+  - \mykeywords
+  - your desired general document structure
 - replace or fill your content in "introduction.tex"
-   - you can rename "introduction.tex" but then you have to modify
-     its include command in "main.tex" too
+  - you can rename "introduction.tex" but then you have to modify
+    its include command in "main.tex" too
 - create further tex-files (similar to "introduction.tex")for each
    chapter of your document
-   - include them according to the example of "introduction" in "main.tex"
+  - include them according to the example of "introduction" in "main.tex"
+- write your document
 - generate your document
-   - with GNU make: "make pdf"
-   - with plain command line: "pdflatex main.tex"
-   - with a LaTeX editor:
-     - select "main.tex" as the "main project file" or
-     - compile/run only "main.tex" (and not "introduction.tex" or similar)
+  - with GNU make: "make pdf"
+  - with plain command line: "pdflatex main.tex"
+  - with a LaTeX editor:
+    - select "main.tex" as the "main project file" or
+    - compile/run only "main.tex" (and not "introduction.tex" or similar)

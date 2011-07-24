@@ -1,19 +1,31 @@
-## Time-stamp: <2011-07-23 12:48:14 vk>
+## Time-stamp: <2011-07-24 14:05:13 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
 
-* TODO Template documentation should be static [0/2]
+* DONE Template documentation should be static [2/2]
 DEADLINE: <2011-07-23 Sat>
 :PROPERTIES:
 :CREATED: <2011-07-23 Sat 12:44>
 :END:
-** NEXT Makefile: documentation should end up in same PDF filename
+** DONE Makefile: documentation should end up in same PDF filename
+CLOSED: [2011-07-24 Sun 14:04]
+:PROPERTIES:
+:CREATED: <2011-07-24 Sun 14:04>
+:END:
 
-** NEXT adopt comments/documentation to this change
+** DONE adopt comments/documentation to this change
+CLOSED: [2011-07-24 Sun 14:04]
 :PROPERTIES:
 :CREATED: <2011-07-23 Sat 12:45>
 :END:
+* DONE Title page KF Uni Graz
+CLOSED: [2011-07-22 Fri 12:46]
+:PROPERTIES:
+:CREATED: <2011-07-22 Fri 12:46>
+:END:
+
+for Petra
 * TODO title page(s)
 :PROPERTIES:
 :CREATED: <2010-12-22 Wed 15:48>
@@ -23,14 +35,6 @@ DEADLINE: <2011-07-23 Sat>
   titlepages are located:
   - TU Graz
   - KF
-
-* DONE Title page KF Uni Graz
-CLOSED: [2011-07-22 Fri 12:46]
-:PROPERTIES:
-:CREATED: <2011-07-22 Fri 12:46>
-:END:
-
-for Petra
 
 * NEXT move almost *all* user-specific data into separate file
 :PROPERTIES:
