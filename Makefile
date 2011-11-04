@@ -109,7 +109,7 @@ publish: templatedocu pdf clean
 templatedocu:
 	echo "%% overriding preamble/preamble.tex %%" >${TEMPLATEDOCUFILE}
 	echo "\documentclass[12pt,a4paper,parskip=half,oneside,headinclude,footinclude=false,openright]{scrartcl}" >>${TEMPLATEDOCUFILE}
-	echo "\usepackage{ucs}\usepackage[utf8x]{inputenc}\usepackage[american]{babel}\usepackage{scrpage2}" >>${TEMPLATEDOCUFILE}
+	echo "\usepackage[utf8x]{inputenc}\usepackage[american]{babel}\usepackage{scrpage2}" >>${TEMPLATEDOCUFILE}
 	echo "\usepackage{ifthen}\usepackage{eurosym}\usepackage{xspace}\usepackage[usenames,dvipsnames]{color}" >>${TEMPLATEDOCUFILE}
 	echo "\definecolor{DispositionColor}{RGB}{30,103,182}" >>${TEMPLATEDOCUFILE}
 	echo "%% overriding userdata.tex %%" >>${TEMPLATEDOCUFILE}
@@ -133,6 +133,7 @@ templatedocu:
 	echo "\\\tableofcontents" >>${TEMPLATEDOCUFILE}
 	echo "%%---------------------------------------%%" >>${TEMPLATEDOCUFILE}
 	grep "%doc%" preamble/preamble.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
+	grep "%doc%" preamble/mycommands.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	grep "%doc%" preamble/typographic_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	grep "%doc%" preamble/pdf_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	echo "%%---------------------------------------%%" >>${TEMPLATEDOCUFILE}

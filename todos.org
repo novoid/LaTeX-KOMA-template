@@ -1,4 +1,4 @@
-## Time-stamp: <2011-07-24 16:45:18 vk>
+## Time-stamp: <2011-07-26 18:15:07 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
@@ -65,6 +65,43 @@ CLOSED: [2011-07-24 Sun 16:45]
 CLOSED: [2011-07-24 Sun 16:45]
 :PROPERTIES:
 :CREATED: <2011-07-22 Fri 17:08>
+:END:
+
+* NEXT define prerequisites
+:PROPERTIES:
+:CREATED: <2011-07-26 Tue 18:03>
+:END:
+
+- user knowledge
+- software dependencies
+  - for compiling PDF
+    - pdflatex
+    - biber
+    - biblatex
+  - for using make to compile
+    - GNU make
+  - for generating template documentation
+    - GNU make
+    - sed
+    - grep
+
+* NEXT adopt biblatex
+:PROPERTIES:
+:CREATED: <2011-07-26 Tue 18:03>
+:END:
+
+http://ftp.univie.ac.at/packages/tex/help/Catalogue/entries/biblatex.html
+
+* NEXT adopt biber
+:PROPERTIES:
+:CREATED: <2011-07-26 Tue 18:03>
+:END:
+
+http://biblatex-biber.sourceforge.net/
+
+* NEXT add biblatex example
+:PROPERTIES:
+:CREATED: <2011-07-26 Tue 18:04>
 :END:
 * NEXT acronyms
 :PROPERTIES:
