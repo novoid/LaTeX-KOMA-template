@@ -1,4 +1,4 @@
-%% Time-stamp: <2011-07-24 17:14:11 vk>
+%% Time-stamp: <2011-11-10 13:22:52 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -54,9 +54,11 @@
 %       {}%% caption
 %       {}%% label
 \begin{figure}%[htp]
-  \includegraphics[keepaspectratio,#2]{figures/#1}
-  \caption{#3}
-  \label{#4} %% NOTE: always label *after* caption!
+  \begin{center}
+     \includegraphics[keepaspectratio,#2]{figures/#1}
+     \caption{#3}
+     \label{#4} %% NOTE: always label *after* caption!
+  \end{center}
 \end{figure}
 }
 
