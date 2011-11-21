@@ -15,14 +15,14 @@ MAINDOCUMENT = "main"
 ## COMMANDS:
 PDFLATEX_CMD = pdflatex
 LATEX_CMD = latex
-DVIPS_CMD = dvips
+#DVIPS_CMD = dvips
 BIBTEX_CMD = bibtex
 MAKEIDX_CMD = makeindex
 DATESTAMP = `/bin/date +%Y-%m-%d`
 DATESTAMP_AND_PROJECT = ${DATESTAMP}_${PROJECTNAME}
 #PDFVIEWER = xpdf
 PDFVIEWER = acroread
-DVIVIEWER = xdvi
+#DVIVIEWER = xdvi
 TEMPLATEDOCUFILE = Template-Documentation.tex
 
 #help
@@ -35,11 +35,6 @@ help:
 #help	all	see "pdf"
 .PHONY: all
 all: pdf
-
-#help	ps	makes a ps-file
-.PHONY: ps
-ps: dvi
-	${DVIPS_CMD} ${MAINDOCUMENT}.dvi -o ${DATESTAMP_AND_PROJECT}.ps
 
 #help	pdf	makes a file per pdflatex
 .PHONY: pdf
@@ -56,10 +51,6 @@ wc:	pdf
 	ps2ascii ${DATESTAMP_AND_PROJECT}.ps > ${DATESTAMP_AND_PROJECT}.txt
 	wc -w ${DATESTAMP_AND_PROJECT}.txt
 
-#help	dvi	generates a DVI-file
-.PHONY: dvi
-dvi:
-	${LATEX_CMD} ${MAINDOCUMENT}.tex
 
 # --------------------------------------------------------
 
@@ -74,7 +65,7 @@ view: pdf
 #help	clean	clean up temporary files
 .PHONY: clean
 clean: 
-	-rm -r _*_.* *~ *.aux *.bbl ${MAINDOCUMENT}.dvi *.ps *.blg *.idx *.ilg *.ind *.toc *.log *.log *.brf *.out *.lof *.lot *.gxg *.glx *.gxs *.glo *.gls -f
+	-rm -r *.bcf *.run.xml _*_.* *~ *.aux *.bbl ${MAINDOCUMENT}.dvi *.ps *.blg *.idx *.ilg *.ind *.toc *.log *.log *.brf *.out *.lof *.lot *.gxg *.glx *.gxs *.glo *.gls -f
 
 #help	purge	cleaner than clean ;-)
 .PHONY: purge
@@ -87,11 +78,6 @@ force:
 	touch *tex
 
 # TOOLS:
-
-#help	tar	create TAR.GZ-file
-.PHONY: tar
-tar: clean
-	tar -czf ../${PROJECTNAME}_${TIMESTAMP}.tar.gz *
 
 #help	zip	create ZIP-file
 .PHONY: zip
