@@ -21,7 +21,7 @@ that is optimized to deliver your content.
 
 The speciality of this template is, that every setting in the preamble
 is *well documented* (in LaTeX). You can generate the documentation
-file "Template-Documentation.pdf" by your own by not removing the
+file "Template-Documentation.pdf" on your own by not removing the
 template documentation include command in the main LaTeX file and
 using [[http://www.gnu.org/software/make/][GNU make]] with the rule "templatedocu":
 
