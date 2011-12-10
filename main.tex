@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-07-24 16:32:55 vk>
+%%%% Time-stamp: <2011-12-10 21:25:10 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -60,17 +60,16 @@
 %%%% begin{document}
 %% ========================================================================
 \begin{document}
-
-
-\pagenumbering{roman} %% use roman numbers for page numbers (or: arabic, Roman, alph, Alph)
+\frontmatter %% KOMA: roman page numbers and such; only available in scrbook
 
 %% include one title page:
 \input{titlepages/plain_maketitle}  %% simple maketitle page
 %\input{titlepages/Deutsche_Diplomarbeit_-_Karl-Franzens_Uni_Graz}  %% fancy title page for KF Uni
+% FIXXME: how to change titlepage
 
 \tableofcontents  %% this produces the table of contents - you might have guessed :-)
-%\clearpage %% start a new page after table of contents
-\pagenumbering{arabic} %% use arabic numbers for page numbers (or: roman, Roman, alph, Alph)
+
+\mainmatter %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
 
 %% include other tex files:
@@ -80,7 +79,11 @@
 % \include{evaluation}
 % \include{outlook}
 
-% \appendix  %% close the main document, appendix follows now until end
+\backmatter %% KOMA: marks appendix; only available in scrbook
+\appendix  %% close the main document, appendix follows now until end; only available in book-classes
+\addpart*{Appendix}  %% adding Appendix to tableofcontents
+
+\printbibliography %% remove, if using BibTeX instead of biblatex
 
 % \include{further_ressources}
 

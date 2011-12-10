@@ -17,52 +17,44 @@ of your work rather than start fiddling around with the look of the document.
 Several typographic optimizations are included in order to get a final document
 that is optimized to deliver your content.
 
+** Requirements
+
+This template uses pdflatex, [[http://www.tex.ac.uk/tex-archive/info/translations/biblatex/de/][biblatex]], [[http://en.wikipedia.org/wiki/Biber_(LaTeX)][biber]], and optionally [[http://www.gnu.org/s/make/][GNU make.]]
+You should be familiar with compiling LaTeX documents by yourself. If
+you are new to LaTeX please get basic knowledge from tutorial pages
+such as [[http://LaTeX.TUGraz.at][this one]].
+
 ** What makes this template special?
 
-The speciality of this template is, that every setting in the preamble
-is *well documented* (in LaTeX). You can generate the documentation
-file "Template-Documentation.pdf" on your own by not removing the
-template documentation include command in the main LaTeX file and
-using [[http://www.gnu.org/software/make/][GNU make]] with the rule "templatedocu":
+The speciality of this consistent template is, that every setting in
+the preamble is *well documented* (in LaTeX). You can generate the
+documentation file "Template-Documentation.pdf" on your own by not
+removing the template documentation include command in the main LaTeX
+file and using [[http://www.gnu.org/software/make/][GNU make]] with the rule "templatedocu":
 
 #+begin_src sh
 make templatedocu
 #+end_src
 
-This command should result in the "Template-Documentation.pdf" file
+This command results in the "Template-Documentation.pdf" file
 containing the most current documentation of this template. Please
 refer to this PDF file for further information about the template.
 
 ** How to start?
 
-- Put your desired PDF file name in the second line of file
-   "Makefile"
-  - replace "Projectname" with your filename
-  - do not use any file extension like ".tex" or ".pdf"
-- OPTIONAL: generate the template documentation using [[http://www.gnu.org/software/make/][GNU make]]:
-  - "make templatedocu"
-  - REQUIRES: [[http://www.gnu.org/software/make/][GNU make]], grep, and sed
-- Read the generated PDF documentation "Template-Documentation.pdf"
-- OPTIONAL: Modify files in the folder "preamble" if necessary
-  - the PDF document documentation should give you an idea what to do
-    and why
-- Modify "userdata.tex":
-  - \myauthor, \mytitle, and so forth
-- Modify "main.tex":
-  - your desired general document structure
-- replace file or fill your content in "introduction.tex"
-  - you can rename "introduction.tex" but then you have to modify
-    its include command in "main.tex" too
-- OPTIONAL: create further tex-files (similar to "introduction.tex") for each
-   chapter of your document
-  - include them according to the example of "introduction" in "main.tex"
-- generate your document
-  - with a LaTeX editor:
-    - select "main.tex" as the "main project file" or make sure to
-      compile/run only "main.tex" (and not "introduction.tex" or
-      similar)
-  - OR with GNU make: run "make pdf"
-  - OR with plain command line:
-    - run "pdflatex main.tex" (invoke twice!)
-    - if you are using [[http://en.wikipedia.org/wiki/BibTeX][BibTeX]], start "bibtex main" followed by
-      "pdflatex main.tex"
+Please do read the "Template-Documentation.pdf" file which contains a
+"How to use this LaTeX template" section.
+
+** What is still work in progress?
+
+- index (makeindex)
+- more titlepage templates
+- example content from the template of [[http://ftp.iicm.tugraz.at/pub/keith/thesis/thesis.zip][Keith Andrews]]
+- table of figures
+- pointers to [[http://en.wikibooks.org/wiki/LaTeX/Packages#Packages_list][other packages]] (not included in this template):
+  - listings
+  - sidewaystable
+  - ...
+- probably: how to switch language
+- probably: how to switch to scrreprt or scrartcle
+- probably: pointers to other LaTeX templates

@@ -17,6 +17,7 @@ PDFLATEX_CMD = pdflatex
 LATEX_CMD = latex
 #DVIPS_CMD = dvips
 BIBTEX_CMD = bibtex
+BIBTEX_CMD = biber
 MAKEIDX_CMD = makeindex
 DATESTAMP = `/bin/date +%Y-%m-%d`
 DATESTAMP_AND_PROJECT = ${DATESTAMP}_${PROJECTNAME}
@@ -93,38 +94,15 @@ publish: templatedocu pdf clean
 #help			needs: echo, sed, grep
 .PHONY: templatedocu
 templatedocu:
-	echo "%% overriding preamble/preamble.tex %%" >${TEMPLATEDOCUFILE}
-	echo "\documentclass[12pt,a4paper,parskip=half,oneside,headinclude,footinclude=false,openright]{scrartcl}" >>${TEMPLATEDOCUFILE}
-	echo "\usepackage[utf8x]{inputenc}\usepackage[american]{babel}\usepackage{scrpage2}" >>${TEMPLATEDOCUFILE}
-	echo "\usepackage{ifthen}\usepackage{eurosym}\usepackage{xspace}\usepackage[usenames,dvipsnames]{color}" >>${TEMPLATEDOCUFILE}
-	echo "\definecolor{DispositionColor}{RGB}{30,103,182}" >>${TEMPLATEDOCUFILE}
-	echo "%% overriding userdata.tex %%" >>${TEMPLATEDOCUFILE}
-	echo "\\\newcommand{\myauthor}{Karl Voit}\\\newcommand{\mytitle}{LaTeX Template Documentation}" >>${TEMPLATEDOCUFILE}
-	echo "\\\newcommand{\mysubject}{A comprehensive guide to use this template}" >>${TEMPLATEDOCUFILE}
-	echo "\\\newcommand{\mykeywords}{LaTeX, pdflatex, template, documentation}" >>${TEMPLATEDOCUFILE}
-	echo "%% using existing TeX files %%" >>${TEMPLATEDOCUFILE}
-	echo "\input{preamble/mycommands}" >>${TEMPLATEDOCUFILE}
-	echo "\input{preamble/typographic_settings}" >>${TEMPLATEDOCUFILE}
-	echo "\\\newcommand{\myLaT}{\LaTeX{}@TUG\xspace}" >>${TEMPLATEDOCUFILE}
-	echo "\input{preamble/pdf_settings}" >>${TEMPLATEDOCUFILE}
-	echo "\\\begin{document}" >>${TEMPLATEDOCUFILE}
-	echo "%% title page %%" >>${TEMPLATEDOCUFILE}
-	echo "\\\title{~\hfill\includegraphics[width=3cm]{figures/TU_Graz_Logo}\\\\\\[5mm]\mytitle}\subtitle{\mysubject}" >>${TEMPLATEDOCUFILE}
-	echo "\\\author{\myauthor\\\thanks{\href{http://LaTeX.TUGraz.at}{http://LaTeX.TUGraz.at}}\\\date{\\\today}}" >>${TEMPLATEDOCUFILE}
-	echo "\maketitle" >>${TEMPLATEDOCUFILE}
-	echo "" >>${TEMPLATEDOCUFILE}
-	echo "" >>${TEMPLATEDOCUFILE}
-	echo "" >>${TEMPLATEDOCUFILE}
-	echo "" >>${TEMPLATEDOCUFILE}
-	echo "\\\tableofcontents" >>${TEMPLATEDOCUFILE}
-	echo "%%---------------------------------------%%" >>${TEMPLATEDOCUFILE}
-	grep "%doc%" preamble/preamble.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
+	grep "%doc%" preamble/preamble.tex | sed 's/^.*%doc% //' > ${TEMPLATEDOCUFILE}
 	grep "%doc%" preamble/mycommands.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	grep "%doc%" preamble/typographic_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	grep "%doc%" preamble/pdf_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	echo "%%---------------------------------------%%" >>${TEMPLATEDOCUFILE}
 	echo "\end{document}" >>${TEMPLATEDOCUFILE}
 	${PDFLATEX_CMD} ${TEMPLATEDOCUFILE}
+	${PDFLATEX_CMD} ${TEMPLATEDOCUFILE}
+	-${BIBTEX_CMD} ${TEMPLATEDOCUFILE}
 	${PDFLATEX_CMD} ${TEMPLATEDOCUFILE}
 
 

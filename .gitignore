@@ -9,3 +9,8 @@ titlepages/Petra-data.tex
 Template-Documentation.tex
 userdata-Petra.tex
 main.pdf
+main-blx.bib
+*.bcf
+*.run.xml
+*test
+*old
