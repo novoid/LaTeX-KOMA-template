@@ -47,14 +47,5 @@ Please do read the "Template-Documentation.pdf" file which contains a
 
 ** What is still work in progress?
 
-- index (makeindex)
-- more titlepage templates
-- example content from the template of [[http://ftp.iicm.tugraz.at/pub/keith/thesis/thesis.zip][Keith Andrews]]
-- table of figures
-- pointers to [[http://en.wikibooks.org/wiki/LaTeX/Packages#Packages_list][other packages]] (not included in this template):
-  - listings
-  - sidewaystable
-  - ...
-- probably: how to switch language
-- probably: how to switch to scrreprt or scrartcle
-- probably: pointers to other LaTeX templates
+look at the file "todos.org"
+  

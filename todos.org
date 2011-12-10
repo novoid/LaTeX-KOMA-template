@@ -1,4 +1,4 @@
-## Time-stamp: <2011-07-26 18:15:07 vk>
+## Time-stamp: <2011-12-10 21:32:48 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
@@ -67,6 +67,39 @@ CLOSED: [2011-07-24 Sun 16:45]
 :CREATED: <2011-07-22 Fri 17:08>
 :END:
 
+* DONE adopt biblatex
+CLOSED: [2011-12-10 Sat 21:29]
+:PROPERTIES:
+:CREATED: <2011-07-26 Tue 18:03>
+:END:
+
+http://ftp.univie.ac.at/packages/tex/help/Catalogue/entries/biblatex.html
+
+* DONE adopt biber
+CLOSED: [2011-12-10 Sat 21:29]
+:PROPERTIES:
+:CREATED: <2011-07-26 Tue 18:03>
+:END:
+
+http://biblatex-biber.sourceforge.net/
+
+* DONE add biblatex example
+CLOSED: [2011-12-10 Sat 21:29]
+:PROPERTIES:
+:CREATED: <2011-07-26 Tue 18:04>
+:END:
+* NEXT table of figures
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:30]
+:END:
+* NEXT pointers to [[http://en.wikibooks.org/wiki/LaTeX/Packages#Packages_list][other packages]] (not included in this template):
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
+:END:
+- listings
+- sidewaystable
+- ...
+
 * NEXT define prerequisites
 :PROPERTIES:
 :CREATED: <2011-07-26 Tue 18:03>
@@ -85,34 +118,30 @@ CLOSED: [2011-07-24 Sun 16:45]
     - sed
     - grep
 
-* NEXT adopt biblatex
+* NEXT index (makeindex)
 :PROPERTIES:
-:CREATED: <2011-07-26 Tue 18:03>
+:CREATED: [2011-12-10 Sat 21:30]
 :END:
-
-http://ftp.univie.ac.at/packages/tex/help/Catalogue/entries/biblatex.html
-
-* NEXT adopt biber
+* NEXT example content from the template of [[http://ftp.iicm.tugraz.at/pub/keith/thesis/thesis.zip][Keith Andrews]]
 :PROPERTIES:
-:CREATED: <2011-07-26 Tue 18:03>
+:CREATED: [2011-12-10 Sat 21:30]
 :END:
-
-http://biblatex-biber.sourceforge.net/
-
-* NEXT add biblatex example
+* NEXT more titlepage templates
 :PROPERTIES:
-:CREATED: <2011-07-26 Tue 18:04>
+:CREATED: [2011-12-10 Sat 21:30]
 :END:
-* NEXT acronyms
+* WISH acronyms
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:49>
 :END:
 
-* NEXT add BibTeX to the template
+* WISH Look at template of matthiaspospiech and adopt things
 :PROPERTIES:
-:CREATED: <2011-07-22 Fri 15:53>
+:CREATED: <2010-12-26 Fri 15:51>
 :END:
-* NEXT translate German comments
+
+/home/vk/src/diss_da_template/matthiaspospiech.de/LaTeX-Vorlage3/preambel
+* WISH translate German comments
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:50>
 :END:
@@ -121,11 +150,21 @@ http://biblatex-biber.sourceforge.net/
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:50>
 :END:
-
-* NEXT Look at template of matthiaspospiech and adopt things
+* WISH how to switch language
 :PROPERTIES:
-:CREATED: <2010-12-26 Fri 15:51>
+:CREATED: [2011-12-10 Sat 21:31]
+:END:
+* WISH how to switch to scrreprt or scrartcle
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
+:END:
+* WISH pointers to other LaTeX templates
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
 :END:
 
-/home/vk/src/diss_da_template/matthiaspospiech.de/LaTeX-Vorlage3/preambel
-
+* CANCELED add BibTeX to the template
+CLOSED: [2011-12-10 Sat 21:31]
+:PROPERTIES:
+:CREATED: <2011-07-22 Fri 15:53>
+:END:
