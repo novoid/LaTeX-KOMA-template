@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-12-11 12:52:02 vk>
+%%%% Time-stamp: <2011-12-11 13:08:08 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -102,6 +102,40 @@
 \addtokomafont{disposition}{\color{DispositionColor}}
 \addtokomafont{caption}{\color{DispositionColor}\footnotesize}
 \addtokomafont{captionlabel}{\color{DispositionColor}}
+
+%doc% 
+%doc% \subsection{Lines above and below the chapter head}
+%doc% 
+%doc% This is not quite something typographic but rather a matter of taste.
+%doc% KOMA Script offers \href{http://www.komascript.de/node/24}{a method to
+%doc% add lines above and below chapter head} which is disabled by
+%doc% default. If you want to enable this feature, remove corresponding
+%doc% comment characters from the settings.
+%doc% 
+%% Source: http://www.komascript.de/node/24
+%disabled% %% 1st get a new command
+%disabled% \newcommand*{\ORIGchapterheadstartvskip}{}%
+%disabled% %% 2nd save the original definition to the new command
+%disabled% \let\ORIGchapterheadstartvskip=\chapterheadstartvskip
+%disabled% %% 3rd redefine the command using the saved original command
+%disabled% \renewcommand*{\chapterheadstartvskip}{%
+%disabled%   \ORIGchapterheadstartvskip
+%disabled%   {%
+%disabled%     \setlength{\parskip}{0pt}%
+%disabled%     \noindent\color{DispositionColor}\rule[.3\baselineskip]{\linewidth}{1pt}\par
+%disabled%   }%
+%disabled% }
+%disabled% %% see above
+%disabled% \newcommand*{\ORIGchapterheadendvskip}{}%
+%disabled% \let\ORIGchapterheadendvskip=\chapterheadendvskip
+%disabled% \renewcommand*{\chapterheadendvskip}{%
+%disabled%   {%
+%disabled%     \setlength{\parskip}{0pt}%
+%disabled%     \noindent\color{DispositionColor}\rule[.3\baselineskip]{\linewidth}{1pt}\par
+%disabled%   }%
+%disabled%   \ORIGchapterheadendvskip
+%disabled% }
+
 
 %%%% END
 %%% Local Variables:
