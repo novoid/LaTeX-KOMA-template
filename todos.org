@@ -1,4 +1,4 @@
-## Time-stamp: <2011-12-11 14:07:46 vk>
+## Time-stamp: <2011-12-12 00:17:13 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
@@ -99,12 +99,20 @@ CLOSED: [2011-12-11 Sun 14:07]
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:30]
 :END:
+* DONE example content from the template of [[http://ftp.iicm.tugraz.at/pub/keith/thesis/thesis.zip][Keith Andrews]]
+CLOSED: [2011-12-12 Mon 00:15]
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:30]
+:END:
+
+see reference {KeithThesis}
 * NEXT pointers to [[http://en.wikibooks.org/wiki/LaTeX/Packages#Packages_list][other packages]] (not included in this template):
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:31]
 :END:
 - listings
 - sidewaystable
+- paralist (compact version of itemize and enumerate)
 - ...
 
 * NEXT define prerequisites
@@ -132,10 +140,6 @@ CLOSED: [2011-12-11 Sun 14:07]
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:30]
 :END:
-* NEXT example content from the template of [[http://ftp.iicm.tugraz.at/pub/keith/thesis/thesis.zip][Keith Andrews]]
-:PROPERTIES:
-:CREATED: [2011-12-10 Sat 21:30]
-:END:
 
 * NEXT try [[http://www.komascript.de/titlepage]] for title pages
 :PROPERTIES:
@@ -144,6 +148,10 @@ CLOSED: [2011-12-11 Sun 14:07]
 * NEXT more titlepage templates
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:30]
+:END:
+* WISH how to switch to scrreprt or scrartcle
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
 :END:
 
 * WISH add FIXXME-marker with [[http://www.komascript.de/marginnote]]
@@ -154,6 +162,10 @@ CLOSED: [2011-12-11 Sun 14:07]
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:49>
 :END:
+* WISH pointers to other LaTeX templates
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
+:END:
 
 * WISH Look at template of matthiaspospiech and adopt things
 :PROPERTIES:
@@ -161,10 +173,6 @@ CLOSED: [2011-12-11 Sun 14:07]
 :END:
 
 /home/vk/src/diss_da_template/matthiaspospiech.de/LaTeX-Vorlage3/preambel
-* WISH translate German comments
-:PROPERTIES:
-:CREATED: <2010-12-22 Fri 15:50>
-:END:
 
 * WISH look at creation of own sty-file
 :PROPERTIES:
@@ -174,13 +182,9 @@ CLOSED: [2011-12-11 Sun 14:07]
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:31]
 :END:
-* WISH how to switch to scrreprt or scrartcle
+* WISH translate German comments
 :PROPERTIES:
-:CREATED: [2011-12-10 Sat 21:31]
-:END:
-* WISH pointers to other LaTeX templates
-:PROPERTIES:
-:CREATED: [2011-12-10 Sat 21:31]
+:CREATED: <2010-12-22 Fri 15:50>
 :END:
 
 * CANCELED add BibTeX to the template

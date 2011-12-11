@@ -1,4 +1,4 @@
-%% Time-stamp: <2011-12-11 14:02:37 vk>
+%% Time-stamp: <2011-12-12 00:09:29 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -18,12 +18,12 @@
 %doc% 
 
 %doc% 
-%doc% One of the best advantages of \LaTeX{} compared to \myabk{WYSIWYG} software products is
+%doc% One of the best advantages of \LaTeX{} compared to \myacro{WYSIWYG} software products is
 %doc% the possibility to define and use macros within text. This empowers the user to
 %doc% a great extend.  Many things can be defined using \verb#\newcommand{}# and
 %doc% automates repeating tasks. It its recommended to use macros not only for
-%doc% repetitive tasks but also for separating form from content such as \myabk{CSS}
-%doc% does for \myabk{XHTML}. Think of including graphics in your document: after
+%doc% repetitive tasks but also for separating form from content such as \myacro{CSS}
+%doc% does for \myacro{XHTML}. Think of including graphics in your document: after
 %doc% writing your book, you might want to change all captions to the upper side of
 %doc% each figure. In this case you either have to modify all
 %doc% \texttt{includegraphics} commands or you were clever enough to define something
@@ -42,10 +42,20 @@
 %doc% The classic: you can easily add graphics to you document with \verb#\myfig#:
 %doc% \begin{verbatim}
 %doc%  \myfig{flower}%% filename w/o extension in directory "figures"
-%doc%        {0.7\textwidth}%% maximum width/height, aspect ratio will be kept
+%doc%        {width=0.7\textwidth}%% maximum width/height, aspect ratio will be kept
 %doc%        {This flower was photographed at my home town in 2010}%% caption
 %doc%        {fig:flower}%% label
 %doc% \end{verbatim}
+%doc% 
+%doc% There are many advantages of this command (compared to manual
+%doc% \texttt{figure} environments and \texttt{includegraphics} commands:
+%doc% \begin{itemize}
+%doc% \item consistent style throughout the whole document
+%doc% \item easy to change; for example move caption on top
+%doc% \item much less characters to type (faster, error prone)
+%doc% \item less visual clutter in the \TeX{}-files
+%doc% \end{itemize}
+%doc% 
 %doc% 
 \newcommand{\myfig}[4]{
 %% example:
@@ -66,11 +76,11 @@
 %doc% 
 %doc% \subsection{\texttt{myclone} --- repeat things!}
 %doc% 
-%doc% Using \verb#\myclone[42]{foobar}# results the text `foobar' printed 42 times.
+%doc% Using \verb#\myclone[42]{foobar}# results the text \myquote{foobar} printed 42 times.
 %doc% But you can not only repeat text output with \texttt{myclone}. 
 %doc%
 %doc% Default argument
-%doc% for the optional parameter `number of times' (like `42' in the example above) 
+%doc% for the optional parameter \myquote{number of times} (like \myquote{42} in the example above) 
 %doc% is set to two.
 %doc% 
 %% \myclone[x]{text}
@@ -89,7 +99,7 @@
 %doc% since they end up in strange characters or false quotation marks.
 %doc% 
 %doc% In \LaTeX{} you have to use different quotation marks. With 
-%doc% \verb#\myquote{foobar}# you can get correct quotation marks around `foobar'.
+%doc% \verb#\myquote{foobar}# you can get correct quotation marks around \myquote{foobar}.
 %doc% Please do check the definition of this function in order to modify
 %doc% its settings according to your language and quotation marks.
 %doc%

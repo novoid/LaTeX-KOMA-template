@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-07-24 16:15:00 vk>
+%%%% Time-stamp: <2011-12-11 23:55:06 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -19,7 +19,7 @@
 %doc% preamble, they got their own \TeX{} file which is included in \texttt{main.tex}.
 %doc% 
 %doc% \paragraph{What should I do with this file?} The settings in this file are
-%doc% important for \myabk{PDF} output and including graphics. Do not exclude the
+%doc% important for \myacro{PDF} output and including graphics. Do not exclude the
 %doc% related \texttt{input} command in \texttt{main.tex}. But you might want to
 %doc% modify some settings after you read the
 %doc% \href{http://tug.org/applications/hyperref/}{documentation of the \texttt{hyperref} package}.
@@ -27,53 +27,35 @@
 
 %% Declarations of hyperref should be the last definitions of the preamble:
 %% FIXXME: black-and-white-version for printing!
-\ifpdfoutput{
 
-  \usepackage[pdftex]{graphicx}
+\pdfcompresslevel=9
 
-  \pdfcompresslevel=9
+\usepackage[%
+pdftitle={\mytitle}, %
+pdfauthor={\myauthor}, %
+pdfsubject={\mysubject}, %
+pdfcreator={Accomplished with: pdfLaTeX, hyperref-package, and GNU/Emacs. No anmimals, MS-EULA or BSA-rules were harmed.},
+pdfproducer={\myauthor},
+pdfkeywords={\mykeywords},
+a4paper=true, %
+pdftex=true, %
+backref, %
+pagebackref=false, % creates backward references too
+bookmarks=false, %
+bookmarksopen=false, % when starting with AcrobatReader, the Bookmarkcolumn is opened
+pdfpagemode=None,% None, UseOutlines, UseThumbs, FullScreen
+plainpages=false, % correct, if pdflatex complains: ``destination with same identifier already exists''
+%% colors: https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Colors
+urlcolor=DispositionColor, %%
+linkcolor=DispositionColor, %%
+pagecolor=DispositionColor, %%
+citecolor=DispositionColor, %%
+anchorcolor=DispositionColor, %%
+colorlinks=true, % turn on colored links (better for on-screen reading)
+%colorlinks=false % turn off colored links (better for printout versions)
+]{hyperref}
 
-  \usepackage[%
-  pdftitle={\mytitle}, %
-  pdfauthor={\myauthor}, %
-  pdfsubject={\mysubject}, %
-  pdfcreator={Accomplished with: pdfLaTeX, hyperref-package, and GNU/Emacs. No anmimals, MS-EULA or BSA-rules were harmed.},
-  pdfproducer={\myauthor},
-  pdfkeywords={\mykeywords},
-  a4paper=true, %
-  pdftex=true, %
-  backref, %
-  pagebackref=false, % creates backward references too
-  bookmarks=false, %
-  bookmarksopen=false, % when starting with AcrobatReader, the Bookmarkcolumn is opened
-  pdfpagemode=None,% None, UseOutlines, UseThumbs, FullScreen
-  plainpages=false, % correct, if pdflatex complains: ``destination with same identifier already exists''
-  %% colors: https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Colors
-  urlcolor=DispositionColor, %%
-  linkcolor=DispositionColor, %%
-  pagecolor=DispositionColor, %%
-  citecolor=DispositionColor, %%
-  anchorcolor=DispositionColor, %%
-%  colorlinks % turn on colored links (better for on-screen reading)
-  colorlinks=true % turn off colored links (better for printout versions)
-  ]{hyperref}
-
-  \DeclareGraphicsExtensions{.pdf}
-
-}{%else
-  % no PDF output; old-style latex producing dvi
-  \usepackage[dvips]{graphicx}
-  \DeclareGraphicsExtensions{.eps}
-  %% should be LAST definition!!!
-  %% for docu on that, see reference on package ``hyperref''!
-  \usepackage[%
-  a4paper=true, %
-  dvips, %
-  %plainpages=false, % correct, if pdflatex complains: ``destination with same identifier already exists''
-  colorlinks=false % ... as himself ;)
-  ]{hyperref}
-
-}
+%\DeclareGraphicsExtensions{.pdf}
 
 %%%% END
 %%% Local Variables:

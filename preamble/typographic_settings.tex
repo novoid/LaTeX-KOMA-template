@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-12-11 14:28:36 vk>
+%%%% Time-stamp: <2011-12-12 00:00:07 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -32,7 +32,7 @@
 %doc% \verb#\frenchspacing  %% Macro to switch off extra space after punctuation.# \\
 \frenchspacing  %% Macro to switch off extra space after punctuation.
 %doc%
-%doc% Note: This setting might be default for \myabk{KOMA} script.
+%doc% Note: This setting might be default for \myacro{KOMA} script.
 %doc%
 
 
@@ -67,15 +67,15 @@
 
 
 %doc% 
-%doc% \subsection{Abbrevations using \textsc{small caps}}
+%doc% \subsection{\texttt{myacro} --- Abbrevations using \textsc{small caps}}
 %doc% 
 %doc% \paragraph{Why?} see~\textcite[p.\,45f]{Bringhurst1993}: `3.2.2 For abbrevations and
 %doc% acronyms in the midst of normal text, use spaced small caps.'
 %doc% 
-%doc% \paragraph{How?} Using the predefined macro \verb#\myabk{}# for things like
-%doc% \myabk{UNO} or \myabk{UNESCO} using \verb#\myabk{UNO}# or \verb#\myabk{UNESCO}#.
+%doc% \paragraph{How?} Using the predefined macro \verb#\myacro{}# for things like
+%doc% \myacro{UNO} or \myacro{UNESCO} using \verb#\myacro{UNO}# or \verb#\myacro{UNESCO}#.
 %doc% 
-\newcommand{\myabk}[1]{%%  abbrevations using small caps
+\newcommand{\myacro}[1]{%%  abbrevations using small caps
 \textsc{\lowercase{#1}}%%
 }
 

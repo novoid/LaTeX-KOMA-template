@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-12-11 13:08:55 vk>
+%%%% Time-stamp: <2011-12-11 23:53:14 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -54,7 +54,7 @@
 %       {}%% label
 %       {}%% caption
 
-%% acronyms in small caps: \myabk{UNESCO}
+%% acronyms in small caps: \myacro{UNESCO}
 
 \input{preamble/pdf_settings}  %% should be *last* definitions in preamble!
 %% ========================================================================
@@ -77,8 +77,11 @@
 
 \mainmatter %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
-%% include other tex files:
-\include{introduction}
+\input{example-short-chapter}  %% remove this line to get rid of the example chapter
+\input{example-style-chapter}  %% remove this line to get rid of the style chapter
+
+%% include tex file chapters:
+% \include{introduction}
 % \include{problem}
 % \include{solution}
 % \include{evaluation}

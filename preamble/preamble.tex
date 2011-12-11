@@ -1,4 +1,4 @@
-%% Time-stamp: <2011-12-11 14:26:12 vk>
+%% Time-stamp: <2011-12-12 00:04:14 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -8,7 +8,8 @@
 %%
 
 %doc% %% overriding preamble/preamble.tex %%
-%doc% \documentclass[12pt,paper=a4,parskip=half,oneside,headinclude,footinclude=false,open=right]{scrartcl}
+%doc% \documentclass[12pt,paper=a4,parskip=half,oneside,%%
+%doc% headinclude,footinclude=false,open=right,bibliography=totoc]{scrartcl}
 %doc% \usepackage[utf8]{inputenc}\usepackage[american]{babel}\usepackage{scrpage2}
 %doc% \usepackage{ifthen}\usepackage{eurosym}\usepackage{xspace}\usepackage[usenames,dvipsnames]{color}
 %doc% \definecolor{DispositionColor}{RGB}{30,103,182}
@@ -26,31 +27,34 @@
 %doc% \newcommand{\mysubject}{A comprehensive guide to use this template}
 %doc% \newcommand{\mykeywords}{LaTeX, pdflatex, template, documentation, biber, biblatex}
 %doc% 
+%doc% \newcommand{\myLaT}{\LaTeX{}@TUG\xspace}
+%doc% 
 %doc% %% for future use?
 %doc% % \usepackage{filecontents}
 %doc% % \begin{filecontents}{filename.example}
 %doc% % 
 %doc% % \end{filecontents}
 %doc% 
+%doc% \usepackage[pdftex]{graphicx}
+%doc% 
 %doc% %% using existing TeX files %%
 %doc% \input{preamble/mycommands}
 %doc% \input{preamble/typographic_settings}
-%doc% \newcommand{\myLaT}{\LaTeX{}@TUG\xspace}
 %doc% \input{preamble/pdf_settings}
 %doc% 
 %doc% \begin{document}
 %doc% %% title page %%
 %doc% \title{~\hfill\includegraphics[width=3cm]{figures/TU_Graz_Logo}\\[5mm]\mytitle}\subtitle{\mysubject}
 %doc% \author{\myauthor\thanks{\href{http://LaTeX.TUGraz.at}{http://LaTeX.TUGraz.at}}\date{\today}}
-%doc% \maketitle
+%doc% \maketitle\newpage
 %doc% 
-%doc% \tableofcontents
+%doc% \tableofcontents\newpage
 %doc% %%---------------------------------------%%
 %doc% 
 %doc% \section{How to use this \LaTeX{} document template}
 %doc% 
 %doc% This \LaTeX{} document template from
-%doc% \myLaT\footnote{\url{http://LaTeX.TUGraz.at}} is based on \myabk{KOMA}
+%doc% \myLaT\footnote{\url{http://LaTeX.TUGraz.at}} is based on \myacro{KOMA}
 %doc% script\footnote{\url{http://komascript.de/}}. It provides an easy to use and
 %doc% easy to modify template. All settings are documented and many references to
 %doc% additional information sources are given.
@@ -60,7 +64,7 @@
 %doc% \newcommand{\myfile}[1]{\texttt{\href{file:#1}{#1}}}
 %doc%
 %doc% \begin{enumerate}
-%doc% \item Put your desired \myabk{PDF} file name in the second line of file
+%doc% \item Put your desired \myacro{PDF} file name in the second line of file
 %doc%    \myfile{Makefile}
 %doc%    \begin{itemize}
 %doc%    \item replace \myquote{Projectname} with your filename
@@ -98,25 +102,21 @@
 %doc%       sure to compile/run only \myfile{main.tex} (and not \myfile{introduction.tex}
 %doc%       or similar)
 %doc%     \end{itemize}
-%doc%   \item OR with \myabk{GNU} make: run \texttt{make pdf}
+%doc%   \item OR with \myacro{GNU} make: run \texttt{make pdf}
 %doc%   \end{itemize}
 %doc% \end{enumerate}
 %doc% 
 %doc% 
 %doc% \subsection{How to compile this document}
 %doc% 
-%doc% If your system provides \myabk{GNU}
+%doc% If your system provides \myacro{GNU}
 %doc% make\footnote{\url{https://secure.wikimedia.org/wikipedia/en/wiki/Make\_\%28software\%29}},
-%doc% it is very easy to compile this document:
-%doc% 
-%doc% \begin{verbatim}
-%doc% make pdf
-%doc% \end{verbatim}
+%doc% it is very easy to compile this document: \verb+make pdf+
 %doc% 
 %doc% You can get a list of all other commands provided by the Makefile by invoking
 %doc% \texttt{make help}.
 %doc% 
-%doc% If you do not have GNU make, please stick to your usual compile
+%doc% If you do not have \myacro{GNU} make, please stick to your usual compile
 %doc% method and notice the changes for \texttt{Biber} in section~\ref{sub:references}.
 %doc% 
 %doc% 
@@ -151,11 +151,11 @@
 %doc% \section{\texttt{preamble.tex} --- Main preamble file}
 %doc%
 %doc% In file \verb#preamble/preamble.tex# you will find the basic
-%doc% definitions related to your document. This template uses the \myabk{KOMA} script
+%doc% definitions related to your document. This template uses the \myacro{KOMA} script
 %doc% extension package of \LaTeX{}.
 %doc% 
 %doc% There are comments added to the \verb#\documentclass{}# definitions. Please
-%doc% refer to the great documentation of \myabk{KOMA}\footnote{\texttt{scrguide.pdf} for
+%doc% refer to the great documentation of \myacro{KOMA}\footnote{\texttt{scrguide.pdf} for
 %doc% German users} for further details.
 %doc% 
 %doc% \paragraph{What should I do with this file?} For standard purposes you might
@@ -190,9 +190,9 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 % add or modify language parameter of package »babel« and use language switches described in babel-documentation
 
 %doc% 
-%doc% \subsection{UTF8 as input charset}
+%doc% \subsection{\texttt{inputenc}: UTF8 as input charset}
 %doc% 
-%doc% You are able and should use \myabk{UTF8} character settings for writing these \TeX{}-files.
+%doc% You are able and should use \myacro{UTF8} character settings for writing these \TeX{}-files.
 %doc% 
 %\usepackage{ucs}             %% UTF8 as input characters; UCS incompatible to biblatex
 \usepackage[utf8]{inputenc} %% UTF8 as input characters
@@ -200,7 +200,7 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 
 
 %doc% 
-%doc% \subsection{Language settings}
+%doc% \subsection{\texttt{babel}: Language settings}
 %doc% 
 %doc% The default setting of the language is American. Please change settings for
 %doc% additional or alternative languages used.
@@ -209,10 +209,10 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %\usepackage[ngerman]{babel}  %% German
 
 %doc% 
-%doc% \subsection{Headers and footers}
+%doc% \subsection{\texttt{scrpage2}: Headers and footers}
 %doc% 
-%doc% Since this template is based on \myabk{KOMA} script it uses its great \texttt{scrpage2}
-%doc% package for defining header and footer information. Please refer to the \myabk{KOMA}
+%doc% Since this template is based on \myacro{KOMA} script it uses its great \texttt{scrpage2}
+%doc% package for defining header and footer information. Please refer to the \myacro{KOMA}
 %doc% script documentation how to use this package.
 %doc% 
 \usepackage{scrpage2} %%  advanced page style using KOMA
@@ -311,7 +311,7 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc%   \item replace \verb=\printbibliography= with the usual
 %doc%     \verb=\bibliographystyle{yourstyle}= and \verb=\bibliography{yourbibfile}=
 %doc%   \end{itemize}
-%doc% \item if you are using \myabk{GNU} \texttt{make}: modify \verb=Makefile=
+%doc% \item if you are using \myacro{GNU} \texttt{make}: modify \verb=Makefile=
 %doc%   \begin{itemize}
 %doc%   \item replace \verb#BIBTEX_CMD = biber# with \verb#BIBTEX_CMD = bibtex#
 %doc%   \end{itemize}
@@ -340,12 +340,18 @@ hyperref=true, %% using hyperref-package references
 %doc% 
 %doc% \begin{enumerate}
 
+%doc% \item[\texttt{\href{http://www.ctan.org/pkg/graphicx}{%%
+%doc% graphicx%%
+%doc% }}] 
+%doc% The widely used package to use graphical images within a \LaTeX{} document.
+\usepackage[pdftex]{graphicx}
 
 %doc% \item[\texttt{\href{https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Formatting\#Other\_symbols}{%%
 %doc% pifont%%
 %doc% }}] 
 %doc% For additional special characters available by \verb#\ding{}#
-%\usepackage{pifont}  %% Sonderzeichen fuer Titelseite \ding{}
+\usepackage{pifont}  %% Sonderzeichen fuer Titelseite \ding{}
+
 
 %doc% \item[\texttt{\href{http://ctan.org/pkg/ifthen}{%%
 %doc% ifthen%%
@@ -372,17 +378,35 @@ hyperref=true, %% using hyperref-package references
 \usepackage[usenames,dvipsnames]{color}
 \definecolor{DispositionColor}{RGB}{30,103,182} %% used for links and so forth in screen-version
 
+%doc% \item[\texttt{\href{http://www.ctan.org/pkg/ulem}{%%
+%doc% ulem%%
+%doc% }}] 
+%doc% This package offers strikethrough command \verb+\sout{foobar}+.
+\usepackage[normalem]{ulem}
 
-%no%doc% \item[\texttt{\href{http://www.ctan.org/tex-archive/macros/latex/contrib/blindtext}{%%
-%no%doc% blindtext%%
-%no%doc% }}] 
-%no%doc% This package is used to generate blind text for demonstration purposes.
-%no%% This is undocumented due to problems using american english; author informed
-%no\usepackage{blindtext}  %% provides commands for blind text:
-%% \blindtext creates some text,
-%% \Blindtext creates more text.
-%% \blinddocument creates a small document with sections, lists...
-%% \Blinddocument creates a large document with sections, lists...
+%doc% \item[\texttt{\href{http://www.ctan.org/pkg/framed}{%%
+%doc% framed%%
+%doc% }}] 
+%doc% Create framed, shaded, or differently highlighted regions that can 
+%doc% break across pages.  The environments defined are 
+%doc% \begin{itemize}
+%doc%   \item framed: ordinary frame box (\verb+\fbox+) with edge at margin
+%doc%   \item shaded: shaded background (\verb+\colorbox+) bleeding into margin
+%doc%   \item snugshade: similar
+%doc%   \item leftbar: thick vertical line in left margin
+%doc% \end{itemize}
+\usepackage{framed}
+
+%disabled% \item[\texttt{\href{http://www.ctan.org/tex-archive/macros/latex/contrib/blindtext}{%%
+%disabled% blindtext%%
+%disabled% }}] 
+%disabled% This package is used to generate blind text for demonstration purposes.
+%disabled% %% This is undocumented due to problems using american english; author informed
+%disabled% \usepackage{blindtext}  %% provides commands for blind text:
+%disabled% %% \blindtext creates some text,
+%disabled% %% \Blindtext creates more text.
+%disabled% %% \blinddocument creates a small document with sections, lists...
+%disabled% %% \Blinddocument creates a large document with sections, lists...
 
 
 %doc% \end{enumerate}

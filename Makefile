@@ -11,8 +11,8 @@ PROJECTNAME = "Projectname"
 ## http://www.ctan.org/tex-archive/help/uk-tex-faq/Makefile
 
 
-MAINDOCUMENTBASENAME = "main"
-MAINDOCUMENTFILENAME = ${TEMPLATEDOCUBASENAME}".tex"
+MAINDOCUMENTBASENAME = main
+MAINDOCUMENTFILENAME = ${MAINDOCUMENTBASENAME}.tex
 ## COMMANDS:
 PDFLATEX_CMD = pdflatex
 #BIBTEX_CMD = bibtex
@@ -23,7 +23,7 @@ DATESTAMP_AND_PROJECT = ${DATESTAMP}_${PROJECTNAME}
 #PDFVIEWER = xpdf
 PDFVIEWER = acroread
 TEMPLATEDOCUBASENAME = Template-Documentation
-TEMPLATEDOCUFILE = ${TEMPLATEDOCUBASENAME}".tex"
+TEMPLATEDOCUFILE = ${TEMPLATEDOCUBASENAME}.tex
 
 #help
 #helpThe main targets of this Makefile are:
@@ -65,7 +65,7 @@ view: pdf
 #help	clean	clean up temporary files
 .PHONY: clean
 clean: 
-	-rm -r *.bcf *.run.xml _*_.* *~ *.aux *.bbl ${MAINDOCUMENTBASENAME}.dvi *.ps *.blg *.idx *.ilg *.ind *.toc *.log *.log *.brf *.out *.lof *.lot *.gxg *.glx *.gxs *.glo *.gls -f
+	-rm -r *.bcf *.run.xml _*_.* *~ *.aux *-blx.bib *.bbl ${MAINDOCUMENTBASENAME}.dvi *.ps *.blg *.idx *.ilg *.ind *.toc *.log *.log *.brf *.out *.lof *.lot *.gxg *.glx *.gxs *.glo *.gls -f
 
 #help	purge	cleaner than clean ;-)
 .PHONY: purge
