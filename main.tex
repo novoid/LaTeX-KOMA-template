@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-12-10 21:25:10 vk>
+%%%% Time-stamp: <2011-12-11 12:45:41 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -36,6 +36,7 @@
 
 
 
+
 %% ========================================================================
 %%%% MISC self-defined commands
 %% ========================================================================
@@ -62,15 +63,19 @@
 \begin{document}
 \frontmatter %% KOMA: roman page numbers and such; only available in scrbook
 
-%% include one title page:
+\input{colophon}
+
 \input{titlepages/plain_maketitle}  %% simple maketitle page
 %\input{titlepages/Deutsche_Diplomarbeit_-_Karl-Franzens_Uni_Graz}  %% fancy title page for KF Uni
-% FIXXME: how to change titlepage
+
+% \input{thanks}
+% \input{foreword}
 
 \tableofcontents  %% this produces the table of contents - you might have guessed :-)
 
-\mainmatter %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
+\listoffigures
 
+\mainmatter %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
 %% include other tex files:
 \include{introduction}
@@ -84,7 +89,6 @@
 \addpart*{Appendix}  %% adding Appendix to tableofcontents
 
 \printbibliography %% remove, if using BibTeX instead of biblatex
-
 % \include{further_ressources}
 
 
