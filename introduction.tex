@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-12-10 15:26:41 vk>
+%%%% Time-stamp: <2011-12-11 12:24:31 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -15,8 +15,13 @@
 %% scrbook starts with part (optional), chapter, section, ...
 \chapter{MYSECTION}
 
-MYTEXT
+This is my text with an example Figure~\ref{fig:example} and example
+citation~\cite{Voit2011} or \textcite{Voit2009}.
 
+\myfig{TU_Graz_Logo}%% filename in figures folder
+      {width=0.1\textwidth,height=0.1\textheight}%% maximum width/height, aspect ratio will be kept
+      {Example figure.}%% caption
+      {fig:example}%% label
 
 
 
