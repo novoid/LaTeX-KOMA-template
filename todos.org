@@ -1,4 +1,4 @@
-## Time-stamp: <2011-12-10 21:32:48 vk>
+## Time-stamp: <2011-12-11 14:07:46 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
@@ -88,7 +88,14 @@ CLOSED: [2011-12-10 Sat 21:29]
 :PROPERTIES:
 :CREATED: <2011-07-26 Tue 18:04>
 :END:
-* NEXT table of figures
+
+* DONE HowTo change titlepage
+CLOSED: [2011-12-11 Sun 14:07]
+:PROPERTIES:
+:CREATED: [2011-12-11 Sun 12:16]
+:END:
+* DONE list of figures
+CLOSED: [2011-12-11 Sun 14:07]
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:30]
 :END:
@@ -117,6 +124,9 @@ CLOSED: [2011-12-10 Sat 21:29]
     - GNU make
     - sed
     - grep
+  - LaTeX packages
+    - necessary
+    - optional
 
 * NEXT index (makeindex)
 :PROPERTIES:
@@ -126,9 +136,19 @@ CLOSED: [2011-12-10 Sat 21:29]
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:30]
 :END:
+
+* NEXT try [[http://www.komascript.de/titlepage]] for title pages
+:PROPERTIES:
+:CREATED: [2011-12-11 Sun 12:49]
+:END:
 * NEXT more titlepage templates
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:30]
+:END:
+
+* WISH add FIXXME-marker with [[http://www.komascript.de/marginnote]]
+:PROPERTIES:
+:CREATED: [2011-12-11 Sun 13:11]
 :END:
 * WISH acronyms
 :PROPERTIES:

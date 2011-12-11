@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-12-11 13:08:08 vk>
+%%%% Time-stamp: <2011-12-11 14:02:27 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -104,7 +104,27 @@
 \addtokomafont{captionlabel}{\color{DispositionColor}}
 
 %doc% 
-%doc% \subsection{Lines above and below the chapter head}
+%doc% \subsection{No figures or tables below footnotes}
+%doc% 
+%doc% \LaTeX{} places floating environments below footnotes if \texttt{b}
+%doc% (bottom) is used as (default) placement algorithm. This is certainly
+%doc% not appealing for most people and is deactivated in this template by
+%doc% using the package \texttt{footmisc} with its option \texttt{bottom}.
+%doc% 
+%% see also: http://www.komascript.de/node/858 (German description)
+\usepackage[bottom]{footmisc}  %% do not place floats below footnotes
+
+%doc% 
+%doc% \subsection{Quotation marks}
+%doc% 
+%doc% For \texttt{biblatex} it is recommended to include the package
+%doc% \texttt{csquotes}. Since Section~\ref{sub:myquote} is providing a
+%doc% mechanism to modify quotation characters accordingly, you have to make
+%doc% sure that you are using the same quotation characters at both settings.
+\usepackage[babel,german=guillemets]{csquotes}
+
+%doc% 
+%doc% \subsection{Optional: Lines above and below the chapter head}
 %doc% 
 %doc% This is not quite something typographic but rather a matter of taste.
 %doc% KOMA Script offers \href{http://www.komascript.de/node/24}{a method to
@@ -136,6 +156,91 @@
 %disabled%   \ORIGchapterheadendvskip
 %disabled% }
 
+%doc% 
+%doc% \subsection{Optional: Chapter thumbs}
+%doc% 
+%doc% This is not quite something typographic but rather a matter of taste.
+%doc% KOMA Script offers \href{http://www.komascript.de/chapterthumbs-example}{a method to
+%doc% add chapter thumbs} (in combination with the package \texttt{scrpage2}) which is disabled by
+%doc% default. If you want to enable this feature, remove corresponding
+%doc% comment characters from the settings.
+%doc% 
+%disabled% % Safty first
+%disabled% \@ifundefined{chapter}{\let\chapter\undefined
+%disabled%   \chapter must be defined to use chapter thumbs!}{%
+%disabled%  
+%disabled% % Two new commands for the width and height of the boxes with the
+%disabled% % chapter number at the thumbs (use of commands instead of lengths
+%disabled% % for sparing registers)
+%disabled% \newcommand*{\chapterthumbwidth}{2em}
+%disabled% \newcommand*{\chapterthumbheight}{1em}
+%disabled%  
+%disabled% % Two new commands for the colors of the box background and the
+%disabled% % chapter numbers of the thumbs
+%disabled% \newcommand*{\chapterthumbboxcolor}{black}
+%disabled% \newcommand*{\chapterthumbtextcolor}{white}
+%disabled%  
+%disabled% % New command to set a chapter thumb. I'm using a group at this
+%disabled% % command, because I'm changing the temporary dimension \@tempdima
+%disabled% \newcommand*{\putchapterthumb}{%
+%disabled%   \begingroup
+%disabled%     \Large
+%disabled%     % calculate the horizontal possition of the right paper border
+%disabled%     % (I ignore \hoffset, because I interprete \hoffset moves the page
+%disabled%     % at the paper e.g. if you are using cropmarks)
+%disabled%     \setlength{\@tempdima}{\@oddheadshift}% (internal from scrpage2)
+%disabled%     \setlength{\@tempdima}{-\@tempdima}%
+%disabled%     \addtolength{\@tempdima}{\paperwidth}%
+%disabled%     \addtolength{\@tempdima}{-\oddsidemargin}%
+%disabled%     \addtolength{\@tempdima}{-1in}%
+%disabled%     % putting the thumbs should not change the horizontal
+%disabled%     % possition
+%disabled%     \rlap{%
+%disabled%       % move to the calculated horizontal possition
+%disabled%       \hspace*{\@tempdima}%
+%disabled%       % putting the thumbs should not change the vertical
+%disabled%       % possition
+%disabled%       \vbox to 0pt{%
+%disabled%         % calculate the vertical possition of the thumbs (I ignore
+%disabled%         % \voffset for the same reasons told above)
+%disabled%         \setlength{\@tempdima}{\chapterthumbwidth}%
+%disabled%         \multiply\@tempdima by\value{chapter}%
+%disabled%         \addtolength{\@tempdima}{-\chapterthumbwidth}%
+%disabled%         \addtolength{\@tempdima}{-\baselineskip}%
+%disabled%         % move to the calculated vertical possition
+%disabled%         \vspace*{\@tempdima}%
+%disabled%         % put the thumbs left so the current horizontal possition
+%disabled%         \llap{%
+%disabled%           % and rotate them
+%disabled%           \rotatebox{90}{\colorbox{\chapterthumbboxcolor}{%
+%disabled%               \parbox[c][\chapterthumbheight][c]{\chapterthumbwidth}{%
+%disabled%                 \centering
+%disabled%                 \textcolor{\chapterthumbtextcolor}{%
+%disabled%                   \strut\thechapter}\\
+%disabled%               }%
+%disabled%             }%
+%disabled%           }%
+%disabled%         }%
+%disabled%         % avoid overfull \vbox messages
+%disabled%         \vss
+%disabled%       }%
+%disabled%     }%
+%disabled%   \endgroup
+%disabled% }
+%disabled%  
+%disabled% % New command, which works like \lohead but also puts the thumbs (you
+%disabled% % cannot use \ihead with this definition but you may change this, if
+%disabled% % you use more internal scrpage2 commands)
+%disabled% \newcommand*{\loheadwithchapterthumbs}[2][]{%
+%disabled%   \lohead[\putchapterthumb#1]{\putchapterthumb#2}%
+%disabled% }
+%disabled%  
+%disabled% % initial use
+%disabled% \loheadwithchapterthumbs{}
+%disabled% \pagestyle{scrheadings}
+%disabled%  
+%disabled% }
+%disabled% 
 
 %%%% END
 %%% Local Variables:
