@@ -1,4 +1,4 @@
-%% Time-stamp: <2011-12-12 18:42:04 vk>
+%% Time-stamp: <2011-12-12 19:26:11 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -205,8 +205,12 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc% The default setting of the language is American. Please change settings for
 %doc% additional or alternative languages used.
 %doc% 
-\usepackage[american]{babel}  %% American English
-%\usepackage[ngerman]{babel}  %% German
+%doc% To set only parts of you document in a different language as the rest, use for example
+%doc% \verb+\foreignlanguage{ngerman}{Beispieltext in deutscher Sprache}+.
+%doc% For using foreign language quotes, please refer to the \verb+\foreignquote+,
+%doc% \verb+\foreigntextquote+, or \verb+\foreignblockquote+ provided by
+%doc% \texttt{csquote} (see Section~\ref{sub:csquote}).
+\usepackage[ngerman,american]{babel}  %% used languages; default language is last language of options
 
 %doc% 
 %doc% \subsection{\texttt{scrpage2}: Headers and footers}
