@@ -1,4 +1,4 @@
-%% Time-stamp: <2011-12-12 00:09:29 vk>
+%% Time-stamp: <2011-12-12 13:58:36 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -114,6 +114,19 @@
   % \flqq{}#1\frqq{} %% results in something like <<#1>> (for *non* german texts)
   % \flq{}#1\frq{}   %% results in something like <#1> (for *non* german texts)
 }
+
+%doc% 
+%doc% \subsection{\texttt{fixxme} --- sidemark something as unfinished}
+%doc% 
+%doc% You know it: something has to be fixed and you can not do it right
+%doc% now. In order to \texttt{not} forget about it, you might want to add a
+%doc% note like \verb+\fixxme{check again}+ which inserts a note on the page
+%doc% margin such as this\fixxme{check again} example.
+%doc%
+\newcommand{\fixxme}[1]{%%
+\textcolor{red}{FIXXME}\marginpar{\textcolor{red}{#1}}%%
+}
+
 
 %%%% End 
 %%% Local Variables:
