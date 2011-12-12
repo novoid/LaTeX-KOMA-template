@@ -1,4 +1,4 @@
-## Time-stamp: <2011-12-12 15:02:10 vk>
+## Time-stamp: <2011-12-12 18:43:03 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
@@ -107,7 +107,8 @@ CLOSED: [2011-12-12 Mon 00:15]
 
 see reference {KeithThesis}
 
-* NEXT merge myquote & csquotes
+* DONE merge myquote & csquotes
+CLOSED: [2011-12-12 Mon 18:42]
 :PROPERTIES:
 :CREATED: [2011-12-12 Mon 15:01]
 :END:

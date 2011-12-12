@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2011-12-12 14:06:39 vk>
+%%%% Time-stamp: <2011-12-12 18:51:07 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -40,7 +40,7 @@
 %doc% \subsection{Text figures}
 %doc% 
 %doc% \ldots also called old style numbers such as 0123456789. 
-%doc% (German: \myquote{Mediävalziffern\footnote{\url{https://secure.wikimedia.org/wikibooks/de/wiki/LaTeX-W\%C3\%B6rterbuch:\_Medi\%C3\%A4valziffern}}})
+%doc% (German: \enquote{Mediävalziffern\footnote{\url{https://secure.wikimedia.org/wikibooks/de/wiki/LaTeX-W\%C3\%B6rterbuch:\_Medi\%C3\%A4valziffern}}})
 %doc% \paragraph{Why?} see~\textcite[p.\,44f]{Bringhurst1993}: 
 %doc% \begin{quote}
 %doc% `3.2.1 If the font includes both text figures and titling figures, use
@@ -111,22 +111,29 @@
 \usepackage[bottom]{footmisc}  %% do not place floats below footnotes
 
 %doc% 
-%doc% \subsection{Quotation marks}
+%doc% \subsection{\texttt{enquote} --- Correct quotation marks}
 %doc% 
-%doc% For \texttt{biblatex} it is recommended to include the package
-%doc% \texttt{csquotes}. Since Section~\ref{sub:myquote} is providing a
-%doc% mechanism to modify quotation characters accordingly, you have to make
-%doc% sure that you are using the same quotation characters at both settings.
-\usepackage[babel,german=guillemets]{csquotes}
+%doc% \emph{Never} use quotation marks found on your keyboard.
+%doc% They end up in strange characters or false looking quotation marks.
+%doc% 
+%doc% In \LaTeX{} you are able to use typographically correct quotation marks. The package 
+%doc% \href{http://www.ctan.org/pkg/csquotes}{\texttt{enquote}} offers you with 
+%doc% \verb#\enquote{foobar}# a command to get correct quotation marks around \enquote{foobar}.
+%doc% Please do check the package options in order to modify
+%doc% its settings according to the language used\footnote{most of the time in 
+%doc% combination with the language set in the options of the \texttt{babel} package}.
+%doc% 
+%doc% \href{http://www.ctan.org/pkg/csquotes}{\texttt{csquotes}} is also recommended 
+%doc% by \texttt{biblatex} (see Section~\ref{sub:references}). 
+\usepackage[babel=true,strict=true,english=american,german=guillemets]{csquotes}
 
 %doc% 
 %doc% \subsection{Line spread}
 %doc% 
-%doc% 
 %doc% If you have to enlarge the distance between two lines of text, you can
 %doc% increase it using the \texttt{linespread} command. By default, it is
-%doc% set to 100~percent.
-
+%doc% deactivated (set to 100~percent). Modify only with caution since it influences the
+%doc% page layout and could lead to ugly looking documents.
 %\linespread{1.5}  %% line spread of 150%
 
 %doc% 
