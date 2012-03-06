@@ -1,0 +1,63 @@
+%%%% Time-stamp: <2012-03-06 16:53:18 vk>
+%% ========================================================================
+%%%% Disclaimer
+%% ========================================================================
+%%
+%% created by
+%%
+%%      Stefan Kroboth and Karl Voit
+
+\begin{titlepage}
+
+%\thispagestyle{empty}  %% no page header or footer
+%\large  %% basic font size of the titlepage
+
+%% placing the TU Graz logo exactly as Corporate Design demands:
+%%   40mm of Logo (here: 2mm margin in picture!)
+%%    8mm from top and from right
+%% Source: http://portal.tugraz.at/portal/page/portal/TU_Graz/Services/BDR/Oeffentlichkeitsarbeit/CD/Logo%20Anwendungsrichtlinien
+\AddToShipoutPicture*{%
+  \AtPageUpperLeft{%
+    \hspace{\paperwidth}%
+    \raisebox{-19mm}{%\baselineskip}{%
+     \makebox[-4mm][r]{\includegraphics[width=42mm]{figures/TU_Graz_Logo}}
+}}}%
+
+\begin{center}
+~
+\vfill\vfill\vfill
+
+\myauthor
+
+\vfill
+
+{\LARGE\bfseries\mytitle}
+
+\vfill\vfill\vfill
+
+{\bfseries\myworktitle}
+
+\vfill\vfill\vfill
+\vfill\vfill\vfill
+\vfill\vfill\vfill
+
+\myuniversity
+
+\vfill
+
+\myinstitute\\
+Head: \myinstitutehead\\
+
+\vfill
+
+Supervisor: \mysupervisor\\
+%usually not mentioned on titlepage:% Evaluator: \myevaluator
+
+\vfill
+
+\mysubmissiontown, \mysubmissionmonth~\mysubmissionyear
+
+\end{center}
+\end{titlepage}
+\normalsize %% new page, reset font size
+%% end of title page
