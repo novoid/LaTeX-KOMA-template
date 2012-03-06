@@ -1,7 +1,98 @@
-## Time-stamp: <2011-12-12 18:43:03 vk>
+## Time-stamp: <2012-03-06 17:56:17 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
+
+
+* NEXT pointers to [[http://en.wikibooks.org/wiki/LaTeX/Packages#Packages_list][other packages]] (not included in this template):
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
+:END:
+- listings
+- sidewaystable
+- paralist (compact version of itemize and enumerate)
+- ...
+
+* NEXT document how to move to one sided document
+:PROPERTIES:
+:CREATED: [2012-03-06 Tue 17:53]
+:END:
+
+* NEXT document how to generate a draft document version
+:PROPERTIES:
+:CREATED: [2012-03-06 Tue 17:53]
+:END:
+* NEXT define prerequisites
+:PROPERTIES:
+:CREATED: <2011-07-26 Tue 18:03>
+:END:
+
+- user knowledge
+- software dependencies
+  - for compiling PDF
+    - pdflatex
+    - biber
+    - biblatex
+  - for using make to compile
+    - GNU make
+  - for generating template documentation
+    - GNU make
+    - sed
+    - grep
+  - LaTeX packages
+    - necessary
+    - optional
+
+* NEXT index (makeindex)
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:30]
+:END:
+
+* NEXT try [[http://www.komascript.de/titlepage]] for title pages
+:PROPERTIES:
+:CREATED: [2011-12-11 Sun 12:49]
+:END:
+
+* NEXT document example usage with MikTex 2.8 and Texmaker
+:PROPERTIES:
+:CREATED: [2012-03-06 Tue 17:52]
+:END:
+
+see id:2012-02-25latex
+* NEXT how to switch language
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
+:END:
+
+* NEXT acronyms
+:PROPERTIES:
+:CREATED: <2010-12-22 Fri 15:49>
+:END:
+
+* WISH how to switch to scrreprt or scrartcle
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
+:END:
+* WISH pointers to other LaTeX templates
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
+:END:
+
+* WISH Look at template of matthiaspospiech and adopt things
+:PROPERTIES:
+:CREATED: <2010-12-26 Fri 15:51>
+:END:
+
+/home/vk/src/diss_da_template/matthiaspospiech.de/LaTeX-Vorlage3/preambel
+
+* WISH look at creation of own sty-file
+:PROPERTIES:
+:CREATED: <2010-12-22 Fri 15:50>
+:END:
+* WISH translate German comments
+:PROPERTIES:
+:CREATED: <2010-12-22 Fri 15:50>
+:END:
 
 * DONE Template documentation should be static [3/3]
 DEADLINE: <2011-07-23 Sat>
@@ -112,86 +203,19 @@ CLOSED: [2011-12-12 Mon 18:42]
 :PROPERTIES:
 :CREATED: [2011-12-12 Mon 15:01]
 :END:
-* NEXT pointers to [[http://en.wikibooks.org/wiki/LaTeX/Packages#Packages_list][other packages]] (not included in this template):
-:PROPERTIES:
-:CREATED: [2011-12-10 Sat 21:31]
-:END:
-- listings
-- sidewaystable
-- paralist (compact version of itemize and enumerate)
-- ...
-
-* NEXT define prerequisites
-:PROPERTIES:
-:CREATED: <2011-07-26 Tue 18:03>
-:END:
-
-- user knowledge
-- software dependencies
-  - for compiling PDF
-    - pdflatex
-    - biber
-    - biblatex
-  - for using make to compile
-    - GNU make
-  - for generating template documentation
-    - GNU make
-    - sed
-    - grep
-  - LaTeX packages
-    - necessary
-    - optional
-
-* NEXT index (makeindex)
+* DONE more titlepage templates
+CLOSED: [2012-03-06 Tue 17:50]
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:30]
 :END:
 
-* NEXT try [[http://www.komascript.de/titlepage]] for title pages
-:PROPERTIES:
-:CREATED: [2011-12-11 Sun 12:49]
-:END:
-* NEXT more titlepage templates
-:PROPERTIES:
-:CREATED: [2011-12-10 Sat 21:30]
-:END:
-* WISH how to switch to scrreprt or scrartcle
-:PROPERTIES:
-:CREATED: [2011-12-10 Sat 21:31]
-:END:
-
-* WISH add FIXXME-marker with [[http://www.komascript.de/marginnote]]
+* DONE add FIXXME-marker with [[http://www.komascript.de/marginnote]]
+CLOSED: [2012-03-06 Tue 17:54]
 :PROPERTIES:
 :CREATED: [2011-12-11 Sun 13:11]
 :END:
-* WISH acronyms
-:PROPERTIES:
-:CREATED: <2010-12-22 Fri 15:49>
-:END:
-* WISH pointers to other LaTeX templates
-:PROPERTIES:
-:CREATED: [2011-12-10 Sat 21:31]
-:END:
 
-* WISH Look at template of matthiaspospiech and adopt things
-:PROPERTIES:
-:CREATED: <2010-12-26 Fri 15:51>
-:END:
-
-/home/vk/src/diss_da_template/matthiaspospiech.de/LaTeX-Vorlage3/preambel
-
-* WISH look at creation of own sty-file
-:PROPERTIES:
-:CREATED: <2010-12-22 Fri 15:50>
-:END:
-* WISH how to switch language
-:PROPERTIES:
-:CREATED: [2011-12-10 Sat 21:31]
-:END:
-* WISH translate German comments
-:PROPERTIES:
-:CREATED: <2010-12-22 Fri 15:50>
-:END:
+see \fixxme{}
 
 * CANCELED add BibTeX to the template
 CLOSED: [2011-12-10 Sat 21:31]
