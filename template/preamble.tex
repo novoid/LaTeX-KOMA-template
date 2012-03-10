@@ -1,4 +1,4 @@
-%% Time-stamp: <2012-03-10 13:44:24 vk>
+%% Time-stamp: <2012-03-10 14:36:26 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -38,9 +38,9 @@
 %doc% \usepackage[pdftex]{graphicx}
 %doc% 
 %doc% %% using existing TeX files %%
-%doc% \input{preamble/mycommands}
-%doc% \input{preamble/typographic_settings}
-%doc% \input{preamble/pdf_settings}
+%doc% \input{template/preamble_mycommands}
+%doc% \input{template/preamble_typographic_settings}
+%doc% \input{template/preamble_pdf_settings}
 %doc% 
 %doc% \begin{document}
 %doc% %% title page %%
@@ -70,12 +70,12 @@
 %doc%    \item replace \enquote{Projectname} with your filename
 %doc%    \item do not use any file extension like \texttt{.tex} or \texttt{.pdf}
 %doc%    \end{itemize}
-%doc% \item OPTIONAL: Modify files in the folder \texttt{preamble} if necessary
+%doc% \item OPTIONAL: Modify files in the folder \texttt{template/preamble} if necessary
 %doc%   \begin{itemize}
 %doc%   \item following sections should give you an idea
 %doc%     what to do and why
 %doc%   \end{itemize}
-%doc% \item Modify \myfile{userdata.tex}:
+%doc% \item Modify \myfile{template/preamble\_userdata.tex}:
 %doc%   \begin{itemize}
 %doc%   \item \verb+\myauthor+, \verb+\mytitle+, and so forth
 %doc%   \end{itemize}
@@ -139,13 +139,13 @@
 %doc% \subsection{How to change the title page}
 %doc% 
 %doc% This template comes with a variety of title pages. They are located in
-%doc% the folder \texttt{titlepages}. You can switch to a specific title
+%doc% the folder \texttt{template}. You can switch to a specific title
 %doc% page by including corresponding title page file in the file
 %doc% \texttt{main.tex}.
 %doc% 
 %doc% Please note that you may not need to modify any title page document by
 %doc% yourself since all relevant information is defined in the file
-%doc% \texttt{userdata.tex}.
+%doc% \texttt{template/preamble\_userdata.tex}.
 
 %doc%
 %doc% \section{\texttt{preamble.tex} --- Main preamble file}
@@ -259,7 +259,7 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc% This template is ready to use \texttt{biblatex} with \texttt{Biber} as
 %doc% reference compiler. You should make sure that you have installed an up
 %doc% to date binary of \texttt{Biber} from its
-%doc% homepage\footnote{http://biblatex-biber.sourceforge.net/}.
+%doc% homepage\footnote{\url{http://biblatex-biber.sourceforge.net/}}.
 %doc% 
 %doc% \subsubsection{Example citation commands}
 %doc% 

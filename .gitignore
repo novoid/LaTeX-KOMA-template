@@ -1,13 +1,12 @@
-preamble/auto/*
+template/auto/*
 20*pdf
 *.aux
 *.bbl
 *.blg
 *.log
 *.toc
-titlepages/Petra-data.tex
+template/preamble_userdata-Petra.tex
 Template-Documentation.tex
-userdata-Petra.tex
 main.pdf
 main-blx.bib
 *.bcf

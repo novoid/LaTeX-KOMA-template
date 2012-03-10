@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2012-03-06 17:43:57 vk>
+%%%% Time-stamp: <2012-03-10 14:33:52 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -7,28 +7,27 @@
 %%
 %%      Karl Voit
 %%
-%% using grml GNU/Linux, GNU Emacs & LaTeX 2e
 
 %% ========================================================================
 %%%% Basic settings
 %% ========================================================================
-\input{preamble/preamble}
+\input{template/preamble}
 
 %% ========================================================================
 %%%% Document metadata
 %% ========================================================================
-\input{userdata}
-%\input{userdata-Petra}
+\input{template/preamble_userdata}
+%\input{template/preamble_userdata-Petra}
 
 %% ========================================================================
 %%%% My own commands
 %% ========================================================================
-\input{preamble/mycommands}
+\input{template/preamble_mycommands}
 
 %% ========================================================================
 %%%% Typographic settings
 %% ========================================================================
-\input{preamble/typographic_settings}
+\input{template/preamble_typographic_settings}
 
 
 %% ========================================================================
@@ -64,46 +63,46 @@
 
 %% acronyms in small caps: \myacro{UNESCO}
 
-\input{preamble/pdf_settings}  %% should be *last* definitions in preamble!
+\input{template/preamble_pdf_settings}  %% should be *last* definitions in preamble!
 %% ========================================================================
 %%%% begin{document}
 %% ========================================================================
 \begin{document}
-\frontmatter %% KOMA: roman page numbers and such; only available in scrbook
+\frontmatter                    %% KOMA: roman page numbers and such; only available in scrbook
 
-\input{colophon}  %% adds information about editor, LaTeX, font, ...
+\input{template/colophon}       %% adds information about editor, LaTeX, font, ...
 
 %% Choose your desired title page:
-%\input{titlepages/plain_maketitle}  %% simple maketitle page
-%\input{titlepages/Deutsche_Diplomarbeit_-_Karl-Franzens_Uni_Graz}  %% fancy title page for KF Uni
-\input{titlepages/Thesis_TU_Graz}  %% titlepage for Graz University of Technology (correct Corporate Design)
+%\input{template/title_plain_maketitle}               %% simple maketitle page
+%\input{template/title_Diplomarbeit_KF_Uni_Graz.tex}  %% fancy (german) title page for KF Uni Graz
+\input{template/title_Thesis_TU_Graz}                 %% titlepage for Graz University of Technology (correct Corporate Design)
 
-\input{declaration}  %% Statutory Declaration
-% \input{thanks}
-% \input{foreword}
+\input{template/declaration}    %% Statutory Declaration
+% \input{thanks}                %% this is a suggestion: you have to create this file on demand
+% \input{foreword}              %% this is a suggestion: you have to create this file on demand
 
-\tableofcontents  %% this produces the table of contents - you might have guessed :-)
+\tableofcontents                %% this produces the table of contents - you might have guessed :-)
 
 \listoffigures
 
-\mainmatter %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
+\mainmatter                     %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
-\input{example-short-chapter}  %% remove this line to get rid of the example chapter
-\input{example-style-chapter}  %% remove this line to get rid of the style chapter
+\input{example-short-chapter}   %% remove this line to get rid of the example chapter
+\input{example-style-chapter}   %% remove this line to get rid of the style chapter
 
 %% include tex file chapters:
-% \include{introduction}
-% \include{problem}
-% \include{solution}
-% \include{evaluation}
-% \include{outlook}
+% \include{introduction}        %% this is a suggestion: you have to create this file on demand
+% \include{problem}             %% this is a suggestion: you have to create this file on demand
+% \include{solution}            %% this is a suggestion: you have to create this file on demand
+% \include{evaluation}          %% this is a suggestion: you have to create this file on demand
+% \include{outlook}             %% this is a suggestion: you have to create this file on demand
 
-\backmatter %% KOMA: marks appendix; only available in scrbook
-\appendix  %% close the main document, appendix follows now until end; only available in book-classes
-\addpart*{Appendix}  %% adding Appendix to tableofcontents
+\backmatter                     %% KOMA: marks appendix; only available in scrbook
+\appendix                       %% closes main document, appendix follows until end; only available in book-classes
+\addpart*{Appendix}             %% adding Appendix to tableofcontents
 
-\printbibliography %% remove, if using BibTeX instead of biblatex
-% \include{further_ressources}
+\printbibliography              %% remove, if using BibTeX instead of biblatex
+% \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
 
 
 
