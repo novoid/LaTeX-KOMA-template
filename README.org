@@ -19,10 +19,11 @@ that is optimized to deliver your content.
 
 ** Requirements
 
-This template uses pdflatex, [[http://www.tex.ac.uk/tex-archive/info/translations/biblatex/de/][biblatex]], [[http://en.wikipedia.org/wiki/Biber_(LaTeX)][biber]], and optionally [[http://www.gnu.org/s/make/][GNU make.]]
-You should be familiar with compiling LaTeX documents by yourself. If
-you are new to LaTeX please get basic knowledge from tutorial pages
-such as [[http://LaTeX.TUGraz.at][this one]].
+This template uses up-to-date technology like pdflatex, [[http://www.tex.ac.uk/tex-archive/info/translations/biblatex/de/][biblatex]]
+(instead of BibTeX-Format), [[http://en.wikipedia.org/wiki/Biber_(LaTeX)][biber]] (instead of bibtex-compiler), and
+optionally [[http://www.gnu.org/s/make/][GNU make.]]  You should be familiar with compiling LaTeX
+documents by yourself. If you are new to LaTeX please get basic
+knowledge from tutorial pages such as [[http://LaTeX.TUGraz.at][this one]].
 
 ** What makes this template special?
 
@@ -47,5 +48,5 @@ Please do read the "Template-Documentation.pdf" file which contains a
 
 ** What is still work in progress?
 
-look at the file "todos.org"
+Please have a look at the file "template/todos.org".
   
