@@ -1,4 +1,4 @@
-## Time-stamp: <2012-03-06 17:56:17 vk>
+## Time-stamp: <2012-03-14 09:54:56 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
@@ -73,6 +73,21 @@ see id:2012-02-25latex
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:31]
 :END:
+
+* WISH replace \fixxme{} with package «todonotes»
+:PROPERTIES:
+:CREATED: [2012-03-14 Wed 09:51]
+:END:
+
+- add dependencies to the documentation
+  - ifthen
+  - xkeyval
+  - xcolor
+  - tikz
+  - calc
+  - graphicx
+- in combination with [[http://orgmode.org][Org-mode]]: http://lists.gnu.org/archive/html/emacs-orgmode/2011-09/msg00157.html
+
 * WISH pointers to other LaTeX templates
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:31]
