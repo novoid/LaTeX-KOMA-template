@@ -1,4 +1,4 @@
-%% Time-stamp: <2012-03-10 14:36:26 vk>
+%% Time-stamp: <2012-03-25 17:16:18 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -12,6 +12,8 @@
 %doc% headinclude,footinclude=false,open=right,bibliography=totoc]{scrartcl}
 %doc% \usepackage[utf8]{inputenc}\usepackage[american]{babel}\usepackage{scrpage2}
 %doc% \usepackage{ifthen}\usepackage{eurosym}\usepackage{xspace}\usepackage[usenames,dvipsnames]{color}
+%doc% \usepackage[pdftex]{graphicx}
+%doc% \usepackage{todonotes}
 %doc% \definecolor{DispositionColor}{RGB}{30,103,182}
 %doc% 
 %doc% \usepackage[backend=biber,%% using "biber" to compile references (instead of "biblatex")
@@ -35,7 +37,6 @@
 %doc% % 
 %doc% % \end{filecontents}
 %doc% 
-%doc% \usepackage[pdftex]{graphicx}
 %doc% 
 %doc% %% using existing TeX files %%
 %doc% \input{template/preamble_mycommands}
@@ -410,6 +411,21 @@ hyperref=true, %% using hyperref-package references
 %doc% the first page (only). The package \texttt{eso-pic} is able to place things on absolute
 %doc% and relative positions on the whole page.
 \usepackage{eso-pic} %%
+
+%doc% \item[\texttt{\href{http://www.ctan.org/tex-archive/macros/latex/contrib/todonotes/}{%%
+%doc% todonotes%%
+%doc% }}] 
+%doc% This packages is \emph{very} handy to add notes\footnote{\texttt{todonotes} replaced 
+%doc% the \texttt{fixxme}-command which previously was defined in the 
+%doc% \texttt{preamble\_mycommands.tex} file.}. Using for example \verb#\todo{check}#
+%doc% results in something like this \todo{check} in the document. Do read the
+%doc% great package documentation for usage of other very helpful commands such as
+%doc% \verb#\missingfigure{}# and \verb#\listoftodos#. The latter one creates an index of all
+%doc% open todos which is very useful for getting an overview of open issues.
+%doc% The package \texttt{todonotes} require the packages \texttt{ifthen}, \texttt{xkeyval}, \texttt{xcolor}, 
+%doc% \texttt{tikz}, \texttt{calc}, and \texttt{graphicx}. Activate \verb#\listoftodos# in \texttt{main.tex}.
+\usepackage{todonotes}
+%\usepackage[disable]{todonotes}  %% option "disable" removes all todonotes output from resulting document
 
 %disabled% \item[\texttt{\href{http://www.ctan.org/tex-archive/macros/latex/contrib/blindtext}{%%
 %disabled% blindtext%%
