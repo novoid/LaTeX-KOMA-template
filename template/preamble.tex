@@ -1,4 +1,4 @@
-%% Time-stamp: <2012-04-04 17:13:28 vk>
+%% Time-stamp: <2012-04-18 17:49:14 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -326,9 +326,10 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc% 
 %doc% 
 \usepackage[backend=biber, %% using "biber" to compile references (instead of "biblatex")
-%style=authoryear, %% see biblatex documentation
-style=alphabetic, %% see biblatex documentation
-%dashed=false, %% do *not* replace recurring reference authors with a dash
+style=authoryear, %% see biblatex documentation
+%style=alphabetic, %% see biblatex documentation
+dashed=false, %% do *not* replace recurring reference authors with a dash
+%backref=true, %% create backlings from references to citations
 natbib=true, %% offering natbib-compatible commands
 hyperref=true, %% using hyperref-package references
 ]{biblatex}  %% remove, if using BibTeX instead of biblatex
