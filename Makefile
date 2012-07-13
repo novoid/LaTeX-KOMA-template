@@ -70,7 +70,7 @@ clean:
 #help	purge	cleaner than clean ;-)
 .PHONY: purge
 purge: clean
-	-rm *.pdf *.ps -f
+	-rm 20*.pdf *.ps -f
 
 #help	force	force rebuild next run
 .PHONY: force
