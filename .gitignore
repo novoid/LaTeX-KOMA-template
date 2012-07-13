@@ -5,7 +5,6 @@ template/auto/*
 *.blg
 *.log
 *.toc
-template/preamble_userdata-Petra.tex
 Template-Documentation.tex
 main.pdf
 main-blx.bib

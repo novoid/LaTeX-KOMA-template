@@ -1,4 +1,4 @@
-%% Time-stamp: <2012-03-25 17:09:57 vk>
+%% Time-stamp: <2012-07-13 22:58:08 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -44,6 +44,7 @@
 %doc%  \myfig{flower}%% filename w/o extension in directory "figures"
 %doc%        {width=0.7\textwidth}%% maximum width/height, aspect ratio will be kept
 %doc%        {This flower was photographed at my home town in 2010}%% caption
+%doc%        {Home town flower}%% optional (short) caption for list of figures
 %doc%        {fig:flower}%% label
 %doc% \end{verbatim}
 %doc% 
@@ -57,17 +58,18 @@
 %doc% \end{itemize}
 %doc% 
 %doc% 
-\newcommand{\myfig}[4]{
+\newcommand{\myfig}[5]{
 %% example:
 % \myfig{}%% filename in figures folder
 %       {width=0.5\textwidth,height=0.5\textheight}%% maximum width/height, aspect ratio will be kept
 %       {}%% caption
+%       {}%% optional (short) caption for list of figures
 %       {}%% label
 \begin{figure}%[htp]
   \begin{center}
      \includegraphics[keepaspectratio,#2]{figures/#1}
-     \caption{#3}
-     \label{#4} %% NOTE: always label *after* caption!
+     \caption[#4]{#3}
+     \label{#5} %% NOTE: always label *after* caption!
   \end{center}
 \end{figure}
 }
