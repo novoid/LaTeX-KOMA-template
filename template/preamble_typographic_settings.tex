@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2012-03-10 14:26:54 vk>
+%%%% Time-stamp: <2012-07-13 23:33:43 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -109,6 +109,21 @@
 %doc% 
 %% see also: http://www.komascript.de/node/858 (German description)
 \usepackage[bottom]{footmisc}  %% do not place floats below footnotes
+
+%doc% 
+%doc% \subsection{Spacings of list environments}
+%doc% 
+%doc% By default, \LaTeX{} is using vertical spaces between items of enumerate, 
+%doc% itemize and description environments. This is fine for multi-line items.
+%doc% Many times, the user does just write single-line items where the larger
+%doc% vertical space is inappropriate. The \href{http://ctan.org/pkg/enumitem}{enumitem}
+%doc% package provides replacements for the pre-defined list environments and
+%doc% offers many options to modify their appearances.
+%doc% This template is using the package option for \texttt{noitemsep} which
+%doc% mimimizes the vertical space between list items.
+%doc% 
+\usepackage{enumitem} %%
+\setlist{noitemsep}   %% kills the space between items
 
 %doc% 
 %doc% \subsection{\texttt{enquote} --- Correct quotation marks}
