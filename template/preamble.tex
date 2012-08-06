@@ -1,4 +1,4 @@
-%% Time-stamp: <2012-08-06 11:52:16 vk>
+%% Time-stamp: <2012-08-06 12:26:15 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -8,7 +8,7 @@
 %%
 
 %doc% %% overriding preamble/preamble.tex %%
-%doc% \documentclass[12pt,paper=a4,parskip=half,oneside,%%
+%doc% \documentclass[12pt,paper=a4,parskip=half,DIV=calc,oneside,%%
 %doc% headinclude,footinclude=false,open=right,bibliography=totoc]{scrartcl}
 %doc% \usepackage[utf8]{inputenc}\usepackage[american]{babel}\usepackage{scrpage2}
 %doc% \usepackage{ifthen}\usepackage{eurosym}\usepackage{xspace}\usepackage[usenames,dvipsnames]{xcolor}
@@ -179,6 +179,7 @@
 12pt,%%  size of the main text
 paper=a4,%%  paper format
 parskip=half,%%  vertical space between paragraphs (instead of indenting first par-line)
+DIV=calc,%%  calculates a good DIV value for type area; 66 characters/line is great
 %oneside,%%  document is not printed on left and right sides, only right side
 %twoside,%%  document is printed on left and right sides
 headinclude,%%  FIXXME
@@ -424,6 +425,13 @@ hyperref=true, %% using hyperref-package references
 %doc% the first page (only). The package \texttt{eso-pic} is able to place things on absolute
 %doc% and relative positions on the whole page.
 \usepackage{eso-pic} %%
+
+%doc% \item[\texttt{\href{http://ctan.org/pkg/enumitem}{%%
+%doc% enumitem%%
+%doc% }}] 
+%doc% This package replaces the built-in definitions for enumerate, itemize and description. 
+%doc% With \texttt{enumitem} the user has more control over the layout of those environments.
+\usepackage{enumitem} %%
 
 %doc% \item[\texttt{\href{http://www.ctan.org/tex-archive/macros/latex/contrib/todonotes/}{%%
 %doc% todonotes%%
