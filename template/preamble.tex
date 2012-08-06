@@ -1,4 +1,4 @@
-%% Time-stamp: <2012-07-13 23:34:40 vk>
+%% Time-stamp: <2012-08-06 11:52:16 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -77,7 +77,7 @@
 %doc%   \item following sections should give you an idea
 %doc%     what to do and why
 %doc%   \end{itemize}
-%doc% \item Modify \myfile{template/preamble\_userdata.tex}:
+%doc% \item Modify \myfile{userdata.tex}:
 %doc%   \begin{itemize}
 %doc%   \item \verb+\myauthor+, \verb+\mytitle+, and so forth
 %doc%   \end{itemize}
@@ -135,6 +135,13 @@
 %doc% you are familiar with the documentation of the command whose settings you want
 %doc% to modify.
 %doc% 
+%doc% It is recommended that for \emph{adding} things to the preambel (newcommands,
+%doc% setting variables, defining headers, \dots) you should use the file
+%doc% \texttt{main.tex}. 
+%doc% There are comment lines which help you finding the right spot.
+%doc% This way you still have the chance to update your \texttt{template}
+%doc% folder from the template repository without losing your own added things.
+%doc% 
 %doc% The following sections describe the settings and commands of this template and
 %doc% gives a short overview of its features.
 
@@ -147,7 +154,7 @@
 %doc% 
 %doc% Please note that you may not need to modify any title page document by
 %doc% yourself since all relevant information is defined in the file
-%doc% \texttt{template/preamble\_userdata.tex}.
+%doc% \texttt{userdata.tex}.
 
 %doc%
 %doc% \section{\texttt{preamble.tex} --- Main preamble file}
@@ -212,8 +219,11 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc% For using foreign language quotes, please refer to the \verb+\foreignquote+,
 %doc% \verb+\foreigntextquote+, or \verb+\foreignblockquote+ provided by
 %doc% \texttt{csquote} (see Section~\ref{sub:csquote}).
-\usepackage[american]{babel}  %% used languages; default language is last language of options
-%\usepackage[american,ngerman]{babel}  %% used languages; default language is last language of options
+%doc% 
+%doc% Please note that the default language of the document is the \emph{last} language
+%doc% which is added to the package options.
+%doc% 
+\usepackage[ngerman,american]{babel}  %% used languages; default language is *last* language of options
 
 %doc% 
 %doc% \subsection{\texttt{scrpage2}: Headers and footers}

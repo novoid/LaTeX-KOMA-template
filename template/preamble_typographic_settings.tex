@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2012-07-13 23:33:43 vk>
+%%%% Time-stamp: <2012-08-06 12:22:07 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -11,8 +11,8 @@
 %doc%
 %doc% The settings of file \verb#template/preamble_typographic_settings.tex# contain
 %doc% typographic finetuning related to things mentioned in literature.  The
-%doc% settings in this file relates to personal taste and most of all typographic
-%doc% experience. 
+%doc% settings in this file relates to personal taste and most of all: 
+%doc% \emph{typographic experience}. 
 %doc% 
 %doc% \paragraph{What should I do with this file?} You might as well skip the whole
 %doc% file by excluding the \verb#\input{template/preamble_typographic_settings.tex}# command
@@ -35,6 +35,26 @@
 %doc% Note: This setting might be default for \myacro{KOMA} script.
 %doc%
 
+
+%doc%
+%doc% \subsection{Font}
+%doc% 
+%doc% This template is using the Palatino font (package \texttt{mathpazo}) which results
+%doc% in a legible document and matching mathematical fonts for printout.
+%doc% 
+%doc% It is highly recommended that you either stick to the Palatino font or use the
+%doc% \LaTeX{} default fonts (by removing the package \texttt{mathpazo}).
+%doc% 
+%doc% Chosing different fonts is not
+%doc% an easy task. Please leave this to people with good knowledge on this subject.
+%doc% 
+%doc% One valid reason to change the default fonts is when your document is mainly
+%doc% read on a computer screen. In this case it is recommended to switch to a font
+%doc% \textsf{which is sans-serif like this}. This template contains several alternative
+%doc% font packages which can be activated in this file.
+%doc% 
+
+% for changing the default font, please go to the next subsection!
 
 %doc%
 %doc% \subsection{Text figures}
@@ -64,6 +84,19 @@
 %\usepackage{hfoldsty}  %% enables text figures using additional font
 %% ... OR use ...
 \usepackage[sc,osf]{mathpazo} %% switches to Palatino with small caps and old style figures
+
+%% Font selection from:
+%%     http://www.matthiaspospiech.de/latex/vorlagen/allgemein/preambel/fonts/
+%% use following lines *instead* of the mathpazo package above:
+%% ===== Serif =========================================================
+%% for Computer Modern (LaTeX default font), simply remove the mathpazo above
+%\usepackage{charter}\linespread{1.05} %% Charter
+%\usepackage{bookman}                  %% Bookman (laedt Avant Garde !!)
+%\usepackage{newcent}                  %% New Century Schoolbook (laedt Avant Garde !!)
+%% ===== Sans Serif ====================================================
+%\renewcommand{\familydefault}{\sfdefault}  %% this one in *combination* with the default mathpazo package
+%\usepackage{cmbright}                  %% CM-Bright (eigntlich eine Familie)
+%\usepackage{tpslifonts}                %% tpslifonts % Font for Slides
 
 
 %doc% 
