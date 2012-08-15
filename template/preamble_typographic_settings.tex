@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2012-08-06 12:22:07 vk>
+%%%% Time-stamp: <2012-08-15 18:34:32 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -108,9 +108,7 @@
 %doc% \paragraph{How?} Using the predefined macro \verb#\myacro{}# for things like
 %doc% \myacro{UNO} or \myacro{UNESCO} using \verb#\myacro{UNO}# or \verb#\myacro{UNESCO}#.
 %doc% 
-\newcommand{\myacro}[1]{%%  abbrevations using small caps
-\textsc{\lowercase{#1}}%%
-}
+\DeclareRobustCommand{\myacro}[1]{\textsc{\lowercase{#1}}}%%  abbrevations using small caps
 
 
 %doc% 
