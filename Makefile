@@ -94,9 +94,9 @@ publish: templatedocu pdf clean
 .PHONY: templatedocu
 templatedocu:
 	grep "%doc%" template/preamble.tex | sed 's/^.*%doc% //' > ${TEMPLATEDOCUFILE}
-	grep "%doc%" template/preamble_mycommands.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
-	grep "%doc%" template/preamble_typographic_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
-	grep "%doc%" template/preamble_pdf_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
+	grep "%doc%" template/mycommands.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
+	grep "%doc%" template/typographic_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
+	grep "%doc%" template/pdf_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	echo "%%---------------------------------------%%" >>${TEMPLATEDOCUFILE}
 	echo "\printbibliography\end{document}" >>${TEMPLATEDOCUFILE}
 	${PDFLATEX_CMD} ${TEMPLATEDOCUFILE}

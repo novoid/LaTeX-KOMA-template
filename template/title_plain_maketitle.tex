@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2012-08-20 17:46:20 vk>
+%%%% Time-stamp: <2013-02-02 21:29:25 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -11,10 +11,12 @@
 
 %% this is a very simple title page using LaTeX maketitle
 
-\lowertitleback{
-\mycolophon
-}%% end lowertitleback
-
+%% if myaddcolophon is set to "true", colophon is added:
+\ifthenelse{\boolean{myaddcolophon}}{
+  \lowertitleback{
+    \mycolophon
+  }%% end lowertitleback
+}{}
 
 \title{%%
 ~\hfill\includegraphics[width=3cm]{figures/TU_Graz_Logo}\\[5mm] %% a logo at the upper right corner

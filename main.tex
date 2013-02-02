@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2013-02-02 18:41:34 vk>
+%%%% Time-stamp: <2013-02-02 21:31:42 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -11,15 +11,134 @@
 %% ========================================================================
 %%%% Basic settings
 %% ========================================================================
-\input{template/preamble}
+%% (idea of using newcommands for basic documentclass settings from: Thomas Schlager)
+
+\newcommand{\mydocumentclass}{scrbook}
+%% "scrartcl", "scrreprt", or "scrbook".
+%% CAUTION: If changed, many other things change as well like heading structure
+
+\newcommand{\mypapersize}{A4}
+%% e.g., "A4", "letter", "legal", "executive", ...
+%% The size of the paper of the resulting PDF file.
+
+\newcommand{\mylaterality}{oneside}
+%% "oneside" or "twoside"
+%% Either you are creating a document which is printed on both, left pages
+%% and right pages (twoside) or you create a document which is printed
+%% on right pages only (oneside).
+
+\newcommand{\mydraft}{false}
+%% "true" or "false"
+%% Use draft mode? If true, included graphics are replaced by empty
+%% rectangles (of same size) and overfull boxes (in margin space) are
+%% marked with black box (-> easy to spot!)
+
+\newcommand{\myparskip}{half}
+%% e.g., "no", "full", "half", ...
+%% How to separate paragraphs: indention ("no") or spacing ("half",
+%% "full", ...).
+
+\newcommand{\myBCOR}{0mm}
+%% Inner binding correction. This value depends on the method which is
+%% being used to bind your printed result. Some techniques do not
+%% require a binding correction at all ("0mm"), other require for
+%% example "5mm". Refer to KOMA script documentation for further details.
+
+\newcommand{\myfontsize}{12pt}   
+%% e.g., 10pt, 11pt, 12pt
+%% The font size of the main text in pt (points).
+
+\newcommand{\mylinespread}{1.0} 
+%% e.g., 1.0, 1.5, 2.0
+%% Line spacing in %/100. For example 1.5 means 150% of the usual line
+%% spacing. Please use with caution: 100% ("1.0") is fine because the
+%% font was designed for it.
+
+\newcommand{\mylanguage}{ngerman,english}
+%% "english,ngerman", "ngerman,english", ...
+%% NOTE: The *last* language is the active one!
+%% See babel documentation for further details.
+
+%% BibLaTeX-settings: (see biblatex reference for further description)
+\newcommand{\mybiblatexstyle}{authoryear}
+%% e.g., "aphabetic", "authoryear", ...
+%% The biblatex style which is being used for referencing. See
+%% biblatex documentation for further details and more values.
+
+\newcommand{\mybiblatexdashed}{false}  %% "true" or "false"
+%% If true: replace recurring reference authors with a dash.
+
+\newcommand{\mybiblatexbackref}{true}  %% "true" or "false"
+%% If true: create backward links from reference to citations.
+
+\newcommand{\mybiblatexfile}{references-biblatex.bib}
+%% Name of the biblatex file that holds the references.
+
+\newcommand{\mydispositioncolor}{30,103,182}
+%% e.g., "30,103,182" (blue/turquois), "0,0,0" (black), ...
+%% Color of the headings and so forth in RGB (red,green,blue) values.
+
+\newcommand{\mycolorlinks}{true}  %% "true" or "false"
+%% Enables or disables colored links (hyperref package).
+
+\newcommand{\mytitlepage}{template/title_Thesis_TU_Graz}
+%% Your own or one of following pre-defined title pages:
+%% "template/title_plain_maketitle": simple maketitle page
+%% "template/title_Diplomarbeit_KF_Uni_Graz.tex": fancy (german) title page for KF Uni Graz
+%% "template/title_Thesis_TU_Graz": titlepage for Graz University of Technology (correct Corporate Design)
+
+\newcommand{\mytodonotesoptions}{}
+%% e.g., "" (empty), "disable", ...
+%% Options for the todonotes-package. If "disable", all todonotes will
+%% be hidden (including listoftodos).
+
+%% Load main settings for document preamble:
+\input{template/preamble}%% DO NOT REMOVE THIS LINE!
+
+\setboolean{myaddcolophon}{false}  %% "true" or "false"
+%% If set to "true": a colophon (with notes about this document
+%% template, LaTeX, ...) is added after the title page.
+
+\setboolean{myaddlistoftodos}{false}  %% "true" or "false"
+%% If set to "true": the current list of open todos is added after the
+%% table of contents. If \mytodonotesoptions is set to "disable", no
+%% list of todos is added, independent of this setting here.
+
+
 
 %% ========================================================================
 %%%% Document metadata
 %% ========================================================================
-\input{userdata}
+
+%% general metadata:
+\newcommand{\myauthor}{AUTHOR}  %% also used for PDF metadata (hyperref)
+\newcommand{\mytitle}{TITLE}  %% also used for PDF metadata (hyperref)
+\newcommand{\mysubject}{SUBJECT}  %% also used for PDF metadata (hyperref)
+\newcommand{\mykeywords}{KEYWORDS}  %% also used for PDF metadata (hyperref)
+
+%% this information is used only for generating the title page:
+\newcommand{\myworktitle}{Master's Thesis}  %% official type of work like ``Master theses''
+\newcommand{\mygrade}{Master of Science} %% title you are getting with this work like ``Master of ...''
+\newcommand{\mystudy}{Telematik} %% your study like ``Arts''
+\newcommand{\myuniversity}{Graz University of Technology} %% your university/school
+\newcommand{\myinstitute}{Institute for Softwaretechnology} %% affiliation
+\newcommand{\myinstitutehead}{Univ.-Prof.\,Dipl-Ing.\,Dr.techn.~Some One} %% head of institute
+\newcommand{\mysupervisor}{Dr.~Some Body} %% your supervisor
+\newcommand{\myevaluator}{Prof.~Some Genius} %% your evaluator
+\newcommand{\myhomestreet}{Street~42} %% your home street (with house number)
+\newcommand{\myhometown}{Graz} %% your home town
+\newcommand{\myhomepostalnumber}{8010} %% your postal number of home town
+\newcommand{\mysubmissionmonth}{November} %% month you are handing in
+\newcommand{\mysubmissionyear}{2013} %% year you are handing in
+\newcommand{\mysubmissiontown}{\myhometown} %% town of handing in (or \myhometown)
+
+%% additional information for generic_documentation title page
+\newcommand{\myid}{1234567} %% Matrikelnummer
+\newcommand{\mylecture}{LECTURE} %% 
+
 
 %% ========================================================================
-%%%% My own commands
+%%%% MISC command definitions
 %% ========================================================================
 \input{template/mycommands}
 
@@ -33,6 +152,8 @@
 %%%% MISC usepackages
 %% ========================================================================
 
+%% ... it's OK to put here your own usepackage commands ...
+
 
 
 
@@ -40,14 +161,20 @@
 %%%% MISC self-defined commands and settings
 %% ========================================================================
 
+%% ... it's OK to put here your own newcommand/newenvironment-definitions ...
+
+
+
+
 \newcommand{\myLaT}{\LaTeX{}@TUG\xspace} %% LaTeX@TUG text "logo"
 
 \hyphenation{ex-am-ple hy-phen-ate}  %% in order to use German umlauts
 %% here (Ver-\"of-fent-li-chung), you have to check for 
 %% activated \usepackage[T1]{fontenc} in the preamble
 
-%% override default language of babel:
-\selectlanguage{american}
+%% override default language of babel: (be sure to know, what you're
+%% doing here)
+%\selectlanguage{american}
 %\selectlanguage{ngerman}
 
 %% ========================================================================
@@ -63,6 +190,7 @@
 
 %% acronyms in small caps: \myacro{UNESCO}
 
+
 \input{template/pdf_settings}  %% should be *last* definitions in preamble!
 %% ========================================================================
 %%%% begin{document}
@@ -71,12 +199,11 @@
 
 \frontmatter                    %% KOMA: roman page numbers and such; only available in scrbook
 
-\input{colophon}       %% adds information about editor, LaTeX, font, ...
+\input{colophon}                %% defines information about editor, LaTeX, font, ...
 
 %% Choose your desired title page:
-%\input{template/title_plain_maketitle}               %% simple maketitle page
-%\input{template/title_Diplomarbeit_KF_Uni_Graz.tex}  %% fancy (german) title page for KF Uni Graz
-\input{template/title_Thesis_TU_Graz}                 %% titlepage for Graz University of Technology (correct Corporate Design)
+\input{\mytitlepage}            %% include title page
+
 
 \input{declaration}    %% Statutory Declaration
 % \input{thanks}                %% this is a suggestion: you have to create this file on demand
@@ -86,10 +213,15 @@
 
 \listoffigures
 
-%\newpage\listoftodos           %% handy if you are using todonotes with \todo{}
-                                %% with todonotes-package option "disable" you can get rid of any todo in the output
+%% if myaddlistoftodos is set to "true", the current list of open todos is added:
+\ifthenelse{\boolean{myaddlistoftodos}}{
+  \newpage\listoftodos          %% handy if you are using todonotes with \todo{}
+}{}                             %% with todonotes-package option "disable" you can get rid of any todo in the output
 
 \mainmatter                     %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
+
+
+
 
 \input{example-short-chapter}   %% remove this line to get rid of the example chapter
 \input{example-style-chapter}   %% remove this line to get rid of the style chapter
@@ -104,8 +236,13 @@
 \appendix                       %% closes main document, appendix follows until end; only available in book-classes
 \addpart*{Appendix}             %% adding Appendix to tableofcontents
 
+
 \printbibliography              %% remove, if using BibTeX instead of biblatex
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
+
+
+
+
 
 
 %%%% end{document}

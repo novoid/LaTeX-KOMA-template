@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2012-08-20 17:47:45 vk>
+%%%% Time-stamp: <2013-02-02 21:23:23 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -11,7 +11,7 @@
 %doc% \section{\texttt{pdf\_settings.tex} --- Settings related to PDF output}
 %doc% \label{sec:pdf}
 %doc% 
-%doc% The file \verb#template/preamble_pdf_settings.tex# basically contains the definitions for
+%doc% The file \verb#template/pdf_settings.tex# basically contains the definitions for
 %doc% the \href{http://tug.org/applications/hyperref/}{\texttt{hyperref} package}
 %doc% including the
 %doc% \href{http://www.ctan.org/tex-archive/macros/latex/required/graphics/}{\texttt{graphicx}
@@ -34,10 +34,10 @@
 pdftitle={\mytitle}, %
 pdfauthor={\myauthor}, %
 pdfsubject={\mysubject}, %
-pdfcreator={Accomplished with: pdfLaTeX, hyperref-package, and GNU/Emacs. No anmimals, MS-EULA or BSA-rules were harmed.},
+pdfcreator={Accomplished with: pdfLaTeX, biber, and hyperref-package. No anmimals, MS-EULA or BSA-rules were harmed.},
 pdfproducer={\myauthor},
 pdfkeywords={\mykeywords},
-a4paper=true, %
+%a4paper=true, %
 pdftex=true, %
 backref, %
 pagebackref=false, % creates backward references too
@@ -51,8 +51,8 @@ linkcolor=DispositionColor, %%
 pagecolor=DispositionColor, %%
 citecolor=DispositionColor, %%
 anchorcolor=DispositionColor, %%
-colorlinks=true, % turn on colored links (better for on-screen reading)
-%colorlinks=false % turn off colored links (better for printout versions)
+colorlinks=\mycolorlinks, % turn on/off colored links (on: better for
+                          % on-screen reading; off: better for printout versions)
 ]{hyperref}
 
 %\DeclareGraphicsExtensions{.pdf}

@@ -1,4 +1,4 @@
-%% Time-stamp: <2012-11-24 12:08:19 vk>
+%% Time-stamp: <2013-02-02 21:49:04 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -8,6 +8,7 @@
 %%
 
 %doc% %% overriding preamble/preamble.tex %%
+%doc% \newcommand{\mylinespread}{1.0}  \newcommand{\mycolorlinks}{true}
 %doc% \documentclass[12pt,paper=a4,parskip=half,DIV=calc,oneside,%%
 %doc% headinclude,footinclude=false,open=right,bibliography=totoc]{scrartcl}
 %doc% \usepackage[utf8]{inputenc}\usepackage[american]{babel}\usepackage{scrpage2}
@@ -17,10 +18,7 @@
 %doc% \usepackage{todonotes}
 %doc% \definecolor{DispositionColor}{RGB}{30,103,182}
 %doc% 
-%doc% \usepackage[backend=biber,%% using "biber" to compile references (instead of "biblatex")
-%doc% style=alphabetic,%% see biblatex documentation
-%doc% natbib=true,%% offering natbib-compatible commands
-%doc% hyperref=true,%% using hyperref-package references
+%doc% \usepackage[backend=biber,style=authoryear,dashed=false,natbib=true,hyperref=true%%
 %doc% ]{biblatex}
 %doc% 
 %doc% \addbibresource{references-biblatex.bib} %% remove, if using BibTeX instead of biblatex
@@ -40,9 +38,9 @@
 %doc% 
 %doc% 
 %doc% %% using existing TeX files %%
-%doc% \input{template/preamble_mycommands}
-%doc% \input{template/preamble_typographic_settings}
-%doc% \input{template/preamble_pdf_settings}
+%doc% \input{template/mycommands}
+%doc% \input{template/typographic_settings}
+%doc% \input{template/pdf_settings}
 %doc% 
 %doc% \begin{document}
 %doc% %% title page %%
@@ -72,19 +70,24 @@
 %doc%    \item replace \enquote{Projectname} with your filename
 %doc%    \item do not use any file extension like \texttt{.tex} or \texttt{.pdf}
 %doc%    \end{itemize}
-%doc% \item OPTIONAL: Modify files in the folder \texttt{template/preamble} if necessary
+%doc% \item Modify settings in \texttt{main.tex} to meet your requirements:
 %doc%   \begin{itemize}
-%doc%   \item following sections should give you an idea
-%doc%     what to do and why
+%doc%   \item Basic settings
+%doc%     \begin{itemize}
+%doc%     \item paper size, languages, font size, citation style,
+%doc%           title page, and so forth
+%doc%     \end{itemize}
+%doc%   \item Document metadata
+%doc%     \begin{itemize}
+%doc%     \item \verb+\myauthor+, \verb+\mytitle+, and so forth
+%doc%     \end{itemize}
 %doc%   \end{itemize}
-%doc% \item Modify \myfile{userdata.tex}:
-%doc%   \begin{itemize}
-%doc%   \item \verb+\myauthor+, \verb+\mytitle+, and so forth
-%doc%   \end{itemize}
-%doc% \item Modify \myfile{colophon.tex} (or remove it in \myfile{main.tex})
-%doc% \item Modify \myfile{main.tex}:
+%doc% \item Modify \myfile{colophon.tex} (or disable it in
+%doc%       \myfile{main.tex}: \texttt{myaddcolophon})
+%doc% \item Further down in \myfile{main.tex}:
 %doc%   \begin{itemize}
 %doc%   \item your desired general document structure
+%doc%         (\verb+\include{introduction}+, \ldots)
 %doc%   \end{itemize}
 %doc% \item replace file or fill your content in \myfile{introduction.tex}
 %doc%   \begin{itemize}
@@ -108,6 +111,12 @@
 %doc%   \item OR with \myacro{GNU} make: run \texttt{make pdf}
 %doc%   \end{itemize}
 %doc% \end{enumerate}
+%doc% 
+%doc% In general, there should not be any reason to modify a file in
+%doc% the \texttt{template} folder. Any important setting should be
+%doc% accessible in the main folder. This way it is easy to update
+%doc% the template independent of the content of the document.
+%doc% 
 %doc% 
 %doc% 
 %doc% \subsection{How to compile this document}
@@ -173,24 +182,30 @@
 %doc% in \texttt{main.tex} since it contains important definitions. This file contains
 %doc% settings which are documented well an can be modified according to your needs.
 %doc% It is recommended that you fully understand each setting you modify in order to
-%doc% get a good document result.
+%doc% get a good document result. However, you can set basic values in the
+%doc% \texttt{main.tex} file: document class, font size, paper size,
+%doc% paragraph separation mode, draft mode, binding correction, and whether
+%doc% your document will be a one sided document or you are planning to
+%doc% create a document which is printed on both, left side and right side.
 %doc% 
 
 \documentclass[%
-12pt,%%  size of the main text
-paper=a4,%%  paper format
-parskip=half,%%  vertical space between paragraphs (instead of indenting first par-line)
-DIV=calc,%%  calculates a good DIV value for type area; 66 characters/line is great
-%oneside,%%  document is not printed on left and right sides, only right side
-%twoside,%%  document is printed on left and right sides
-headinclude,%%  FIXXME
-footinclude=false,%%  FIXXME
-open=right,%%  FIXXME
-appendixprefix=true,%% adds appendix prefix; only for book-classes with \backmatter
-bibliography=totoc,%% adds the bibliography to table of contents (without number)
-%]{scrartcl}%% article class of KOMA: FIXXME
-%]{scrreprt}%% article class of KOMA: FIXXME
-]{scrbook}%% article class of KOMA: FIXXME
+fontsize=\myfontsize,%% size of the main text
+paper=\mypapersize,  %% paper format
+parskip=\myparskip,  %% vertical space between paragraphs (instead of indenting first par-line)
+DIV=calc,            %% calculates a good DIV value for type area; 66 characters/line is great
+headinclude=true,    %% is header part of margin space or part of page content?
+footinclude=false,   %% is footer part of margin space or part of page content?
+open=right,          %% "right" or "left": start new chapter on right or left page
+appendixprefix=true, %% adds appendix prefix; only for book-classes with \backmatter
+bibliography=totoc,  %% adds the bibliography to table of contents (without number)
+draft=\mydraft,      %% if true: included graphics are omitted and black boxes
+                     %%          mark overfull boxes in margin space
+BCOR=\myBCOR,        %% binding correction (depends on how you bind
+                     %% the resulting printout.
+\mylaterality        %% oneside: document is not printed on left and right sides, only right side
+                     %% twoside: document is printed on left and right sides
+]{\mydocumentclass}  %% article class of KOMA: FIXXME
 
 % FIXXME: adopting class usage:
 % from scrbook -> scrartcl OR scrreport:
@@ -214,7 +229,10 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc% \subsection{\texttt{babel}: Language settings}
 %doc% 
 %doc% The default setting of the language is American. Please change settings for
-%doc% additional or alternative languages used.
+%doc% additional or alternative languages used in \texttt{main.tex}.
+%doc% 
+%doc% Please note that the default language of the document is the \emph{last} language
+%doc% which is added to the package options.
 %doc% 
 %doc% To set only parts of you document in a different language as the rest, use for example
 %doc% \verb+\foreignlanguage{ngerman}{Beispieltext in deutscher Sprache}+.
@@ -222,10 +240,7 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc% \verb+\foreigntextquote+, or \verb+\foreignblockquote+ provided by
 %doc% \texttt{csquotes} (see Section~\ref{sub:csquotes}).
 %doc% 
-%doc% Please note that the default language of the document is the \emph{last} language
-%doc% which is added to the package options.
-%doc% 
-\usepackage[ngerman,american]{babel}  %% used languages; default language is *last* language of options
+\usepackage[\mylanguage]{babel}  %% used languages; default language is *last* language of options
 
 %doc% 
 %doc% \subsection{\texttt{scrpage2}: Headers and footers}
@@ -276,7 +291,16 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc% to date binary of \texttt{Biber} from its
 %doc% homepage\footnote{\url{http://biblatex-biber.sourceforge.net/}}.
 %doc% 
+%doc% 
+%doc% In \texttt{main.tex} you can define several general \texttt{biblatex}
+%doc% options: citation style, whether or not multiple occurrences of
+%doc% authors are replaced with dashes, or if backward references (from
+%doc% references to citations) should be added.
+%doc% 
+
 %doc% \subsubsection{Example citation commands}
+%doc% 
+%doc% This section demonstrates some example citations using the style \texttt{authoryear}.
 %doc% 
 %doc% \begin{itemize}
 %doc% \item cite \cite{Eijkhout2008} and cite \cite{Bringhurst1993, Eijkhout2008}.
@@ -294,7 +318,8 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc% \end{itemize}
 %doc% 
 %doc% Please note that the citation style as well as the bibliography style
-%doc% can be changed very easily.
+%doc% can be changed very easily. Refer to the settings in
+%doc% \texttt{main.tex} as well as the very good documentation of \texttt{biblatex}.
 %doc% 
 %doc% \subsubsection{Manual compiling with \texttt{Biber}}
 %doc% 
@@ -340,15 +365,15 @@ bibliography=totoc,%% adds the bibliography to table of contents (without number
 %doc% 
 %doc% 
 \usepackage[backend=biber, %% using "biber" to compile references (instead of "biblatex")
-style=authoryear, %% see biblatex documentation
+style=\mybiblatexstyle, %% see biblatex documentation
 %style=alphabetic, %% see biblatex documentation
-dashed=false, %% do *not* replace recurring reference authors with a dash
-backref=true, %% create backlings from references to citations
+dashed=\mybiblatexdashed, %% do *not* replace recurring reference authors with a dash
+backref=\mybiblatexbackref, %% create backlings from references to citations
 natbib=true, %% offering natbib-compatible commands
 hyperref=true, %% using hyperref-package references
 ]{biblatex}  %% remove, if using BibTeX instead of biblatex
 
-\addbibresource{references-biblatex.bib} %% remove, if using BibTeX instead of biblatex
+\addbibresource{\mybiblatexfile} %% remove, if using BibTeX instead of biblatex
 
 
 
@@ -379,6 +404,11 @@ hyperref=true, %% using hyperref-package references
 %doc% For using if/then/else statements for example in macros
 \usepackage{ifthen}  %% fuer Wiederholungen usw.
 
+%% pre-define ifthen-boolean variables:
+\newboolean{myaddcolophon}
+\newboolean{myaddlistoftodos}
+
+
 %doc% \item[\texttt{\href{http://www.ctan.org/tex-archive/fonts/eurosym}{%%
 %doc% eurosym%%
 %doc% }}] 
@@ -395,10 +425,9 @@ hyperref=true, %% using hyperref-package references
 %doc% xcolor%%
 %doc% }}] 
 %doc% This package defines basic colors. If you want to get rid of colored links and headings
-%doc% please change it to \{0,0,0\}.
+%doc% please change corresponding value in \texttt{main.tex} to \{0,0,0\}.
 \usepackage[usenames,dvipsnames]{xcolor}
-%\definecolor{DispositionColor}{RGB}{0,0,9} %% black color everywhere
-\definecolor{DispositionColor}{RGB}{30,103,182} %% used for links and so forth in screen-version
+\definecolor{DispositionColor}{RGB}{\mydispositioncolor} %% used for links and so forth in screen-version
 
 %doc% \item[\texttt{\href{http://www.ctan.org/pkg/ulem}{%%
 %doc% ulem%%
@@ -445,9 +474,10 @@ hyperref=true, %% using hyperref-package references
 %doc% \verb#\missingfigure{}# and \verb#\listoftodos#. The latter one creates an index of all
 %doc% open todos which is very useful for getting an overview of open issues.
 %doc% The package \texttt{todonotes} require the packages \texttt{ifthen}, \texttt{xkeyval}, \texttt{xcolor}, 
-%doc% \texttt{tikz}, \texttt{calc}, and \texttt{graphicx}. Activate \verb#\listoftodos# in \texttt{main.tex}.
-\usepackage{todonotes}
-%\usepackage[disable]{todonotes}  %% option "disable" removes all todonotes output from resulting document
+%doc% \texttt{tikz}, \texttt{calc}, and \texttt{graphicx}. Activate
+%doc% and configure \verb#\listoftodos# in \texttt{main.tex}.
+%\usepackage{todonotes}
+\usepackage[\mytodonotesoptions]{todonotes}  %% option "disable" removes all todonotes output from resulting document
 
 %disabled% \item[\texttt{\href{http://www.ctan.org/tex-archive/macros/latex/contrib/blindtext}{%%
 %disabled% blindtext%%
@@ -469,6 +499,8 @@ hyperref=true, %% using hyperref-package references
 
 
 %doc% \end{enumerate}
+
+
 
 
 %%%% End 

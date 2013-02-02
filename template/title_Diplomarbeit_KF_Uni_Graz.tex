@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2012-08-20 17:45:54 vk>
+%%%% Time-stamp: <2013-02-02 21:30:07 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -48,11 +48,16 @@ von\\[5mm]
 \normalsize %% new page, reset font size
 
 \newpage
-\thispagestyle{empty}  %% no page header or footer
 
-~
-\vfill
-\mycolophon
+%% if myaddcolophon is set to "true", colophon is added:
+\ifthenelse{\boolean{myaddcolophon}}{
+  \newpage
+  \thispagestyle{empty}  %% no page header or footer
+
+  ~
+  \vfill
+  \mycolophon
+}{}
 \newpage
 
 %% end of title page

@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2012-08-20 17:48:29 vk>
+%%%% Time-stamp: <2013-02-02 21:28:44 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -62,12 +62,15 @@ Supervisor: \mysupervisor\\
 \end{center}
 \end{titlepage}
 
-\newpage
-\thispagestyle{empty}  %% no page header or footer
+%% if myaddcolophon is set to "true", colophon is added:
+\ifthenelse{\boolean{myaddcolophon}}{
+  \newpage
+  \thispagestyle{empty}  %% no page header or footer
 
-~
-\vfill
-\mycolophon
+  ~
+  \vfill
+  \mycolophon
+}{}
 \newpage
 
 %% end of title page

@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2012-11-24 11:58:09 vk>
+%%%% Time-stamp: <2013-02-02 21:44:05 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -9,13 +9,13 @@
 %doc%
 %doc% \section{\texttt{typographic\_settings.tex} --- Typographic finetuning}
 %doc%
-%doc% The settings of file \verb#template/preamble_typographic_settings.tex# contain
+%doc% The settings of file \verb#template/typographic_settings.tex# contain
 %doc% typographic finetuning related to things mentioned in literature.  The
 %doc% settings in this file relates to personal taste and most of all: 
 %doc% \emph{typographic experience}. 
 %doc% 
 %doc% \paragraph{What should I do with this file?} You might as well skip the whole
-%doc% file by excluding the \verb#\input{template/preamble_typographic_settings.tex}# command
+%doc% file by excluding the \verb#\input{template/typographic_settings.tex}# command
 %doc% in \texttt{main.tex}.  For standard usage it is recommended to stay with the
 %doc% default settings.
 %doc% 
@@ -178,10 +178,10 @@
 %doc% \subsection{Line spread}
 %doc% 
 %doc% If you have to enlarge the distance between two lines of text, you can
-%doc% increase it using the \texttt{linespread} command. By default, it is
+%doc% increase it using the \texttt{\mylinespread} command in \texttt{main.tex}. By default, it is
 %doc% deactivated (set to 100~percent). Modify only with caution since it influences the
 %doc% page layout and could lead to ugly looking documents.
-%\linespread{1.5}  %% line spread of 150%
+\linespread{\mylinespread}  %% line spread
 
 %doc% 
 %doc% \subsection{Optional: Lines above and below the chapter head}
