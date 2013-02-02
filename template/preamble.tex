@@ -1,4 +1,4 @@
-%% Time-stamp: <2013-02-02 21:49:04 vk>
+%% Time-stamp: <2013-02-02 22:28:27 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -11,7 +11,7 @@
 %doc% \newcommand{\mylinespread}{1.0}  \newcommand{\mycolorlinks}{true}
 %doc% \documentclass[12pt,paper=a4,parskip=half,DIV=calc,oneside,%%
 %doc% headinclude,footinclude=false,open=right,bibliography=totoc]{scrartcl}
-%doc% \usepackage[utf8]{inputenc}\usepackage[american]{babel}\usepackage{scrpage2}
+%doc% \usepackage[utf8]{inputenc}\usepackage[ngerman,american]{babel}\usepackage{scrpage2}
 %doc% \usepackage{ifthen}\usepackage{eurosym}\usepackage{xspace}\usepackage[usenames,dvipsnames]{xcolor}
 %doc% \usepackage{enumitem}
 %doc% \usepackage[pdftex]{graphicx}
@@ -340,6 +340,61 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% your own reference file(s). Look out for
 %doc% \verb#\usepackage[...]{biblatex}# to modify its options.
 %doc% 
+%doc% \subsubsection{Using this \texttt{biber} with TeXworks}
+%doc% 
+%doc% 
+%doc% The \href{https://www.tug.org/texworks/}{TeXworks} editor is a very
+%doc% basic (but fine) \LaTeX{} editor to start with. It is included in
+%doc% \href{http://miktex.org/}{MiKTeX} and
+%doc% \href{http://miktex.org/portable}{MiKTeX portable} and supports
+%doc% \href{https://en.wikipedia.org/wiki/Syntax_highlighting}{syntax
+%doc%   highlighting} and
+%doc% \href{http://itexmac.sourceforge.net/SyncTeX.html}{SyncTeX} to
+%doc% synchronize PDF output and \LaTeX{} source code.
+%doc% 
+%doc% Unfortunately, TeXworks shipped with MiKTeX does not support compiling
+%doc% using \texttt{biber} (biblatex) out of the box. Here is a solution to
+%doc% this issue. Go to TeXworks: \texttt{Edit} $\rightarrow$
+%doc% \texttt{Preferences~\ldots} $\rightarrow$ \texttt{Typesetting} $\rightarrow$
+%doc% \texttt{Processing tools} and add a new entry (using the plus icon):
+%doc% 
+%doc% \begin{tabbing}
+%doc%   Arguments: \= foobar  \kill
+%doc%   Name:      \> \verb#pdflatex+biber# \\
+%doc%   Program:   \> \emph{find the \texttt{template/pdflatex+biber.bat} file from your disk} \\
+%doc%   Arguments: \> \verb+$fullname+ \\
+%doc%              \> \verb+$basename+
+%doc% \end{tabbing}
+%doc% 
+%doc% Activate the \enquote{View PDF after running} option.
+%doc% 
+%doc% Close the preferences dialog and you will now have an additional
+%doc% choice in the drop down list for compiling your document. Choose the
+%doc% new entry called \verb#pdflatex+biber# and start a happier life with
+%doc% \texttt{biber}.
+%doc% 
+%doc% In case your TeXworks has a German user interface, here the key
+%doc% aspects in German as well:
+%doc% 
+%doc% \begin{otherlanguage}{ngerman}
+%doc% 
+%doc%   \texttt{Bearbeiten} $\rightarrow$ \texttt{Einstellungen~\ldots} $\rightarrow$
+%doc%   \texttt{Textsatz} $\rightarrow$ \texttt{Verarbeitungsprogramme} $\rightarrow$
+%doc%   + \emph{(neues Verarbeitungsprogramm)}:
+%doc% 
+%doc% \begin{tabbing}
+%doc%   Befehl/Datei: \= foobar  \kill
+%doc%     Name: \> pdflatex+biber \\
+%doc%     Befehl/Datei: \> \emph{die \texttt{template/pdflatex+biber.bat} im Laufwerk suchen} \\
+%doc%     Argumente: \> \verb+$fullname+ \\
+%doc%                \> \verb+$basename+
+%doc% \end{tabbing}
+%doc% 
+%doc% \enquote{PDF nach Beendigung anzeigen} aktivieren.
+%doc% 
+%doc% \end{otherlanguage}
+%doc% 
+
 %doc% \subsubsection{Using this template with \textsc{Bib}\TeX{}}
 %doc% 
 %doc% If you do not want to use \texttt{Biber} and \texttt{biblatex}, you

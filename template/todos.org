@@ -1,23 +1,8 @@
-## Time-stamp: <2013-02-02 18:40:55 vk>
+## Time-stamp: <2013-02-02 22:28:50 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
 
-
-* NEXT move some settings from template/* to main.tex as newcommand-definitions :KarlVoit:
-:PROPERTIES:
-:CREATED:  [2013-02-02 Sat 18:37]
-:END:
-
-- like http://ufo.tugraz.at/assets/Downloads/UFO-Vorlage.zip
-
-* NEXT document example usage with MikTex 2.8 and TeXworks         :KarlVoit:
-:PROPERTIES:
-:CREATED: [2012-03-06 Tue 17:52]
-:END:
-
-- see id:2012-02-25latex
-- see id:2013-02-02TeXworksbiber
 
 * NEXT pointers to [[http://en.wikibooks.org/wiki/LaTeX/Packages#Packages_list][other packages]] (not included in this template):
 :PROPERTIES:
@@ -27,16 +12,6 @@
 - sidewaystable
 - paralist (compact version of itemize and enumerate)
 - ...
-
-* NEXT document how to move to one sided document                  :KarlVoit:
-:PROPERTIES:
-:CREATED: [2012-03-06 Tue 17:53]
-:END:
-
-* NEXT document how to generate a draft document version
-:PROPERTIES:
-:CREATED: [2012-03-06 Tue 17:53]
-:END:
 * NEXT define prerequisites
 :PROPERTIES:
 :CREATED: <2011-07-26 Tue 18:03>
@@ -103,6 +78,35 @@
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:50>
 :END:
+
+* DONE document example usage with MikTex 2.8 and TeXworks         :KarlVoit:
+CLOSED: [2013-02-02 Sat 22:28]
+:PROPERTIES:
+:CREATED: [2012-03-06 Tue 17:52]
+:END:
+
+- see id:2012-02-25latex
+- see id:2013-02-02TeXworksbiber
+
+* DONE document how to move to one sided document                  :KarlVoit:
+CLOSED: [2013-02-02 Sat 22:00]
+:PROPERTIES:
+:CREATED: [2012-03-06 Tue 17:53]
+:END:
+
+* DONE document how to generate a draft document version
+CLOSED: [2013-02-02 Sat 22:00]
+:PROPERTIES:
+:CREATED: [2012-03-06 Tue 17:53]
+:END:
+
+* DONE move some settings from template/* to main.tex as newcommand-definitions :KarlVoit:
+CLOSED: [2013-02-02 Sat 22:00]
+:PROPERTIES:
+:CREATED:  [2013-02-02 Sat 18:37]
+:END:
+
+- like http://ufo.tugraz.at/assets/Downloads/UFO-Vorlage.zip
 
 * DONE replace \fixxme{} with package «todonotes»
 CLOSED: [2012-03-25 Sun 17:08]
