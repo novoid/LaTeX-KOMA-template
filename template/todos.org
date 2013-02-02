@@ -1,8 +1,23 @@
-## Time-stamp: <2012-03-25 17:08:56 vk>
+## Time-stamp: <2013-02-02 18:40:55 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
 
+
+* NEXT move some settings from template/* to main.tex as newcommand-definitions :KarlVoit:
+:PROPERTIES:
+:CREATED:  [2013-02-02 Sat 18:37]
+:END:
+
+- like http://ufo.tugraz.at/assets/Downloads/UFO-Vorlage.zip
+
+* NEXT document example usage with MikTex 2.8 and TeXworks         :KarlVoit:
+:PROPERTIES:
+:CREATED: [2012-03-06 Tue 17:52]
+:END:
+
+- see id:2012-02-25latex
+- see id:2013-02-02TeXworksbiber
 
 * NEXT pointers to [[http://en.wikibooks.org/wiki/LaTeX/Packages#Packages_list][other packages]] (not included in this template):
 :PROPERTIES:
@@ -13,7 +28,7 @@
 - paralist (compact version of itemize and enumerate)
 - ...
 
-* NEXT document how to move to one sided document
+* NEXT document how to move to one sided document                  :KarlVoit:
 :PROPERTIES:
 :CREATED: [2012-03-06 Tue 17:53]
 :END:
@@ -48,12 +63,6 @@
 :CREATED: [2011-12-10 Sat 21:30]
 :END:
 
-* NEXT document example usage with MikTex 2.8 and Texmaker
-:PROPERTIES:
-:CREATED: [2012-03-06 Tue 17:52]
-:END:
-
-see id:2012-02-25latex
 * NEXT how to switch language
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:31]
