@@ -1,4 +1,4 @@
-%% Time-stamp: <2013-02-02 21:23:11 vk>
+%% Time-stamp: <2013-02-03 15:12:53 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -8,7 +8,8 @@
 %%
 
 %doc%
-%doc% \section{\texttt{mycommands.tex} --- various definitions}
+%doc% \section{\texttt{mycommands.tex} --- various definitions}\myinteresting
+%doc% \label{sec:mycommands}
 %doc%
 %doc% In file \verb#template/mycommands.tex# many useful commands are being
 %doc% defined. 
@@ -21,7 +22,7 @@
 %doc% One of the best advantages of \LaTeX{} compared to \myacro{WYSIWYG} software products is
 %doc% the possibility to define and use macros within text. This empowers the user to
 %doc% a great extend.  Many things can be defined using \verb#\newcommand{}# and
-%doc% automates repeating tasks. It its recommended to use macros not only for
+%doc% automates repeating tasks. It is recommended to use macros not only for
 %doc% repetitive tasks but also for separating form from content such as \myacro{CSS}
 %doc% does for \myacro{XHTML}. Think of including graphics in your document: after
 %doc% writing your book, you might want to change all captions to the upper side of
@@ -31,7 +32,7 @@
 %doc% macro for including graphics enables you to modify the position caption on only
 %doc% \emph{one} place: at the definition of the macro.
 %doc% 
-%doc% Following section describes some macros that came with this document template
+%doc% The following section describes some macros that came with this document template
 %doc% from \myLaT and you are welcome to modify or extend them or to create
 %doc% your own macros!
 %doc% 
@@ -39,9 +40,9 @@
 %doc% 
 %doc% \subsection{\texttt{myfig} --- including graphics made easy}
 %doc% 
-%doc% The classic: you can easily add graphics to you document with \verb#\myfig#:
+%doc% The classic: you can easily add graphics to your document with \verb#\myfig#:
 %doc% \begin{verbatim}
-%doc%  \myfig{flower}%% filename w/o extension in directory "figures"
+%doc%  \myfig{flower}%% filename w/o extension in the folder figures
 %doc%        {width=0.7\textwidth}%% maximum width/height, aspect ratio will be kept
 %doc%        {This flower was photographed at my home town in 2010}%% caption
 %doc%        {Home town flower}%% optional (short) caption for list of figures

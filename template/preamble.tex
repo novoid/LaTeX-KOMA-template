@@ -1,4 +1,4 @@
-%% Time-stamp: <2013-02-03 11:23:01 vk>
+%% Time-stamp: <2013-02-03 16:41:14 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -16,6 +16,7 @@
 %doc% \usepackage{enumitem}
 %doc% \usepackage[pdftex]{graphicx}
 %doc% \usepackage{todonotes}
+%doc% \usepackage{dingbat,bbding} %% special characters
 %doc% \definecolor{DispositionColor}{RGB}{30,103,182}
 %doc% 
 %doc% \usepackage[backend=biber,style=authoryear,dashed=false,natbib=true,hyperref=true%%
@@ -25,7 +26,8 @@
 %doc% 
 %doc% %% overriding userdata.tex %%
 %doc% \newcommand{\myauthor}{Karl Voit}\newcommand{\mytitle}{LaTeX Template Documentation}
-%doc% \newcommand{\mysubject}{A comprehensive guide to use this template}
+%doc% \newcommand{\mysubject}{A Comprehensive Guide to Use the
+%doc% Template from https://github.com/novoid/LaTeX-KOMA-template}
 %doc% \newcommand{\mykeywords}{LaTeX, pdflatex, template, documentation, biber, biblatex}
 %doc% 
 %doc% \newcommand{\myLaT}{\LaTeX{}@TUG\xspace}
@@ -44,93 +46,197 @@
 %doc% 
 %doc% \begin{document}
 %doc% %% title page %%
-%doc% \title{~\hfill\includegraphics[width=3cm]{figures/TU_Graz_Logo}\\[5mm]\mytitle}\subtitle{\mysubject}
-%doc% \author{\myauthor\thanks{\href{http://LaTeX.TUGraz.at}{http://LaTeX.TUGraz.at}}\date{\today}}
+%doc% \title{\mytitle}\subtitle{\mysubject}
+%doc% \author{\myauthor}
+%doc% \date{\today}
+%doc% 
 %doc% \maketitle\newpage
 %doc% 
 %doc% \tableofcontents\newpage
 %doc% %%---------------------------------------%%
+
 %doc% 
 %doc% \section{How to use this \LaTeX{} document template}
 %doc% 
 %doc% This \LaTeX{} document template from
 %doc% \myLaT\footnote{\url{http://LaTeX.TUGraz.at}} is based on \myacro{KOMA}
-%doc% script\footnote{\url{http://komascript.de/}}. It provides an easy to use and
+%doc% script\footnote{\url{http://komascript.de/}}. You don't need any
+%doc% special \myacro{KOMA} knowledge (but it woun't hurt either). It provides an easy to use and
 %doc% easy to modify template. All settings are documented and many references to
 %doc% additional information sources are given.
 %doc% 
-%doc% \subsection{Modify this template for your requirements}
+
+%doc% In general, there should not be any reason to modify a file in
+%doc% the \texttt{template} folder. \emph{All important settings are
+%doc% accessible in the main folder, mostly in the \texttt{main.tex}
+%doc% file.} This way, it is easy to get what you need and you can update
+%doc% the template independent of the content of the document.
+%doc% 
+%doc% \newcommand{\myimportant}{%% mark important chapters
+%doc%   \marginpar{\vspace{-1em}\rightpointleft}
+%doc% }
+%doc% \newcommand{\myinteresting}{\marginpar{\vspace{-2em}\PencilLeftDown}}
+
+%doc% 
+%doc% The \emph{absolute minimum you should read} is listed below and 
+%doc% marked with the hand symbol:\myimportant
+%doc% \begin{itemize}
+%doc% \item Section~\ref{sec:modifytemplate}: basic configuration of this template.
+%doc% \item Section~\ref{sec:howtocompile}: how to generate the \myacro{PDF} file
+%doc% \item Section~\ref{sec:references}: using biblatex (instead of bibtex)
+%doc% \end{itemize}
+%doc% 
+%doc% In order to get a perfect resulting document and to get an
+%doc% exciting experience with this template, you should definitely consider reading
+%doc% following sections which are also marked with the pencil symbol:\myinteresting
+%doc% \begin{itemize}
+%doc% \item Section~\ref{sec:mycommands}: pre-defined commands to make your life easier (e.g., including graphics)
+%doc% \item Section~\ref{sec:myacro}: how to do acronyms (like \myacro{ACME}) beautifully
+%doc% \item Section~\ref{sub:csquotes}: how to \enquote{quote} text and use parentheses correctly
+%doc% \end{itemize}
+%doc% 
+%doc% The other sections describe all other settings for the sake of completeness. This is
+%doc% interesting for learning more about \LaTeX{} and modifying this template to a higher level of detail.
+
+%doc% 
+%doc% \newpage
+%doc% \subsection{Modify this template for your requirements}\myimportant
+%doc% \label{sec:modifytemplate}
 %doc%
 %doc% \newcommand{\myfile}[1]{\texttt{\href{file:#1}{#1}}}
 %doc%
 %doc% \begin{enumerate}
-%doc% \item If you are using \myacro{GNU} make: Put your desired \myacro{PDF} file name in the second line of file
+%doc% \item Modify settings in \texttt{main.tex} to meet your requirements:
+%doc%   \begin{itemize}
+%doc%   \item Basic settings
+%doc%     \begin{itemize}
+%doc%     \item Paper size, languages, font size, citation style,
+%doc%           title page, and so forth
+%doc%     \end{itemize}
+%doc%   \item Document metadata
+%doc%     \begin{itemize}
+%doc%     \item Preferences like \verb+myauthor+, \verb+mytitle+, and so forth
+%doc%     \end{itemize}
+%doc%   \end{itemize}
+%doc% \item Further down in \myfile{main.tex}:
+%doc%   \begin{itemize}
+%doc%   \item Create your desired structure for the chapters
+%doc%         (\verb+\include{introduction}+, \verb+\include{evaluation}+, \ldots)
+%doc%   \end{itemize}
+%doc% \item Create the \TeX{} files and fill your content into these files you defined in the previous step.
+%doc% \item Modify \myfile{colophon.tex} to meet your situation.
+%doc%   \begin{itemize}
+%doc%   \item Please spend a couple of minutes and think about putting your work
+%doc%         under an open license\footnote{\url{https://creativecommons.org/licenses/}}
+%doc%         in order to follow the spirit of Open Science\footnote{\url{https://en.wikipedia.org/wiki/Open_science}}.
+%doc%   \end{itemize}
+%doc% \item In case you are using \myacro{GNU} make\footnote{If you
+%doc%       don't know, what \myacro{GNU} make is, you are not using it (yet).}: 
+%doc%       Put your desired \myacro{PDF} file name in the second line of file
 %doc%    \myfile{Makefile}
 %doc%    \begin{itemize}
 %doc%    \item replace \enquote{Projectname} with your filename
 %doc%    \item do not use any file extension like \texttt{.tex} or \texttt{.pdf}
 %doc%    \end{itemize}
-%doc% \item Modify settings in \texttt{main.tex} to meet your requirements:
-%doc%   \begin{itemize}
-%doc%   \item Basic settings
-%doc%     \begin{itemize}
-%doc%     \item paper size, languages, font size, citation style,
-%doc%           title page, and so forth
-%doc%     \end{itemize}
-%doc%   \item Document metadata
-%doc%     \begin{itemize}
-%doc%     \item \verb+\myauthor+, \verb+\mytitle+, and so forth
-%doc%     \end{itemize}
-%doc%   \end{itemize}
-%doc% \item Modify \myfile{colophon.tex} (or disable it in
-%doc%       \myfile{main.tex}: \texttt{myaddcolophon})
-%doc% \item Further down in \myfile{main.tex}:
-%doc%   \begin{itemize}
-%doc%   \item your desired general document structure
-%doc%         (\verb+\include{introduction}+, \ldots)
-%doc%   \end{itemize}
-%doc% \item replace file or fill your content in \myfile{introduction.tex}
-%doc%   \begin{itemize}
-%doc%   \item you can rename \myfile{introduction.tex} but then you have to
-%doc%     modify its include command in \myfile{main.tex} too
-%doc%   \end{itemize}
-%doc% \item OPTIONAL: create further tex-files (similar to \myfile{introduction.tex}) for each
-%doc%    chapter of your document
-%doc%    \begin{itemize}
-%doc%    \item include them according to the example of \texttt{introduction}
-%doc%      in \myfile{main.tex}
-%doc%    \end{itemize}
-%doc% \item generate your document
-%doc%   \begin{itemize}
-%doc%   \item with a \LaTeX{} editor:
-%doc%     \begin{itemize}
-%doc%     \item select \myfile{main.tex} as the \enquote{main project file} or make
-%doc%       sure to compile/run only \myfile{main.tex} (and not \myfile{introduction.tex}
-%doc%       or similar)
-%doc%     \end{itemize}
-%doc%   \item OR with \myacro{GNU} make: run \texttt{make pdf}
-%doc%   \end{itemize}
 %doc% \end{enumerate}
 %doc% 
-%doc% In general, there should not be any reason to modify a file in
-%doc% the \texttt{template} folder. Any important setting should be
-%doc% accessible in the main folder. This way it is easy to update
-%doc% the template independent of the content of the document.
+%doc% 
+
 %doc% 
 %doc% 
+%doc% \subsection{How to compile this document}\myimportant
+%doc% \label{sec:howtocompile}
 %doc% 
-%doc% \subsection{How to compile this document}
+
+%doc% \subsubsection{Compiling Using a \LaTeX{} Editor}
 %doc% 
-%doc% If your system provides \myacro{GNU}
-%doc% make\footnote{\url{https://secure.wikimedia.org/wikipedia/en/wiki/Make\_\%28software\%29}},
-%doc% it is very easy to compile this document: \verb+make pdf+
+%doc% Please do select \myfile{main.tex} as the \enquote{main project file} or make
+%doc% sure to compile/run only \myfile{main.tex} (and not \myfile{introduction.tex}
+%doc% or other \TeX{} files of this template).
 %doc% 
-%doc% You can get a list of all other commands provided by the Makefile by invoking
-%doc% \texttt{make help}.
+%doc% Choose \texttt{biber} for generating the references. Modern LaTeX{}
+%doc% environments offer this option. Older tools might not be that up to
+%doc% date yet.
 %doc% 
-%doc% If you do not have \myacro{GNU} make, please stick to your usual compile
-%doc% method and notice the changes for \texttt{Biber} in section~\ref{sub:references}.
+
+%doc% \subsubsection{Activating \texttt{biber} in the \LaTeX{} editor TeXworks}
+%doc% \label{sec:biberTeXworks}
 %doc% 
+%doc% The \href{https://www.tug.org/texworks/}{TeXworks} editor is a very
+%doc% basic (but fine) \LaTeX{} editor to start with. It is included in
+%doc% \href{http://miktex.org/}{MiKTeX} and
+%doc% \href{http://miktex.org/portable}{MiKTeX portable} and supports
+%doc% \href{https://en.wikipedia.org/wiki/Syntax_highlighting}{syntax
+%doc%   highlighting} and
+%doc% \href{http://itexmac.sourceforge.net/SyncTeX.html}{SyncTeX} to
+%doc% synchronize \myacro{PDF} output and \LaTeX{} source code.
+%doc% 
+%doc% Unfortunately, TeXworks shipped with MiKTeX does not support compiling
+%doc% using \texttt{biber} (biblatex) out of the box. Here is a solution to
+%doc% this issue. Go to TeXworks: \texttt{Edit} $\rightarrow$
+%doc% \texttt{Preferences~\ldots} $\rightarrow$ \texttt{Typesetting} $\rightarrow$
+%doc% \texttt{Processing tools} and add a new entry (using the plus icon):
+%doc% 
+%doc% \begin{tabbing}
+%doc%   Arguments: \= foobar  \kill
+%doc%   Name:      \> \verb#pdflatex+biber# \\
+%doc%   Program:   \> \emph{find the \texttt{template/pdflatex+biber.bat} file from your disk} \\
+%doc%   Arguments: \> \verb+$fullname+ \\
+%doc%              \> \verb+$basename+
+%doc% \end{tabbing}
+%doc% 
+%doc% Activate the \enquote{View PDF after running} option.
+%doc% 
+%doc% Close the preferences dialog and you will now have an additional
+%doc% choice in the drop down list for compiling your document. Choose the
+%doc% new entry called \verb#pdflatex+biber# and start a happier life with
+%doc% \texttt{biber}.
+%doc% 
+%doc% In case your TeXworks has a German user interface, here the key
+%doc% aspects in German as well:
+%doc% 
+%doc% \begin{otherlanguage}{ngerman}
+%doc% 
+%doc%   \texttt{Bearbeiten} $\rightarrow$ \texttt{Einstellungen~\ldots} $\rightarrow$
+%doc%   \texttt{Textsatz} $\rightarrow$ \texttt{Verarbeitungsprogramme} $\rightarrow$
+%doc%   + \emph{(neues Verarbeitungsprogramm)}:
+%doc% 
+%doc% \begin{tabbing}
+%doc%   Befehl/Datei: \= foobar  \kill
+%doc%     Name: \> pdflatex+biber \\
+%doc%     Befehl/Datei: \> \emph{die \texttt{template/pdflatex+biber.bat} im Laufwerk suchen} \\
+%doc%     Argumente: \> \verb+$fullname+ \\
+%doc%                \> \verb+$basename+
+%doc% \end{tabbing}
+%doc% 
+%doc% \enquote{PDF nach Beendigung anzeigen} aktivieren.
+%doc% 
+%doc% \end{otherlanguage}
+%doc% 
+
+%doc% \subsubsection{Compiling Using \myacro{GNU} make}
+%doc% 
+%doc% With \myacro{GNU}
+%doc% make\footnote{\url{https://secure.wikimedia.org/wikipedia/en/wiki/Make\_\%28software\%29}}
+%doc% it is just simple as that: \texttt{make pdf}
+%doc% 
+%doc% Several other targets are available. You can check them out by
+%doc% executing: \texttt{make help}
+%doc% 
+
+%doc% \subsubsection{Compiling in a Text-Shell}
+%doc% 
+%doc% To generate a document using \texttt{Biber}, you can stick to
+%doc% following example:
+%doc% \begin{verbatim}
+%doc% pdflatex main.tex
+%doc% biber main
+%doc% pdflatex main.tex
+%doc% pdflatex main.tex
+%doc% \end{verbatim}
+
+
+
 %doc% 
 %doc% \subsection{How to get rid of the template documentation}
 %doc% 
@@ -148,18 +254,18 @@
 %doc% It is recommended that for \emph{adding} things to the preambel (newcommands,
 %doc% setting variables, defining headers, \dots) you should use the file
 %doc% \texttt{main.tex}. 
-%doc% There are comment lines which help you finding the right spot.
+%doc% There are comment lines which help you find the right spot.
 %doc% This way you still have the chance to update your \texttt{template}
 %doc% folder from the template repository without losing your own added things.
 %doc% 
 %doc% The following sections describe the settings and commands of this template and
-%doc% gives a short overview of its features.
+%doc% give a short overview of its features.
 
 %doc% \subsection{How to change the title page}
 %doc% 
 %doc% This template comes with a variety of title pages. They are located in
 %doc% the folder \texttt{template}. You can switch to a specific title
-%doc% page by including corresponding title page file in the file
+%doc% page by including the corresponding title page file in the file
 %doc% \texttt{main.tex}.
 %doc% 
 %doc% Please note that you may not need to modify any title page document by
@@ -169,7 +275,7 @@
 %doc%
 %doc% \section{\texttt{preamble.tex} --- Main preamble file}
 %doc%
-%doc% In file \verb#preamble/preamble.tex# you will find the basic
+%doc% In the file \verb#preamble/preamble.tex# you will find the basic
 %doc% definitions related to your document. This template uses the \myacro{KOMA} script
 %doc% extension package of \LaTeX{}.
 %doc% 
@@ -180,7 +286,7 @@
 %doc% \paragraph{What should I do with this file?} For standard purposes you might
 %doc% use the default values it provides. You must not remove its \texttt{include} command
 %doc% in \texttt{main.tex} since it contains important definitions. This file contains
-%doc% settings which are documented well an can be modified according to your needs.
+%doc% settings which are documented well and can be modified according to your needs.
 %doc% It is recommended that you fully understand each setting you modify in order to
 %doc% get a good document result. However, you can set basic values in the
 %doc% \texttt{main.tex} file: font size, paper size,
@@ -238,7 +344,7 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% Please note that the default language of the document is the \emph{last} language
 %doc% which is added to the package options.
 %doc% 
-%doc% To set only parts of you document in a different language as the rest, use for example
+%doc% To set only parts of your document in a different language as the rest, use for example
 %doc% \verb+\foreignlanguage{ngerman}{Beispieltext in deutscher Sprache}+.
 %doc% For using foreign language quotes, please refer to the \verb+\foreignquote+,
 %doc% \verb+\foreigntextquote+, or \verb+\foreignblockquote+ provided by
@@ -257,14 +363,14 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 
 
 %doc% 
-%doc% \subsection{References}
-%doc% \label{sub:references}
+%doc% \subsection{References}\myimportant
+%doc% \label{sec:references}
 %doc% 
 %doc% This template is using
 %doc% \href{http://www.tex.ac.uk/tex-archive/info/translations/biblatex/de/}{\texttt{biblatex}}
 %doc% and \href{http://en.wikipedia.org/wiki/Biber_(LaTeX)}{\texttt{Biber}}
 %doc% instead of
-%doc% \href{http://en.wikipedia.org/wiki/BibTeX}{\textsc{Bib}\TeX{}}. This has following
+%doc% \href{http://en.wikipedia.org/wiki/BibTeX}{\textsc{Bib}\TeX{}}. This has the following
 %doc% advantages:
 %doc% \begin{itemize}
 %doc% \item better documentation
@@ -272,7 +378,7 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% \item flexible definition of citation styles
 %doc% \item multiple bibliographies e.\,g. for printed and online resources
 %doc% \item cleaner reference definition e.\,g. inheriting information from
-%doc%   \texttt{Proceedings} to all related \texttt{InProceeings}
+%doc%   \texttt{Proceedings} to all related \texttt{InProceedings}
 %doc% \item modern implementation
 %doc% \end{itemize}
 %doc% 
@@ -301,10 +407,16 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% authors are replaced with dashes, or if backward references (from
 %doc% references to citations) should be added.
 %doc% 
+%doc% 
+%doc% If you are using the LaTeX{} editor TeXworks, please make sure that
+%doc% you have read Section~\ref{sec:biberTeXworks} in order to use
+%doc% \texttt{biber}.
+%doc% 
 
 %doc% \subsubsection{Example citation commands}
 %doc% 
 %doc% This section demonstrates some example citations using the style \texttt{authoryear}.
+%doc% You can change the citation style in \texttt{main.tex} (\texttt{mybiblatexstyle}).
 %doc% 
 %doc% \begin{itemize}
 %doc% \item cite \cite{Eijkhout2008} and cite \cite{Bringhurst1993, Eijkhout2008}.
@@ -324,79 +436,6 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% Please note that the citation style as well as the bibliography style
 %doc% can be changed very easily. Refer to the settings in
 %doc% \texttt{main.tex} as well as the very good documentation of \texttt{biblatex}.
-%doc% 
-%doc% \subsubsection{Manual compiling with \texttt{Biber}}
-%doc% 
-%doc% To generate a document using \texttt{Biber}, you can stick to
-%doc% following example:
-%doc% \begin{verbatim}
-%doc% pdflatex main.tex
-%doc% biber main
-%doc% pdflatex main.tex
-%doc% pdflatex main.tex
-%doc% \end{verbatim}
-%doc% 
-%doc% Using the \texttt{Makefile} which comes with this template, you simply
-%doc% have to call \texttt{make~pdf} in order to get the resulting document.
-%doc% 
-%doc% In the file \verb#preamble/preamble.tex# you can modify the template
-%doc% defaults for references such as changing the citation style or adding
-%doc% your own reference file(s). Look out for
-%doc% \verb#\usepackage[...]{biblatex}# to modify its options.
-%doc% 
-%doc% \subsubsection{Using this \texttt{biber} with TeXworks}
-%doc% 
-%doc% 
-%doc% The \href{https://www.tug.org/texworks/}{TeXworks} editor is a very
-%doc% basic (but fine) \LaTeX{} editor to start with. It is included in
-%doc% \href{http://miktex.org/}{MiKTeX} and
-%doc% \href{http://miktex.org/portable}{MiKTeX portable} and supports
-%doc% \href{https://en.wikipedia.org/wiki/Syntax_highlighting}{syntax
-%doc%   highlighting} and
-%doc% \href{http://itexmac.sourceforge.net/SyncTeX.html}{SyncTeX} to
-%doc% synchronize PDF output and \LaTeX{} source code.
-%doc% 
-%doc% Unfortunately, TeXworks shipped with MiKTeX does not support compiling
-%doc% using \texttt{biber} (biblatex) out of the box. Here is a solution to
-%doc% this issue. Go to TeXworks: \texttt{Edit} $\rightarrow$
-%doc% \texttt{Preferences~\ldots} $\rightarrow$ \texttt{Typesetting} $\rightarrow$
-%doc% \texttt{Processing tools} and add a new entry (using the plus icon):
-%doc% 
-%doc% \begin{tabbing}
-%doc%   Arguments: \= foobar  \kill
-%doc%   Name:      \> \verb#pdflatex+biber# \\
-%doc%   Program:   \> \emph{find the \texttt{template/pdflatex+biber.bat} file from your disk} \\
-%doc%   Arguments: \> \verb+$fullname+ \\
-%doc%              \> \verb+$basename+
-%doc% \end{tabbing}
-%doc% 
-%doc% Activate the \enquote{View PDF after running} option.
-%doc% 
-%doc% Close the preferences dialog and you will now have an additional
-%doc% choice in the drop down list for compiling your document. Choose the
-%doc% new entry called \verb#pdflatex+biber# and start a happier life with
-%doc% \texttt{biber}.
-%doc% 
-%doc% In case your TeXworks has a German user interface, here the key
-%doc% aspects in German as well:
-%doc% 
-%doc% \begin{otherlanguage}{ngerman}
-%doc% 
-%doc%   \texttt{Bearbeiten} $\rightarrow$ \texttt{Einstellungen~\ldots} $\rightarrow$
-%doc%   \texttt{Textsatz} $\rightarrow$ \texttt{Verarbeitungsprogramme} $\rightarrow$
-%doc%   + \emph{(neues Verarbeitungsprogramm)}:
-%doc% 
-%doc% \begin{tabbing}
-%doc%   Befehl/Datei: \= foobar  \kill
-%doc%     Name: \> pdflatex+biber \\
-%doc%     Befehl/Datei: \> \emph{die \texttt{template/pdflatex+biber.bat} im Laufwerk suchen} \\
-%doc%     Argumente: \> \verb+$fullname+ \\
-%doc%                \> \verb+$basename+
-%doc% \end{tabbing}
-%doc% 
-%doc% \enquote{PDF nach Beendigung anzeigen} aktivieren.
-%doc% 
-%doc% \end{otherlanguage}
 %doc% 
 
 %doc% \subsubsection{Using this template with \textsc{Bib}\TeX{}}
