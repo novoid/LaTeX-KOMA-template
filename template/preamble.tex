@@ -1,4 +1,4 @@
-%% Time-stamp: <2013-02-02 22:28:27 vk>
+%% Time-stamp: <2013-02-03 11:23:01 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -183,7 +183,7 @@
 %doc% settings which are documented well an can be modified according to your needs.
 %doc% It is recommended that you fully understand each setting you modify in order to
 %doc% get a good document result. However, you can set basic values in the
-%doc% \texttt{main.tex} file: document class, font size, paper size,
+%doc% \texttt{main.tex} file: font size, paper size,
 %doc% paragraph separation mode, draft mode, binding correction, and whether
 %doc% your document will be a one sided document or you are planning to
 %doc% create a document which is printed on both, left side and right side.
@@ -205,7 +205,11 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
                      %% the resulting printout.
 \mylaterality        %% oneside: document is not printed on left and right sides, only right side
                      %% twoside: document is printed on left and right sides
-]{\mydocumentclass}  %% article class of KOMA: FIXXME
+]{scrbook}  %% article class of KOMA: "scrartcl", "scrreprt", or "scrbook".
+            %% CAUTION: If documentclass will be changed, *many* other things
+            %%          change as well like heading structure, ...
+
+
 
 % FIXXME: adopting class usage:
 % from scrbook -> scrartcl OR scrreport:

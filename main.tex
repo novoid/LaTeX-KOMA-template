@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2013-02-02 21:31:42 vk>
+%%%% Time-stamp: <2013-02-03 11:23:57 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -13,15 +13,11 @@
 %% ========================================================================
 %% (idea of using newcommands for basic documentclass settings from: Thomas Schlager)
 
-\newcommand{\mydocumentclass}{scrbook}
-%% "scrartcl", "scrreprt", or "scrbook".
-%% CAUTION: If changed, many other things change as well like heading structure
-
 \newcommand{\mypapersize}{A4}
 %% e.g., "A4", "letter", "legal", "executive", ...
 %% The size of the paper of the resulting PDF file.
 
-\newcommand{\mylaterality}{oneside}
+\newcommand{\mylaterality}{twoside}
 %% "oneside" or "twoside"
 %% Either you are creating a document which is printed on both, left pages
 %% and right pages (twoside) or you create a document which is printed
@@ -54,7 +50,7 @@
 %% spacing. Please use with caution: 100% ("1.0") is fine because the
 %% font was designed for it.
 
-\newcommand{\mylanguage}{ngerman,english}
+\newcommand{\mylanguage}{ngerman,american}
 %% "english,ngerman", "ngerman,english", ...
 %% NOTE: The *last* language is the active one!
 %% See babel documentation for further details.
@@ -95,7 +91,7 @@
 %% Load main settings for document preamble:
 \input{template/preamble}%% DO NOT REMOVE THIS LINE!
 
-\setboolean{myaddcolophon}{false}  %% "true" or "false"
+\setboolean{myaddcolophon}{true}  %% "true" or "false"
 %% If set to "true": a colophon (with notes about this document
 %% template, LaTeX, ...) is added after the title page.
 
