@@ -1,4 +1,4 @@
-%% Time-stamp: <2013-02-03 15:12:53 vk>
+%% Time-stamp: <2013-02-07 11:51:00 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -87,7 +87,7 @@
 %doc% is set to two.
 %doc% 
 %% \myclone[x]{text}
-\newcounter{testcnt}
+\newcounter{myclonecnt}
 \newcommand{\myclone}[2][2]{%
   \setcounter{myclonecnt}{#1}%
   \whiledo{\value{myclonecnt}>0}{#2\addtocounter{myclonecnt}{-1}}%
