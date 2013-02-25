@@ -1,4 +1,4 @@
-## Time-stamp: <2013-02-02 22:28:50 vk>
+## Time-stamp: <2013-02-25 11:04:54 vk>
 ## This file is best viewed with GNU Emacs Org-mode: http://orgmode.org/
 #+TODO: TODO(t) NEXT(n) WISH(w) | DONE(d) CANCELED(c)
 #+TAGS: KarlVoit(k) 
@@ -12,35 +12,10 @@
 - sidewaystable
 - paralist (compact version of itemize and enumerate)
 - ...
-* NEXT define prerequisites
-:PROPERTIES:
-:CREATED: <2011-07-26 Tue 18:03>
-:END:
-
-- user knowledge
-- software dependencies
-  - for compiling PDF
-    - pdflatex
-    - biber
-    - biblatex
-  - for using make to compile
-    - GNU make
-  - for generating template documentation
-    - GNU make
-    - sed
-    - grep
-  - LaTeX packages
-    - necessary
-    - optional
 
 * NEXT index (makeindex)
 :PROPERTIES:
 :CREATED: [2011-12-10 Sat 21:30]
-:END:
-
-* NEXT how to switch language
-:PROPERTIES:
-:CREATED: [2011-12-10 Sat 21:31]
 :END:
 
 * NEXT acronyms
@@ -77,6 +52,33 @@
 * WISH translate German comments
 :PROPERTIES:
 :CREATED: <2010-12-22 Fri 15:50>
+:END:
+* DONE define prerequisites
+CLOSED: [2013-02-25 Mon 11:04]
+:PROPERTIES:
+:CREATED: <2011-07-26 Tue 18:03>
+:END:
+
+- user knowledge
+- software dependencies
+  - for compiling PDF
+    - pdflatex
+    - biber
+    - biblatex
+  - for using make to compile
+    - GNU make
+  - for generating template documentation
+    - GNU make
+    - sed
+    - grep
+  - LaTeX packages
+    - necessary
+    - optional
+
+* DONE how to switch language
+CLOSED: [2013-02-25 Mon 11:04]
+:PROPERTIES:
+:CREATED: [2011-12-10 Sat 21:31]
 :END:
 
 * DONE document example usage with MikTex 2.8 and TeXworks         :KarlVoit:

@@ -17,6 +17,8 @@ of your work rather than start fiddling around with the look of the document.
 Several typographic optimizations are included in order to get a final document
 that is optimized to deliver your content.
 
+Please do read [[https://github.com/novoid/LaTeX-KOMA-template/blob/master/Template-Documentation.pdf][Template-Documentation.pdf]].
+
 ** Requirements
 
 This template uses up-to-date technology like pdflatex, [[http://www.tex.ac.uk/tex-archive/info/translations/biblatex/de/][biblatex]]
@@ -24,6 +26,8 @@ This template uses up-to-date technology like pdflatex, [[http://www.tex.ac.uk/t
 optionally [[http://www.gnu.org/s/make/][GNU make.]]  You should be familiar with compiling LaTeX
 documents by yourself. If you are new to LaTeX please get basic
 knowledge from tutorial pages such as [[http://LaTeX.TUGraz.at][this one]].
+
+You can find out more in [[https://github.com/novoid/LaTeX-KOMA-template/blob/master/Template-Documentation.pdf][Template-Documentation.pdf]].
 
 ** What makes this template special?
 
@@ -37,16 +41,16 @@ file and using [[http://www.gnu.org/software/make/][GNU make]] with the rule "te
 make templatedocu
 #+end_src
 
-This command results in the "Template-Documentation.pdf" file
+This command results in the "[[https://github.com/novoid/LaTeX-KOMA-template/blob/master/Template-Documentation.pdf][Template-Documentation.pdf]]" file
 containing the most current documentation of this template. Please
 refer to this PDF file for further information about the template.
 
 ** How to start?
 
-Please do read the "Template-Documentation.pdf" file which contains a
+Please do read the "[[https://github.com/novoid/LaTeX-KOMA-template/blob/master/Template-Documentation.pdf][Template-Documentation.pdf]]" file which contains a
 "How to use this LaTeX template" section.
 
 ** What is still work in progress?
 
-Please have a look at the file "template/todos.org".
+Please have a look at the file "[[https://github.com/novoid/LaTeX-KOMA-template/blob/master/template/todos.org][template/todos.org]]".
   
