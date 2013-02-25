@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2013-02-03 17:35:45 vk>
+%%%% Time-stamp: <2013-02-25 10:31:09 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -218,6 +218,10 @@
 \mainmatter                     %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
 
 
+%% include the abstract without chapter number but include it on table of contents:
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Abstract}
+\include{abstract}              %% Abstract
 
 
 \input{example-short-chapter}   %% remove this line to get rid of the example chapter
