@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2013-02-25 10:31:09 vk>
+%%%% Time-stamp: <2013-02-27 14:26:16 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -58,9 +58,15 @@
 
 %% BibLaTeX-settings: (see biblatex reference for further description)
 \newcommand{\mybiblatexstyle}{authoryear}
-%% e.g., "aphabetic", "authoryear", ...
+%% e.g., "alphabetic", "authoryear", ...
 %% The biblatex style which is being used for referencing. See
 %% biblatex documentation for further details and more values.
+%%
+%% CAUTION: if you change the style, please check for (in)compatible
+%%          "biblatex" package options in the file
+%%          "template/preamble.tex"! For example: "alphabetic" does
+%%          not have an option "dashed=..." and causes an error if it
+%%          does not get removed from the list of options.
 
 \newcommand{\mybiblatexdashed}{false}  %% "true" or "false"
 %% If true: replace recurring reference authors with a dash.
@@ -206,6 +212,13 @@
 % \input{thanks}                %% this is a suggestion: you have to create this file on demand
 % \input{foreword}              %% this is a suggestion: you have to create this file on demand
 
+
+%% include the abstract without chapter number but include it on table of contents:
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Abstract}
+\include{abstract}              %% Abstract
+
+
 \tableofcontents                %% this produces the table of contents - you might have guessed :-)
 
 \listoffigures
@@ -216,12 +229,6 @@
 }{}                             %% with todonotes-package option "disable" you can get rid of any todo in the output
 
 \mainmatter                     %% KOMA: marks main part using arabic page numbers and such; only available in scrbook
-
-
-%% include the abstract without chapter number but include it on table of contents:
-\cleardoublepage
-\addcontentsline{toc}{chapter}{Abstract}
-\include{abstract}              %% Abstract
 
 
 \input{example-short-chapter}   %% remove this line to get rid of the example chapter
@@ -236,7 +243,6 @@
 
 \appendix                       %% closes main document, appendix follows until end; only available in book-classes
 \addpart*{Appendix}             %% adding Appendix to tableofcontents
-
 
 \printbibliography              %% remove, if using BibTeX instead of biblatex
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
