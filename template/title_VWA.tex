@@ -1,0 +1,62 @@
+%%%% Time-stamp: <2013-02-25 16:05:46 vk>
+%% ========================================================================
+%%%% Titelseite für eine Vorwissenschaftliche Arbeit
+%% ========================================================================
+%%
+%% created by
+%%
+%%      Karl Voit
+%%
+
+
+\thispagestyle{empty}  %% no page header or footer
+\large  %% basic font size of the titlepage
+
+\begin{center}
+
+{\LARGE\bfseries\mytitle}
+
+\vfill
+
+Vorwissenschaftliche Arbeit verfasst von\\[5mm]
+{\Large\bfseries\myauthor}\\[5mm]
+Klasse \mystudy\\[50mm]
+
+\vfill
+
+\includegraphics[width=3cm]{figures/institution}\\[5mm]
+
+Betreuer: \mysupervisor
+
+\vfill
+
+\myinstitute\\
+\myhomestreet\\
+\myhomepostalnumber~\myhometown
+
+\vfill
+
+\mysubmissiontown, \mysubmissionmonth~\mysubmissionyear
+\end{center}
+\normalsize %% new page, reset font size
+\newpage
+
+%% if myaddcolophon is set to "true", colophon is added:
+\ifthenelse{\boolean{myaddcolophon}}{
+  \newpage
+  \thispagestyle{empty}  %% no page header or footer
+
+  ~
+  \vfill
+  \mycolophon
+}{}
+\newpage
+
+%% end of title page
+%%% Local Variables:
+%%% mode: latex
+%%% mode: auto-fill
+%%% mode: flyspell
+%%% eval: (ispell-change-dictionary "de_AT")
+%%% TeX-master: "../main"
+%%% End:
