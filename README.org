@@ -50,6 +50,25 @@ refer to this PDF file for further information about the template.
 Please do read the "[[https://github.com/novoid/LaTeX-KOMA-template/blob/master/Template-Documentation.pdf][Template-Documentation.pdf]]" file which contains a
 "How to use this LaTeX template" section.
 
+** License
+
+This template is licensed under a [[https://creativecommons.org/licenses/by-sa/3.0/][Creative Commons
+      Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license]]:
+
+- You can share (to copy, distribute and transmit) this template.
+- You can remix (adapt) this template.
+- You can make commercial use of the template.
+- In case you modify this template and share the derived template: You
+  must attribute the template such that you do not remove
+  (co-)authorship of Karl Voit and you must not remove the URL to [[https://github.com/novoid/LaTeX-KOMA-template][the
+  original repository on github]].
+- If you alter, transform, or build a new template upon this template,
+  you may distribute the resulting template only under the same or
+  similar license to this one.
+- There are *no restrictions* of any kind, however, related to the
+  resulting (PDF) document!
+- You may remove the colophon (but it's not recommended).
+
 ** What is still work in progress?
 
 Please have a look at the file "[[https://github.com/novoid/LaTeX-KOMA-template/blob/master/template/todos.org][template/todos.org]]".
