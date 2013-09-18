@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2013-03-18 14:39:01 vk>
+%%%% Time-stamp: <2013-09-18 19:27:11 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -80,6 +80,13 @@
 \newcommand{\mydispositioncolor}{30,103,182}
 %% e.g., "30,103,182" (blue/turquois), "0,0,0" (black), ...
 %% Color of the headings and so forth in RGB (red,green,blue) values.
+%% NOTE: if you are using "0,0,0" for black, printers might still
+%%       recognize pages as color pages. In case this is a problem
+%%       (paying for color print-outs vs. paying for b/w-printouts)
+%%       please edit file "template/preamble.tex" and change
+%%       "\definecolor{DispositionColor}{RGB}{\mydispositioncolor}"
+%%       to "\definecolor{DispositionColor}{gray}{0}" and thus
+%%       overwriting the value of \mydispositioncolor above.
 
 \newcommand{\mycolorlinks}{true}  %% "true" or "false"
 %% Enables or disables colored links (hyperref package).
