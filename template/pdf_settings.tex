@@ -31,12 +31,7 @@
 \pdfcompresslevel=9
 
 \usepackage[%
-pdftitle={\mytitle}, %
-pdfauthor={\myauthor}, %
-pdfsubject={\mysubject}, %
-pdfcreator={Accomplished with: pdfLaTeX, biber, and hyperref-package. No anmimals, MS-EULA or BSA-rules were harmed.},
-pdfproducer={\myauthor},
-pdfkeywords={\mykeywords},
+unicode=true, % loads with unicode support
 %a4paper=true, %
 pdftex=true, %
 backref, %
@@ -54,6 +49,17 @@ anchorcolor=DispositionColor, %%
 colorlinks=\mycolorlinks, % turn on/off colored links (on: better for
                           % on-screen reading; off: better for printout versions)
 ]{hyperref}
+
+%% all strings need to be loaded after hyperref was loaded with unicode support
+%% if not the field is garbled in the output for characters like ČŽĆŠĐ
+\hypersetup{
+pdftitle={\mytitle}, %
+pdfauthor={\myauthor}, %
+pdfsubject={\mysubject}, %
+pdfcreator={Accomplished with: pdfLaTeX, biber, and hyperref-package. No anmimals, MS-EULA or BSA-rules were harmed.},
+pdfproducer={\myauthor},
+pdfkeywords={\mykeywords}
+}
 
 %\DeclareGraphicsExtensions{.pdf}
 
