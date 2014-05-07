@@ -205,6 +205,10 @@
 
 
 \input{template/pdf_settings}  %% should be *last* definitions in preamble!
+
+\usepackage[acronyms]{glossaries} %% should be after hyperref package!
+\makeglossaries
+
 %% ========================================================================
 %%%% begin{document}
 %% ========================================================================
@@ -254,6 +258,8 @@
 \appendix                       %% closes main document, appendix follows until end; only available in book-classes
 \addpart*{Appendix}             %% adding Appendix to tableofcontents
 
+
+\printglossary[type=\acronymtype,title={List of Abbreviations},toctitle={List of Abbreviations}]
 \printbibliography              %% remove, if using BibTeX instead of biblatex
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
 
