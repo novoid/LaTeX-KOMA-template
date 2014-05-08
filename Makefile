@@ -53,6 +53,15 @@ wc:	pdf
 	ps2ascii ${DATESTAMP_AND_PROJECT}.ps > ${DATESTAMP_AND_PROJECT}.txt
 	wc -w ${DATESTAMP_AND_PROJECT}.txt
 
+#help with spell checking, using hunspell and assuming en_US, de_At dictionaries are available, dictionary.txt is the custom one
+
+	# print the whole sentences with the false words
+spellsent:
+	hunspell -d en_US,de_AT -p dictionary.txt -L -t -i utf-8 *.tex
+	
+	# print only the false words
+spellword:
+	hunspell -d en_US,de_AT -p dictionary.txt -l -t -i utf-8 *.tex
 
 # --------------------------------------------------------
 
