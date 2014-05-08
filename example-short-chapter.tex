@@ -7,13 +7,31 @@
 
 This is my text with an example Figure~\ref{fig:example} and example
 citation~\cite{StrunkWhite} or \textcite{Bringhurst1993}. And there is another
-\enquote{citation} which is located at the bottom\footcite{tagstore}. Here we have an acronym  \newacronym{acr:example}{ECB}{Dance the ECB} \gls{acr:example}.
+\enquote{citation} which is located at the bottom\footcite{tagstore}. Here we have an acronym  \newacronym{acr:example}{ECB}{Dance the ECB} \gls{acr:example}. And then there is a vector graphics done with \href{http://tug.org/PSTricks/}{\texttt{PSTricks}}, Figure~\ref{fig:pstricks}.
 
 \myfig{TU_Graz_Logo}%% filename in figures folder
   {width=0.1\textwidth,height=0.1\textheight}%% maximum width/height, aspect ratio will be kept
   {Example figure.}%% caption
   {}%% optional (short) caption for table of figures
   {fig:example}%% label
+  
+\begin{figure}[h]
+	\begin{pdfpic}
+		\begin{pspicture}(-5.25,-5.25)(5.25,5.25)%
+			\pscircle*[linecolor=cyan]{5}
+			\psgrid[subgriddiv=0,gridcolor=lightgray,gridlabels=0pt]
+			\Huge\sffamily\bfseries
+			\rput(-4.5,4.5){A} \rput(4.5,4.5){B}
+			\rput(-4.5,-4.5){C}\rput(4.5,-4.5){D}
+			\rput(0,0){pdftricks}
+			\rmfamily
+			\rput(0,-3.8){PSTricks}
+			\rput(0,3.8){\LaTeX}
+		\end{pspicture}
+	\end{pdfpic}
+\caption{PSTricks Inside.}
+\label{fig:pstricks}
+\end{figure}
 
 Now you are able to write your own document. Always keep in mind: it's
 the \emph{content} that matters, not the form. But good typography is

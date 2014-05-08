@@ -14,7 +14,7 @@ PROJECTNAME = "Projectname"
 MAINDOCUMENTBASENAME = main
 MAINDOCUMENTFILENAME = ${MAINDOCUMENTBASENAME}.tex
 ## COMMANDS:
-PDFLATEX_CMD = pdflatex
+PDFLATEX_CMD = pdflatex -shell-escape
 #BIBTEX_CMD = bibtex
 BIBTEX_CMD = biber
 MAKEIDX_CMD = makeindex
