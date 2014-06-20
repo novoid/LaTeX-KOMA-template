@@ -1,4 +1,4 @@
-## please modify following line for naming the end products (PDFs, ZIPs, ...)
+## please modify the following line for naming the end products (PDFs, ZIPs, ...)
 PROJECTNAME = "Projectname"
 
 ## -----------------------------------------
@@ -36,7 +36,7 @@ help:
 .PHONY: all
 all: pdf
 
-#help	pdf	makes a file per pdflatex
+#help	pdf	creates a pdf file using pfdlatex
 .PHONY: pdf
 pdf:
 	${PDFLATEX_CMD} ${MAINDOCUMENTFILENAME}
