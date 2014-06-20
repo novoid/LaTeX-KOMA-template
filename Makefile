@@ -36,7 +36,7 @@ help:
 .PHONY: all
 all: pdf
 
-#help	pdf	creates a pdf file using pfdlatex
+#help	pdf	creates a pdf file using pdflatex
 .PHONY: pdf
 pdf:
 	${PDFLATEX_CMD} ${MAINDOCUMENTFILENAME}
