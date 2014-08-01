@@ -115,7 +115,7 @@
 %doc% \paragraph{How?} Using the predefined macro \verb#\myacro{}# for things like
 %doc% \myacro{UNO} or \myacro{UNESCO} using \verb#\myacro{UNO}# or \verb#\myacro{UNESCO}#.
 %doc% 
-\DeclareRobustCommand{\myacro}[1]{\textsc{\lowercase{#1}}}%%  abbrevations using small caps
+\DeclareRobustCommand{\myacro}[1]{\textsc{\lowercase{#1}}} %%  abbrevations using small caps
 
 
 %doc% 
@@ -146,7 +146,7 @@
 %doc% using the package \texttt{footmisc} with its option \texttt{bottom}.
 %doc% 
 %% see also: http://www.komascript.de/node/858 (German description)
-\usepackage[bottom]{footmisc}  %% do not place floats below footnotes
+\usepackage[bottom]{footmisc}
 
 %doc% 
 %doc% \subsection{Spacings of list environments}
@@ -160,7 +160,7 @@
 %doc% This template is using the package option for \texttt{noitemsep} which
 %doc% mimimizes the vertical space between list items.
 %doc% 
-\usepackage{enumitem} %%
+\usepackage{enumitem}
 \setlist{noitemsep}   %% kills the space between items
 
 %doc% 
@@ -178,7 +178,7 @@
 %doc% combination with the language set in the options of the \texttt{babel} package}.
 %doc% 
 %doc% \href{http://www.ctan.org/pkg/csquotes}{\texttt{csquotes}} is also recommended 
-%doc% by \texttt{biblatex} (see Section~\ref{sub:references}). 
+%doc% by \texttt{biblatex} (see Section~\ref{sec:references}). 
 \usepackage[babel=true,strict=true,english=american,german=guillemets]{csquotes}
 
 %doc% 
@@ -188,7 +188,7 @@
 %doc% increase it using the \texttt{\mylinespread} command in \texttt{main.tex}. By default, it is
 %doc% deactivated (set to 100~percent). Modify only with caution since it influences the
 %doc% page layout and could lead to ugly looking documents.
-\linespread{\mylinespread}  %% line spread
+\linespread{\mylinespread}
 
 %doc% 
 %doc% \subsection{Optional: Lines above and below the chapter head}
