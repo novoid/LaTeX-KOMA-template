@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2013-09-18 19:27:11 vk>
+%%%% Time-stamp: <2015-04-05 11:36:28 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -41,11 +41,11 @@
 %% example "5mm". Refer to KOMA script documentation for a detailed
 %% explanation what a binding correction is and how to measure it.
 
-\newcommand{\myfontsize}{12pt}   
+\newcommand{\myfontsize}{12pt}
 %% e.g., 10pt, 11pt, 12pt
 %% The font size of the main text in pt (points).
 
-\newcommand{\mylinespread}{1.0} 
+\newcommand{\mylinespread}{1.0}
 %% e.g., 1.0, 1.5, 2.0
 %% Line spacing in %/100. For example 1.5 means 150% of the usual line
 %% spacing. Please use with caution: 100% ("1.0") is fine because the
@@ -95,7 +95,13 @@
 %% Your own or one of following pre-defined title pages:
 %% "template/title_plain_maketitle": simple maketitle page
 %% "template/title_Diplomarbeit_KF_Uni_Graz.tex": fancy (german) title page for KF Uni Graz
-%% "template/title_Thesis_TU_Graz": titlepage for Graz University of Technology (correct Corporate Design)
+%% "template/title_Thesis_TU_Graz":
+%%             titlepage for Graz University of Technology (correct
+%%             (old?) Corporate Design) by Karl Voit (2012)
+%% "template/title_Thesis_TU_Graz_-_kazemakase":
+%%             titlepage for Graz University of Technology
+%%             (correct new Corporate Design) by kazemakase (2013):
+%%             see https://github.com/novoid/LaTeX-KOMA-template/issues/5
 %% "template/title_VWA": titlepage for Vorwissenschaftliche Arbeit
 
 \newcommand{\mytodonotesoptions}{}
@@ -147,7 +153,7 @@
 
 %% additional information for generic_documentation title page
 \newcommand{\myid}{1234567} %% Matrikelnummer
-\newcommand{\mylecture}{LECTURE} %% 
+\newcommand{\mylecture}{LECTURE} %%
 
 
 %% ========================================================================
@@ -182,7 +188,7 @@
 \newcommand{\myLaT}{\LaTeX{}@TUG\xspace} %% LaTeX@TUG text "logo"
 
 \hyphenation{ex-am-ple hy-phen-ate}  %% in order to use German umlauts
-%% here (Ver-\"of-fent-li-chung), you have to check for 
+%% here (Ver-\"of-fent-li-chung), you have to check for
 %% activated \usepackage[T1]{fontenc} in the preamble
 
 %% override default language of babel: (be sure to know, what you're

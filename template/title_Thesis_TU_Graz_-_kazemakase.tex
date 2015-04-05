@@ -1,0 +1,95 @@
+%%%% Time-stamp: <2015-04-05 11:32:08 vk>
+%% ========================================================================
+%%%% Disclaimer
+%% ========================================================================
+%%
+%% created by
+%%
+%%      Stefan Kroboth and Karl Voit
+%%
+%% this title page fulfills the requirements of the corporate design
+%% of Graz University of Technology (correct placement of logo)
+
+\begin{titlepage}
+
+%\large  %% basic font size of the titlepage
+
+%% placing the TU Graz logo exactly as Corporate Design demands:
+%%   40mm of Logo (here: 2mm margin in picture!)
+%%    8mm from top and from right
+%% Source: http://portal.tugraz.at/portal/page/portal/TU_Graz/Services/BDR/Oeffentlichkeitsarbeit/CD/Logo%20Anwendungsrichtlinien
+\AddToShipoutPicture*{%
+  \AtPageUpperLeft{%
+    \hspace{\paperwidth}%
+    \raisebox{-19mm}{%\baselineskip}{%
+     \makebox[-4mm][r]{\includegraphics[width=42mm]{figures/TU_Graz_Logo}}
+}}}%
+
+\begin{center}
+~
+\vfill\vfill\vfill
+
+\sffamily
+
+\myauthor
+
+\vfill
+
+{\LARGE\bfseries\mytitle}
+
+{\large\bfseries\mysubtitle}
+
+\vfill\vfill\vfill\vfill
+
+{\normalsize\bfseries\myworktitle}\\
+\vfill
+zur Erlangung des akademischen Grades\\
+{\mygrade}\\
+\vfill
+eingereicht an der\\
+{\normalsize\bfseries\myuniversity}
+
+\vfill\vfill\vfill
+\vfill\vfill\vfill
+
+Betreuer\\
+\mysupervisor\\
+\vfill
+Mitbetreuer\\
+\mycosupervisor\\
+%usually not mentioned on titlepage:% Evaluator: \myevaluator
+\vfill
+\vfill
+\myinstitute\\
+%Head: \myinstitutehead\\
+
+\vfill
+
+\myfaculty
+
+\vfill\vfill\vfill
+
+{\scriptsize\mysubmissiontown, \mysubmissionmonth~\mysubmissionyear}
+
+\end{center}
+\end{titlepage}
+
+%% if myaddcolophon is set to "true", colophon is added:
+\ifthenelse{\boolean{myaddcolophon}}{
+  \newpage
+  \thispagestyle{empty}  %% no page header or footer
+
+  ~
+  \vfill
+  \mycolophon
+}{}
+\newpage
+
+%% end of title page
+%%% Local Variables:
+%%% mode: latex
+%%% mode: auto-fill
+%%% mode: flyspell
+%%% eval: (ispell-change-dictionary "en_US")
+%%% TeX-master: "../main"
+%%% End:
