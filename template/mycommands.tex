@@ -1,4 +1,4 @@
-%% Time-stamp: <2013-02-07 11:51:00 vk>
+%% Time-stamp: <2015-04-30 17:19:58 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -67,11 +67,10 @@
 %       {}%% optional (short) caption for list of figures
 %       {}%% label
 \begin{figure}%[htp]
-  \begin{center}
-     \includegraphics[keepaspectratio,#2]{figures/#1}
-     \caption[#4]{#3}
-     \label{#5} %% NOTE: always label *after* caption!
-  \end{center}
+  \centering
+  \includegraphics[keepaspectratio,#2]{figures/#1}
+  \caption[#4]{#3}
+  \label{#5} %% NOTE: always label *after* caption!
 \end{figure}
 }
 
