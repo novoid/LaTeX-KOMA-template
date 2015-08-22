@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2013-02-26 12:18:29 vk>
+%%%% Time-stamp: <2015-08-22 17:20:32 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -232,6 +232,7 @@
 %doc% default. If you want to enable this feature, remove corresponding
 %doc% comment characters from the settings.
 %doc% 
+%disabled% \makeatletter
 %disabled% % Safty first
 %disabled% \@ifundefined{chapter}{\let\chapter\undefined
 %disabled%   \chapter must be defined to use chapter thumbs!}{%
@@ -307,7 +308,7 @@
 %disabled% \pagestyle{scrheadings}
 %disabled%  
 %disabled% }
-%disabled% 
+%disabled% \makeatother
 
 %%%% END
 %%% Local Variables:
