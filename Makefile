@@ -57,7 +57,7 @@ wc:	pdf
 #help	view	view the PDF-file
 .PHONY: view
 view: pdf
-	${PDFVIEWER} *_${PROJECTNAME}.pdf
+	${PDFVIEWER} ${DATESTAMP_AND_PROJECT}.pdf
 
 # --------------------------------------------------------
 
