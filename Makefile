@@ -14,10 +14,11 @@ PROJECTNAME = "Projectname"
 MAINDOCUMENTBASENAME = main
 MAINDOCUMENTFILENAME = ${MAINDOCUMENTBASENAME}.tex
 ## COMMANDS:
-PDFLATEX_CMD = pdflatex
+PDFLATEX_CMD = pdflatex -shell-escape
 #BIBTEX_CMD = bibtex
 BIBTEX_CMD = biber
 MAKEIDX_CMD = makeindex
+GLOSSARY_CMD = makeglossaries
 DATESTAMP = `/bin/date +%Y-%m-%d`
 DATESTAMP_AND_PROJECT = ${DATESTAMP}_${PROJECTNAME}
 #PDFVIEWER = xpdf
@@ -41,6 +42,7 @@ all: pdf
 pdf:
 	${PDFLATEX_CMD} ${MAINDOCUMENTFILENAME}
 	-${BIBTEX_CMD} ${MAINDOCUMENTBASENAME}
+	${GLOSSARY_CMD} ${MAINDOCUMENTBASENAME}
 	${PDFLATEX_CMD} ${MAINDOCUMENTFILENAME}
 	${PDFLATEX_CMD} ${MAINDOCUMENTFILENAME}
 	-mv ${MAINDOCUMENTBASENAME}.pdf ${DATESTAMP_AND_PROJECT}.pdf
@@ -51,6 +53,15 @@ wc:	pdf
 	ps2ascii ${DATESTAMP_AND_PROJECT}.ps > ${DATESTAMP_AND_PROJECT}.txt
 	wc -w ${DATESTAMP_AND_PROJECT}.txt
 
+#help with spell checking, using hunspell and assuming en_US, de_At dictionaries are available, dictionary.txt is the custom one
+
+	# print the whole sentences with the false words
+spellsent:
+	hunspell -d en_US,de_AT -p dictionary.txt -L -t -i utf-8 *.tex
+	
+	# print only the false words
+spellword:
+	hunspell -d en_US,de_AT -p dictionary.txt -l -t -i utf-8 *.tex
 
 # --------------------------------------------------------
 

@@ -138,17 +138,20 @@
 %% this information is used only for generating the title page:
 \newcommand{\myworktitle}{Master's Thesis}  %% official type of work like ``Master theses''
 \newcommand{\mygrade}{Master of Science} %% title you are getting with this work like ``Master of ...''
-\newcommand{\mystudy}{Telematik} %% your study like ``Arts''
-\newcommand{\myuniversity}{Graz University of Technology} %% your university/school
+\newcommand{\mystudy}{Study} %% your study like ``Arts''
+\newcommand{\myuniversity}{Autrian University of Technology} %% your university/school
+\newcommand{\myuniversitygerman}{Österreichischen Technischen Universität} %% your university/school
 \newcommand{\myinstitute}{Institute for Softwaretechnology} %% affiliation
+\newcommand{\myinstitutegerman}{Institut für Softwaretechnology} %% affiliation 
 \newcommand{\myinstitutehead}{Univ.-Prof.\,Dipl-Ing.\,Dr.techn.~Some One} %% head of institute
 \newcommand{\mysupervisor}{Dr.~Some Body} %% your supervisor
+\newcommand{\mysupervisorsimple}{Some Body} %% your supervisor
 \newcommand{\myevaluator}{Prof.~Some Genius} %% your evaluator
 \newcommand{\myhomestreet}{Street~42} %% your home street (with house number)
-\newcommand{\myhometown}{Graz} %% your home town
-\newcommand{\myhomepostalnumber}{8010} %% your postal number of home town
-\newcommand{\mysubmissionmonth}{November} %% month you are handing in
-\newcommand{\mysubmissionyear}{2013} %% year you are handing in
+\newcommand{\myhometown}{Town} %% your home town
+\newcommand{\myhomepostalnumber}{1234} %% your postal number of home town
+\newcommand{\mysubmissionmonth}{Month} %% month you are handing in
+\newcommand{\mysubmissionyear}{2020} %% year you are handing in
 \newcommand{\mysubmissiontown}{\myhometown} %% town of handing in (or \myhometown)
 
 %% additional information for generic_documentation title page
@@ -172,7 +175,13 @@
 %% ========================================================================
 
 %% ... it's OK to put here your own usepackage commands ...
+\usepackage{tabularx}
 
+\usepackage{pdftricks}
+\begin{psinputs}
+   \usepackage{pstricks}
+   \usepackage{multido}
+\end{psinputs}
 
 
 
@@ -211,6 +220,10 @@
 
 
 \input{template/pdf_settings}  %% should be *last* definitions in preamble!
+
+\usepackage[acronyms]{glossaries} %% should be after hyperref package!
+\makeglossaries
+
 %% ========================================================================
 %%%% begin{document}
 %% ========================================================================
@@ -260,6 +273,8 @@
 \appendix                       %% closes main document, appendix follows until end; only available in book-classes
 \addpart*{Appendix}             %% adding Appendix to tableofcontents
 
+
+\printglossary[type=\acronymtype,title={List of Abbreviations},toctitle={List of Abbreviations}]
 \printbibliography              %% remove, if using BibTeX instead of biblatex
 % \include{further_ressources}  %% this is a suggestion: you have to create this file on demand
 
