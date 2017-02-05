@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2013-02-02 21:28:44 vk>
+%%%% Time-stamp: <2017-02-05 16:21:48 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
@@ -12,38 +12,52 @@
 
 \begin{titlepage}
 
-%\large  %% basic font size of the titlepage
-
-%% placing the TU Graz logo exactly as Corporate Design demands:
-%%   40mm of Logo (here: 2mm margin in picture!)
-%%    8mm from top and from right
-%% Source: http://portal.tugraz.at/portal/page/portal/TU_Graz/Services/BDR/Oeffentlichkeitsarbeit/CD/Logo%20Anwendungsrichtlinien
-\AddToShipoutPicture*{%
-  \AtPageUpperLeft{%
-    \hspace{\paperwidth}%
-    \raisebox{-19mm}{%\baselineskip}{%
-     \makebox[-4mm][r]{\includegraphics[width=42mm]{figures/TU_Graz_Logo}}
-}}}%
+{\sffamily
 
 \begin{center}
-~
+
+\includegraphics[width=30mm]{figures/TU_Graz_Logo}
+
+\vfill\vfill\vfill
 \vfill\vfill\vfill
 
-\myauthor
+\myauthorwithexistingtitles
 
-\vfill
+\vfill\vfill\vfill
 
 {\LARGE\bfseries\mytitle}
 
-\vfill\vfill\vfill
-
-{\bfseries\myworktitle}
 
 \vfill\vfill\vfill
 \vfill\vfill\vfill
+
+
+{\bfseries\large\myworktitle}
+
+to achieve the university degree of
+
+\mygrade
+
+\mydegreeprogramme
+
+
 \vfill\vfill\vfill
 
-\myuniversity
+
+submitted to
+
+\vfill
+
+{\bfseries\large\myuniversity}
+
+
+\vfill\vfill\vfill
+
+
+Supervisor
+
+\mysupervisor
+%usually not mentioned on titlepage:% Evaluator: \myevaluator
 
 \vfill
 
@@ -52,14 +66,16 @@ Head: \myinstitutehead\\
 
 \vfill
 
-Supervisor: \mysupervisor\\
-%usually not mentioned on titlepage:% Evaluator: \myevaluator
+%% OPTIONAL: second supervisor/name of the faculty, etc.
 
-\vfill
+
+\vfill\vfill\vfill
+
 
 \mysubmissiontown, \mysubmissionmonth~\mysubmissionyear
 
 \end{center}
+}%% end sffamily
 \end{titlepage}
 
 %% if myaddcolophon is set to "true", colophon is added:
