@@ -1,58 +1,50 @@
-%%%% Time-stamp: <2017-02-05 16:00:44 vk>
+%%%% Time-stamp: <2017-02-14 16:01:12 vk>
 %% ========================================================================
 %%%% Disclaimer
 %% ========================================================================
 %%
 %% created by
 %%
-%%      Karl Voit
+%%      Karl Voit, and Matthias Wölbitsch
 %%
+%%
+%% code for the date and signature fields adapted from
+%% http://tex.stackexchange.com/a/20562
 
-\section*{Affidavit}
 
-I declare that I have authored this thesis independently, that I have
-not used other than the declared sources/resources, and that I have
-explicitly indicated all material which has been quoted either
-literally or by content from the sources used. The text document
-uploaded to \myacro{TUGRAZ}online is identical to the present master‘s
-thesis.
-
-\vfill
-
-%% definition of the block tat contains date and signature
-\newcommand{\mysignatureblock}[3]{%
-  %% Sorry, this is a "bit" of a hack. Maybe someone knows a more elegant method?
-  \begin{tabular}{llp{2em}l}
-  #1 & \hspace{5cm}        & & \hspace{6cm} \\\cline{2-2}\cline{4-4}
-     &                     & & \\[-3mm]
-     & {\footnotesize #2}  & & {\footnotesize #3}
-  \end{tabular}
+\newcommand{\textfield}[2]{
+  \vbox{
+    \hsize=#1\kern3cm\hrule\kern1ex
+    \hbox to \hsize{\strut\hfil\footnotesize#2\hfil}
+  }
 }
 
-\mysignatureblock{Graz,}{Date}{Signature}
 
-\vfill
-\vfill
-\vfill
-\vfill
+\ifthenelse{\boolean{english_affidavit}}{
+  \section*{Affidavit}
+  I declare that I have authored this thesis independently, that I have
+  not used other than the declared sources/resources, and that I have
+  explicitly indicated all material which has been quoted either
+  literally or by content from the sources used. The text document
+  uploaded to \myacro{TUGRAZ}online is identical to the present master‘s
+  thesis.
 
-\section*{Eidesstattliche Erklärung}
+  \hbox to \hsize{\textfield{4cm}{Date}\hfil\hfil\textfield{7cm}{Signature}}
+}{
+  \section*{Eidesstattliche Erklärung}
+  \foreignlanguage{ngerman}{%
+    Ich erkläre an Eides statt, dass ich die vorliegende Arbeit
+    selbstständig verfasst, andere als die angegebenen
+    Quellen/Hilfsmittel nicht benutzt, und die den benutzten Quellen
+    wörtlich und inhaltlich entnommenen Stellen als solche kenntlich
+    gemacht habe. Das in \myacro{TUGRAZ}online hochgeladene Textdokument
+    ist mit der vorliegenden Dissertation identisch.}
 
-\foreignlanguage{ngerman}{%
-  Ich erkläre an Eides statt, dass ich die vorliegende Arbeit
-  selbstständig verfasst, andere als die angegebenen
-  Quellen/Hilfsmittel nicht benutzt, und die den benutzten Quellen
-  wörtlich und inhaltlich entnommenen Stellen als solche kenntlich
-  gemacht habe. Das in \myacro{TUGRAZ}online hochgeladene Textdokument
-  ist mit der vorliegenden Dissertation identisch.}
-
-\vfill
-
-\mysignatureblock{Graz, am}{Datum}{Unterschrift}
-
+    \hbox to \hsize{\textfield{4cm}{Datum}\hfil\hfil\textfield{7cm}{Unterschrift}}
+}
 
 \newpage
-\newpage
+
 
 %%% Local Variables:
 %%% mode: latex
