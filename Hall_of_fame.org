@@ -1,0 +1,37 @@
+
+* Hall of Fame
+
+Here is an (incomplete) list of great documents which were written
+using this LaTeX template and sent-in by their proud authors.
+
+Feel free to submit your own document as long it can be freely
+downloaded from the web. Either send me a pull-request via GitHub or
+send me an email: =add-my-document {at sign] Karl [dash} Voit (dot} at=
+
+** [[http://karl-voit.at/tagstore/downloads/Voit2012b.pdf][TagTrees: Improving Personal Information Management Using Associative Navigation]]
+
+- Author :: Karl Voit
+- Type :: PhD Thesis
+- Date :: November 2012
+
+- Project Webpage: http://Karl-Voit.at/tagstore/
+- [[http://karl-voit.at/tagstore/downloads/Voit2012b.bib][BibTeX file]]
+
+
+
+
+ # TEMPLATE:
+ # Links with descriptions are written with two opening square brackets followed
+ # by the URL, one closing square bracket, one opening square bracket, the link
+ # text, and two closing square brackets. Links without descriptions are
+ # recognized without using any special markup.
+ #
+ # ** THE TITLE OF YOUR DOCUMENT AND THE LINK TO THE PDF FILE
+ #
+ # - Author :: FIRSTNAME LASTNAME
+ # - Type :: Report | Bachelor Thesis | Master Thesis | PhD Thesis | Book | ...
+ # - Date :: MONTH AND YEAR OF FINALIZATION
+ #
+ # - Project Webpage: URL
+ # - [[http://karl-voit.at/tagstore/downloads/Voit2012b.bib][BibTeX file]] (WITH LINK)
+ # - WHATEVER PLEASES YOUR AUDIENCE
