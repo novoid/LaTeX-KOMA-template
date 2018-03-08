@@ -571,7 +571,12 @@ hyperref=true, %% using hyperref-package references
 %doc% graphicx%%
 %doc% }}]
 %doc% The widely used package to use graphical images within a \LaTeX{} document.
-\usepackage[pdftex]{graphicx}
+\newcommand{\mytrue}{true}
+\ifx\mydraft\mytrue
+  \usepackage[pdftex,draft]{graphicx}
+\else
+  \usepackage[pdftex]{graphicx}
+\fi
 
 %doc% \item[\texttt{\href{https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Formatting\#Other\_symbols}{%%
 %doc% pifont%%
