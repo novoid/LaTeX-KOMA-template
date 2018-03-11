@@ -1,4 +1,4 @@
-%%%% Time-stamp: <2014-03-23 13:40:59 vk>
+%%%% Time-stamp: <2018-03-11 14:31:45 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -10,25 +10,25 @@
 %doc%
 %doc% \section{\texttt{pdf\_settings.tex} --- Settings related to PDF output}
 %doc% \label{sec:pdf}
-%doc% 
+%doc%
 %doc% The file \verb#template/pdf_settings.tex# basically contains the definitions for
 %doc% the \href{http://tug.org/applications/hyperref/}{\texttt{hyperref} package}
 %doc% including the
 %doc% \href{http://www.ctan.org/tex-archive/macros/latex/required/graphics/}{\texttt{graphicx}
 %doc% package}. Since these settings should be the last things of any \LaTeX{}
 %doc% preamble, they got their own \TeX{} file which is included in \texttt{main.tex}.
-%doc% 
+%doc%
 %doc% \paragraph{What should I do with this file?} The settings in this file are
 %doc% important for \myacro{PDF} output and including graphics. Do not exclude the
 %doc% related \texttt{input} command in \texttt{main.tex}. But you might want to
 %doc% modify some settings after you read the
 %doc% \href{http://tug.org/applications/hyperref/}{documentation of the \texttt{hyperref} package}.
-%doc% 
+%doc%
 
 
 %% Fix positioning of images in PDF viewers. (disabled by
 %% default; see https://github.com/novoid/LaTeX-KOMA-template/issues/4
-%% for more information) 
+%% for more information)
 %% I do not have time to read about possible side-effect of this
 %% package for now.
 % \usepackage[hypcap]{caption}
@@ -44,7 +44,7 @@ unicode=true, % loads with unicode support
 pdftex=true, %
 backref, %
 pagebackref=false, % creates backward references too
-bookmarks=false, %
+bookmarks=true, % generate bookmarks in PDF files
 bookmarksopen=false, % when starting with AcrobatReader, the Bookmarkcolumn is opened
 pdfpagemode=None,% None, UseOutlines, UseThumbs, FullScreen
 plainpages=false, % correct, if pdflatex complains: ``destination with same identifier already exists''
