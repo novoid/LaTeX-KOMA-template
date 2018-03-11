@@ -1,4 +1,4 @@
-%% Time-stamp: <2015-04-30 17:23:24 vk>
+%% Time-stamp: <2018-03-11 14:25:47 vk>
 %%%% === Disclaimer: =======================================================
 %% created by
 %%
@@ -284,7 +284,7 @@
 %doc% pdflatex main.tex
 %doc% pdflatex main.tex
 %doc% \end{verbatim}
-%doc% 
+%doc%
 %doc% Users of TeXLive with Microsoft Windows might want to try the
 %doc% following script\footnote{Thanks to Florian Brucker for provinding
 %doc%   this script.} which could be stored as, e.g., \texttt{compile.bat}:
@@ -297,7 +297,7 @@
 %doc% pdflatex.exe  "main.tex"
 %doc% pdflatex.exe -synctex=-1 -interaction=nonstopmode "main.tex"
 %doc% \end{verbatim}
-%doc% 
+%doc%
 
 
 %doc%
@@ -571,7 +571,13 @@ hyperref=true, %% using hyperref-package references
 %doc% graphicx%%
 %doc% }}]
 %doc% The widely used package to use graphical images within a \LaTeX{} document.
-\usepackage[pdftex]{graphicx}
+\ifthenelse{\boolean{\mydraft}}{   %% the \mydraft switches between
+                                   %% showing rectangles instead of graphics
+  \usepackage[pdftex,draft]{graphicx}
+}
+{
+  \usepackage[pdftex]{graphicx}
+}
 
 %doc% \item[\texttt{\href{https://secure.wikimedia.org/wikibooks/en/wiki/LaTeX/Formatting\#Other\_symbols}{%%
 %doc% pifont%%
