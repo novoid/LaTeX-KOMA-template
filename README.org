@@ -24,7 +24,7 @@ Please do read [[https://github.com/novoid/LaTeX-KOMA-template/blob/master/Templ
 In case you want to see some example documents generated via this
 template, please do read [[https://github.com/novoid/LaTeX-KOMA-template/blob/master/Hall_of_fame.org][the Hall of Fame]].
 
-Do me a favor and *do submit your final document* as well. It helps
+Do me a favor and *do submit the name or an URL of your final document* as well. It helps
 other people in their decision process and adds up to a very cool
 collection of results we can be proud of.
 
