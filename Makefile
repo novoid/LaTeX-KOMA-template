@@ -98,7 +98,7 @@ templatedocu:
 	grep "%doc%" template/typographic_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	grep "%doc%" template/pdf_settings.tex | sed 's/^.*%doc% //' >> ${TEMPLATEDOCUFILE}
 	echo "%%---------------------------------------%%" >>${TEMPLATEDOCUFILE}
-	echo "\printbibliography\end{document}" >>${TEMPLATEDOCUFILE}
+	printf '%s\n' "\printbibliography\end{document}" >>${TEMPLATEDOCUFILE}
 	${PDFLATEX_CMD} ${TEMPLATEDOCUFILE}
 	${PDFLATEX_CMD} ${TEMPLATEDOCUFILE}
 	${BIBTEX_CMD} ${TEMPLATEDOCUBASENAME}
