@@ -28,6 +28,23 @@ Do me a favor and *do submit the name or an URL of your final document* as well.
 other people in their decision process and adds up to a very cool
 collection of results we can be proud of.
 
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+#+caption: Screenshot of the title page.
+[[figures/PDF preview - title page -- screenshots.png]]
+
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+#+caption: Screenshot of the table of contents page.
+[[figures/PDF preview - contents -- screenshots.png]]
+
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+#+caption: Screenshot of the first page of a chapter.
+[[figures/PDF preview - language and writing -- screenshots.png]]
+
+#+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+#+caption: Screenshot of the bibliography.
+[[figures/PDF preview - bibliography -- screenshots.png]]
+
+
 ** Requirements
 
 This template uses up-to-date technology like pdflatex, [[http://www.tex.ac.uk/tex-archive/info/translations/biblatex/de/][biblatex]]
