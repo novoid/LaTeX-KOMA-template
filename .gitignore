@@ -4,6 +4,7 @@ template/auto/*
 *.bbl
 *.blg
 *.log
+*.out
 *.toc
 Template-Documentation.tex
 main.pdf
