@@ -17,6 +17,17 @@ send me an email: =add-my-document {at sign] Karl [dash} Voit (dot} at=
 - Project Webpage: http://Karl-Voit.at/tagstore/
 - [[http://karl-voit.at/tagstore/downloads/Voit2012b.bib][BibTeX file]]
 
+- Author :: Sabrina Meindlhumer
+- Type :: Master's Thesis
+- Date :: September 2019
+
+- Project Webpage: https://github.com/M-Sabrina/Masterthesis-Meindlhumer-Sabrina
+
+- Author :: Julian Hofer
+- Type :: Master's Thesis
+- Date :: October 2019
+
+- Project Webpage: https://github.com/JKU-HFP/Masterthesis-Hofer-Julian
 
 
 
