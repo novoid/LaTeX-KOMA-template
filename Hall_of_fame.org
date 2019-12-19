@@ -17,6 +17,22 @@ send me an email: =add-my-document {at sign] Karl [dash} Voit (dot} at=
 - Project Webpage: http://Karl-Voit.at/tagstore/
 - [[http://karl-voit.at/tagstore/downloads/Voit2012b.bib][BibTeX file]]
 
+** [[https://github.com/M-Sabrina/Masterthesis-Meindlhumer-Sabrina/blob/master/Masterthesis_Meindlhumer.pdf][TagTrees: Comparison of different evaluation strategies for single-molecule force spectroscopy of antibody/antigen interactions]]
+
+- Author :: Sabrina Meindlhumer
+- Type :: Master's Thesis
+- Date :: September 2019
+
+- Project Webpage: https://github.com/M-Sabrina/Masterthesis-Meindlhumer-Sabrina
+
+** [[https://github.com/JKU-HFP/Masterthesis-Hofer-Julian/blob/master/masterthesis.pdf][TagTrees: Advanced excitation and spectroscopy schemes of single quantum dots]]
+
+
+- Author :: Julian Hofer
+- Type :: Master's Thesis
+- Date :: October 2019
+
+- Project Webpage: https://github.com/JKU-HFP/Masterthesis-Hofer-Julian
 
 
 
