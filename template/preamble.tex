@@ -11,7 +11,7 @@
 %doc% \newcommand{\mylinespread}{1.0}  \newcommand{\mycolorlinks}{true}
 %doc% \documentclass[12pt,paper=a4,parskip=half,DIV=calc,oneside,%%
 %doc% headinclude,footinclude=false,open=right,bibliography=totoc]{scrartcl}
-%doc% \usepackage[utf8]{inputenc}\usepackage[ngerman,american]{babel}\usepackage{scrpage2}
+%doc% \usepackage[utf8]{inputenc}\usepackage[ngerman,american]{babel}\usepackage{scrlayer-scrpage}
 %doc% \usepackage{ifthen}\usepackage{eurosym}\usepackage{xspace}\usepackage[usenames,dvipsnames]{xcolor}
 %doc% \usepackage[protrusion=true,factor=900]{microtype}
 %doc% \usepackage{enumitem}
@@ -417,13 +417,14 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 \usepackage[\mylanguage]{babel}  %% used languages; default language is *last* language of options
 
 %doc%
-%doc% \subsection{\texttt{scrpage2}: Headers and footers}
+%doc% \subsection{\texttt{scrlayer-scrpage}: Headers and footers}
 %doc%
-%doc% Since this template is based on \myacro{KOMA} script it uses its great \texttt{scrpage2}
+%doc% Since this template is based on \myacro{KOMA} script it uses its great
+%doc% \texttt{scrlayer-scrpage} (previously \texttt{scrpage2})
 %doc% package for defining header and footer information. Please refer to the \myacro{KOMA}
 %doc% script documentation how to use this package.
 %doc%
-\usepackage{scrpage2} %%  advanced page style using KOMA
+\usepackage{scrlayer-scrpage} %%  advanced page style using KOMA
 
 
 %doc%
