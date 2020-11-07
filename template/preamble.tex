@@ -11,6 +11,7 @@
 %doc% \newcommand{\mylinespread}{1.0}  \newcommand{\mycolorlinks}{true}
 %doc% \documentclass[12pt,paper=a4,parskip=half,DIV=calc,oneside,%%
 %doc% headinclude,footinclude=false,open=right,bibliography=totoc]{scrartcl}
+%doc% \usepackage[T1]{fontenc}\usepackage{lmodern}
 %doc% \usepackage[utf8]{inputenc}\usepackage[ngerman,american]{babel}\usepackage{scrlayer-scrpage}
 %doc% \usepackage{ifthen}\usepackage{eurosym}\usepackage{xspace}\usepackage[usenames,dvipsnames]{xcolor}
 %doc% \usepackage[protrusion=true,factor=900]{microtype}
@@ -388,6 +389,23 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 
 % FIXXME: adopting language:
 % add or modify language parameter of package »babel« and use language switches described in babel-documentation
+
+%doc%
+%doc% \subsection{\texttt{ifthen}: Conditional execution of latex code}
+%doc%
+%doc% This package allows conditional code execution (e.g. changing parameters passed to packages).
+%doc%
+\usepackage{ifthen}
+
+%doc%
+%doc% \subsection{\texttt{fontenc}: Switch to Western European output charset}
+%doc%
+%doc% This allows \LaTeX{} to output special digits like german mutated vovels or quotation marks without assembling them of basic US-ASCII ones. This makes text in the generated pdf copyable. Sadly this also influences the fonts used, as the default ones do not contain most of the characters we use here. The lmodern font set is usually used to counteract this problem.
+%doc%
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+%% Source: https://texwelt.de/fragen/5537/was-macht-eigentlich-usepackaget1fontenc
+%%         https://tex.stackexchange.com/questions/227063/fontenc-changes-sans-serif-bold-font-in-koma-script
 
 %doc%
 %doc% \subsection{\texttt{inputenc}: UTF8 as input charset}
