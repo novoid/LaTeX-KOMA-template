@@ -8,16 +8,28 @@
 %%      Karl Voit
 
 
+\ifthenelse{\equal{\mylanguage}{english}}%%
+{%%
 \newcommand{\mycolophon}{%%
-  This document 
-  %% was written with \myacro{GNU}~Emacs, 
-  is set in Palatino, compiled with
+  This document is set in Palatino, compiled with
   \href{http://LaTeX.TUGraz.at}{pdf\LaTeX2e} and
   \href{http://en.wikipedia.org/wiki/Biber_(LaTeX)}{\texttt{Biber}}.
 
   The \LaTeX{} template from Karl Voit is based on
   \href{http://www.komascript.de/}{KOMA script} and can be found 
   online: \href{https://github.com/novoid/LaTeX-KOMA-template}{https://github.com/novoid/LaTeX-KOMA-template}
+}
+}
+{%%
+\newcommand{\mycolophon}{%%
+  Dieses Dokument ist in der Schriftart Palatino mit
+  \href{http://LaTeX.TUGraz.at}{pdf\LaTeX2e} und
+  \href{http://en.wikipedia.org/wiki/Biber_(LaTeX)}{\texttt{Biber}} kompiliert.
+
+  Das \LaTeX{} Template von Karl Voit basiert auf
+  \href{http://www.komascript.de/}{KOMA Script} und ist online
+  verfügbar: \href{https://github.com/novoid/LaTeX-KOMA-template}{https://github.com/novoid/LaTeX-KOMA-template}
+}
 }
 
 

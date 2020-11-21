@@ -34,6 +34,8 @@
 
 {\bfseries\large\myworktitle}
 
+\ifthenelse{\equal{\mylanguage}{english}}%%
+{%%
 to achieve the university degree of
 
 \mygrade
@@ -63,6 +65,38 @@ Supervisor
 
 \myinstitute\\
 Head: \myinstitutehead\\
+}
+{%%
+zur Erlangung des akademischen Grades eines
+
+\mygrade
+
+\mydegreeprogramme
+
+
+\vfill\vfill\vfill
+
+
+an der
+
+\vfill
+
+{\bfseries\large\myuniversity}
+
+
+\vfill\vfill\vfill
+
+
+Begutachter
+
+\mysupervisor
+%usually not mentioned on titlepage:% Evaluator: \myevaluator
+
+\vfill
+
+\myinstitute\\
+Leitung: \myinstitutehead\\
+}
 
 \vfill
 

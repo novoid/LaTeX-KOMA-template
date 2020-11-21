@@ -427,8 +427,9 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc%
 %doc% \subsection{\texttt{babel}: Language settings}
 %doc%
-%doc% The default setting of the language is American. Please change settings for
-%doc% additional or alternative languages used in \texttt{main.tex}.
+%doc% The default setting of the english language kind is American. For german, the
+%doc% \texttt{ngerman} kind is used. Please change settings for additional or
+%doc% alternative languages in \texttt{template/preamble.tex}.
 %doc%
 %doc% Please note that the default language of the document is the \emph{last} language
 %doc% which is added to the package options.
@@ -439,7 +440,14 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% \verb+\foreigntextquote+, or \verb+\foreignblockquote+ provided by
 %doc% \texttt{csquotes} (see Section~\ref{sub:csquotes}).
 %doc%
-\usepackage[\mylanguage]{babel}  %% used languages; default language is *last* language of options
+\ifthenelse{\equal{\mylanguage}{english}}%%
+{%%
+  \usepackage[ngerman,american]{babel}
+}
+{%%
+  \usepackage[american,ngerman]{babel}
+}
+
 
 %doc%
 %doc% \subsection{\texttt{scrlayer-scrpage}: Headers and footers}
@@ -449,7 +457,7 @@ BCOR=\myBCOR,        %% binding correction (depends on how you bind
 %doc% package for defining header and footer information. Please refer to the \myacro{KOMA}
 %doc% script documentation how to use this package.
 %doc%
-\usepackage{scrlayer-scrpage} %%  advanced page style using KOMA
+\usepackage{scrlayer-scrpage}%%  advanced page style using KOMA
 
 
 %doc%
