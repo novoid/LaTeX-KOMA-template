@@ -18,6 +18,19 @@
 
 \vfill
 
+\ifthenelse{\equal{\mylanguage}{english}}%%
+{%%
+Pre-scientific work written by\\[5mm]
+{\Large\bfseries\myauthor}\\[5mm]
+Class \mystudy\\[50mm]
+
+\vfill
+
+\includegraphics[width=3cm]{figures/institution}\\[5mm]
+
+Supervisor: \mysupervisor
+}
+{%%
 Vorwissenschaftliche Arbeit verfasst von\\[5mm]
 {\Large\bfseries\myauthor}\\[5mm]
 Klasse \mystudy\\[50mm]
@@ -27,6 +40,7 @@ Klasse \mystudy\\[50mm]
 \includegraphics[width=3cm]{figures/institution}\\[5mm]
 
 Betreuer: \mysupervisor
+}
 
 \vfill
 

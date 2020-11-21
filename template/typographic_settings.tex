@@ -169,17 +169,15 @@
 %doc% 
 %doc% \emph{Never} use quotation marks found on your keyboard.
 %doc% They end up in strange characters or false looking quotation marks.
-%doc% 
-%doc% In \LaTeX{} you are able to use typographically correct quotation marks. The package 
+%doc%
+%doc% Different languages also use quotation marks differently. In \LaTeX{} you
+%doc% are able to use typographically correct quotation marks. The package 
 %doc% \href{http://www.ctan.org/pkg/csquotes}{\texttt{csquotes}} offers you with 
 %doc% \verb#\enquote{foobar}# a command to get correct quotation marks around \enquote{foobar}.
-%doc% Please do check the package options in order to modify
-%doc% its settings according to the language used\footnote{most of the time in 
-%doc% combination with the language set in the options of the \texttt{babel} package}.
 %doc% 
 %doc% \href{http://www.ctan.org/pkg/csquotes}{\texttt{csquotes}} is also recommended 
 %doc% by \texttt{biblatex} (see Section~\ref{sec:references}). 
-\usepackage[babel=true,strict=true,english=american,german=guillemets]{csquotes}
+\usepackage[autostyle=true,strict=true,english=american,german=guillemets]{csquotes}
 
 %doc% 
 %doc% \subsection{Line spread}
