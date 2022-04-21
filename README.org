@@ -12,7 +12,7 @@ document exceeding a few pages. So if you plan to write a longer report,
 a diploma thesis, a PhD thesis, or similar, this template should give you
 a good basis.
 
-The focus is that you - the author - is able to concentrate on the *content*
+The focus is that you - the author - are able to concentrate on the *content*
 of your work rather than start fiddling around with the look of the document.
 Several typographic optimizations are included in order to get a final document
 that is optimized to deliver your content.
