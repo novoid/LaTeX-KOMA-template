@@ -43,6 +43,23 @@
 
 {\normalsize\bfseries\myworktitle}\\
 \vfill
+\ifthenelse{\equal{\mylanguage}{english}}%%
+{%%
+to obtain the academic degree\\
+{\mygrade}\\
+\vfill
+submitted at the\\
+{\normalsize\bfseries\myuniversity}
+
+\vfill\vfill\vfill
+\vfill\vfill\vfill
+
+Supervisor\\
+\mysupervisor\\
+\vfill
+Cosupervisor\\
+}
+{%%
 zur Erlangung des akademischen Grades\\
 {\mygrade}\\
 \vfill
@@ -56,6 +73,7 @@ Betreuer\\
 \mysupervisor\\
 \vfill
 Mitbetreuer\\
+}
 \mycosupervisor\\
 %usually not mentioned on titlepage:% Evaluator: \myevaluator
 \vfill

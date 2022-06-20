@@ -16,7 +16,29 @@
 {\LARGE\bfseries\myworktitle}
 
 \vfill
+\ifthenelse{\equal{\mylanguage}{english}}%%
+{%%
+to obtain the academic degree\\[5mm]
+{\LARGE\mygrade}\\[5mm]
+in the field of study \mystudy\\
+at the \myuniversity
 
+\vfill
+
+on the topic\\[10mm]
+
+{\LARGE\bfseries\mytitle}
+
+\vfill
+
+submitted to the\\
+\myinstitute
+
+Supervisor: \mysupervisor
+
+from\\[5mm]
+}
+{%%
 zur Erlangung des akademischen Grades eines\\[5mm]
 {\LARGE\mygrade}\\[5mm]
 der Studienrichtung \mystudy\\
@@ -36,6 +58,7 @@ eingereicht am\\
 Begutachter: \mysupervisor
 
 von\\[5mm]
+}
 {\Large\bfseries\myauthor}\\[5mm]
 \myhomestreet\\
 \myhomepostalnumber~\myhometown
